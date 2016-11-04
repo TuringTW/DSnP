@@ -1,0 +1,12 @@
+mtr 0
+mtr 39
+mtr 40
+mtn 1
+mtn 1 -a 1
+mtn 1 -a 0
+mtp
+MTD
+mtd -a
+mtd -r 4
+help mtn
+mtn 5
