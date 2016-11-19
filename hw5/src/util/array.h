@@ -21,7 +21,7 @@ class Array
 {
 public:
    // TODO: decide the initial value for _isSorted
-   Array() : _data(0), _size(0), _capacity(0) {}
+   Array() : _data(0), _size(0), _capacity(0), _isSorted(true) {}
    ~Array() { delete []_data; }
 
    // DO NOT add any more data member or function for class iterator
@@ -75,6 +75,7 @@ public:
    const T& operator [] (size_t i) const { return *_data[i]; }
 
    void push_back(const T& x) {
+     if(_isSorted&&!empty()&&*(_data+_size-1)==x) _isSorted = false;
      if (_size==_capacity) {
        _capacity = int(pow(2, _capacity));
        T* temp = _data;
@@ -102,27 +103,30 @@ public:
        return false;
      }
      _size--;
-     for (size_t i = pos._node-_data; i < _capacity-1 && i<_size ; i++) {
-       *(_data+i) = *(_data+i+1);
+     for (iterator ii = pos; ii!=end(); ii++) {
+       *ii = *(ii+1);
      }
+    //  for (size_t i = pos._node-_data; i < _capacity-1 && i<_size ; i++) {
+    //    *(_data+i) = *(_data+i+1);
+    //  }
      return true;
    }
    bool erase(const T& x) {
-     for (iterator ii = begin(); ii!=end(); ii++) {
-       if(*ii==x) {
-         erase(ii);
-         return true;
-       }
+     iterator pos;
+     if(find(pos, x)){
+       erase(pos);
+       return true;
      }
      return false;
    }
 
    void clear() {
      _size = 0;
+     _isSorted = true;
    }
 
    // This is done. DO NOT change this one.
-   void sort() const { if (!empty()) ::sort(_data, _data+_size); }
+   void sort() const { if (!empty()&&!_isSorted) ::sort(_data, _data+_size); _isSorted = true;}
 
    // Nice to have, but not required in this homework...
    // void reserve(size_t n) { ... }
@@ -135,6 +139,29 @@ private:
    mutable bool  _isSorted;   // (optionally) to indicate the array is sorted
 
    // [OPTIONAL TODO] Helper functions; called by public member functions
+   bool find(iterator &result, const T& x){
+     if (_isSorted) {
+       int move = _size/2;
+       int cur_pos = 0;
+       while(move == 0){
+         cur_pos+=move;
+         if (_data[cur_pos]==x) {
+           result = iterator(_data+cur_pos);
+           return true;
+         }
+         move/=2;
+       }
+       return false;
+     }else{
+       for (iterator ii = begin(); ii!=end(); ii++) {
+         if(*ii==x) {
+           result = ii;
+           return true;
+         }
+       }
+     }
+     return false;
+   }
 };
 
 #endif // ARRAY_H

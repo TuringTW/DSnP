@@ -41,7 +41,7 @@ public:
    DList() {
       _head = new DListNode<T>(T());
       _head->_prev = _head->_next = _head; // _head is a dummy node
-      _isSorted = false;
+      _isSorted = true;
    }
    ~DList() { clear(); delete _head; }
 
@@ -93,6 +93,7 @@ public:
    }
 
    void push_back(const T& x) {
+     if(_isSorted&&(_head->_prev->_prev->_data)>x) _isSorted = false;
      insert_node(_head->_prev, new DListNode<T>(x));
    }
    void pop_front() {
@@ -120,19 +121,26 @@ public:
 
    void clear() {
      link_node(_head, _head);
+     _isSorted = true;
    }  // delete all nodes except for the dummy node
 
    void sort() const {
+     if (_isSorted) return;
      for (iterator ii = begin(); ii!=end(); ii++) {
-       for (iterator jj = ii; jj!=end(); jj++) {
-         if (*ii>*jj) {
-           T temp = *ii;
-           *ii = *jj;
-           *jj = temp;
-          // exchange(ii, jj);
+       iterator jj = ii;
+       while(jj!=end()){
+         if(*ii>*jj){
+           DListNode<T>* temp = jj._node->_next;
+           link_node(jj._node->_prev, jj._node->_next);
+           insert_node(ii._node->_prev, jj._node);
+           ii = jj;
+           jj = iterator(temp);
+           continue;
          }
+         jj++;
        }
      }
+     _isSorted = true;
    }
 
 private:
@@ -140,29 +148,12 @@ private:
    mutable bool   _isSorted; // (optionally) to indicate the array is sorted
 
    // [OPTIONAL TODO] helper functions; called by public member functions
-   void link_node(DListNode<T>* a, DListNode<T>* b){
+   void link_node(DListNode<T>* a, DListNode<T>* b) const{
      a->_next = b;
      b->_prev = a;
    }
 
-   void exchange(iterator& ii, iterator& jj){
-     if(ii._node->_next == jj._node){
-       erase(ii);
-       insert_node(jj._node, ii._node);
-     }else if(ii._node->_prev == jj._node){
-       erase(jj);
-       insert_node(ii._node, jj._node);
-     }else{
-       erase(ii);
-       erase(jj);
-       insert_node(jj._node->_prev, ii._node);
-       insert_node(ii._node->_prev, jj._node);
-     }
-     DListNode<T>* temp = ii._node;
-     ii._node = jj._node;
-     jj._node = temp;
-   }
-   void insert_node(DListNode<T>* left, DListNode<T>* new_node){
+   void insert_node(DListNode<T>* left, DListNode<T>* new_node) const{
      link_node(new_node, left->_next);
      link_node(left, new_node);
    }
