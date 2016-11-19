@@ -11,7 +11,7 @@
 
 #include <cassert>
 #include <algorithm>
-
+#include <math.h>
 using namespace std;
 
 // NO need to implement class ArrayNode
@@ -37,40 +37,85 @@ public:
       // TODO: implement these overloaded operators
       const T& operator * () const { return (*this); }
       T& operator * () { return (*_node); }
-      iterator& operator ++ () { return (*this); }
-      iterator operator ++ (int) { return (*this); }
-      iterator& operator -- () { return (*this); }
-      iterator operator -- (int) { return (*this); }
+      iterator& operator ++ () { _node++; return (*this); }
+      iterator operator ++ (int) {
+        iterator temp(*this);
+        _node++;
+        return (temp);
+      }
+      iterator& operator -- () { _node--; return (*this); }
+      iterator operator -- (int) {
+        iterator temp(*this);
+        _node--;
+        return (temp);
+      }
 
-      iterator operator + (int i) const { return (*this); }
-      iterator& operator += (int i) { return (*this); }
+      iterator operator + (int i) const {
+        iterator temp(_node+i);
+        return (temp);
+      }
+      iterator& operator += (int i) { _node = _node + i; return (*this); }
 
       iterator& operator = (const iterator& i) { return (*this); }
 
-      bool operator != (const iterator& i) const { return false; }
-      bool operator == (const iterator& i) const { return false; }
+      bool operator != (const iterator& i) const { return (_node!=i._node); }
+      bool operator == (const iterator& i) const { return (_node==i._node); }
 
    private:
       T*    _node;
    };
 
    // TODO: implement these functions
-   iterator begin() const { return 0; }
-   iterator end() const { return 0; }
-   bool empty() const { return false; }
-   size_t size() const { return 0; }
+   iterator begin() const { return iterator(_data); }
+   iterator end() const { return iterator(_data+_size); }
+   bool empty() const { return _size==0; }
+   size_t size() const { return _size; }
 
-   T& operator [] (size_t i) { return _data[0]; }
-   const T& operator [] (size_t i) const { return _data[0]; }
+   T& operator [] (size_t i) { return *_data[i]; }
+   const T& operator [] (size_t i) const { return *_data[i]; }
 
-   void push_back(const T& x) { }
-   void pop_front() { }
-   void pop_back() { }
+   void push_back(const T& x) {
+     if (_size==_capacity) {
+       _size = int(pow(2, _size));
+       T* temp = _data;
+       _data = new T[_size];
+       for (size_t i = 0; i < _capacity; i++) {
+         *(_data+i) = *(temp+i);
+       }
+       delete [] temp;
+     }
+     *(_data+_capacity) = x;
+     _capacity++;
+   }
+   void pop_front() {
+     for (size_t i = 0; i < _capacity; i++) {
+       *(_data+i) = *(_data+i+1);
+     }
+     _capacity--;
+   }
+   void pop_back() {
+     _capacity--;
+   }
 
-   bool erase(iterator pos) { return false; }
-   bool erase(const T& x) { return false; }
+   bool erase(iterator pos) {
+     if (pos._node>_data+_capacity-1 || pos._node < _data) {
+       return false;
+     }
+     for (size_t i = pos._node-_data; i < _capacity; i++) {
+       *(_data+i) = *(_data+i+1);
+     }
+     return true;
+   }
+   bool erase(const T& x) {
+     for (size_t i = 0; i < _capacity; i++) {
+       if(*(_data+i)==x) erase(iterator(_data+i)); return true;
+     }
+     return false;
+   }
 
-   void clear() { }
+   void clear() {
+     _capacity = 0;
+   }
 
    // This is done. DO NOT change this one.
    void sort() const { if (!empty()) ::sort(_data, _data+_size); }
