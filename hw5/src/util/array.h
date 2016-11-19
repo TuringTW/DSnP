@@ -76,45 +76,49 @@ public:
 
    void push_back(const T& x) {
      if (_size==_capacity) {
-       _size = int(pow(2, _size));
+       _capacity = int(pow(2, _capacity));
        T* temp = _data;
-       _data = new T[_size];
-       for (size_t i = 0; i < _capacity; i++) {
+       _data = new T[_capacity];
+       for (size_t i = 0; i < _capacity-1 && i<_size; i++) {
          *(_data+i) = *(temp+i);
        }
        delete [] temp;
      }
-     *(_data+_capacity) = x;
-     _capacity++;
+     *(_data+_size) = x;
+     _size++;
    }
    void pop_front() {
-     for (size_t i = 0; i < _capacity; i++) {
+     for (size_t i = 0; i < _capacity-1 && i<_size; i++) {
        *(_data+i) = *(_data+i+1);
      }
-     _capacity--;
+     _size--;
    }
    void pop_back() {
-     _capacity--;
+     _size--;
    }
 
    bool erase(iterator pos) {
-     if (pos._node>_data+_capacity-1 || pos._node < _data) {
+     if (pos._node>_data+_size-1 || pos._node < _data) {
        return false;
      }
-     for (size_t i = pos._node-_data; i < _capacity; i++) {
+     _size--;
+     for (size_t i = pos._node-_data; i < _capacity-1 && i<_size ; i++) {
        *(_data+i) = *(_data+i+1);
      }
      return true;
    }
    bool erase(const T& x) {
-     for (size_t i = 0; i < _capacity; i++) {
-       if(*(_data+i)==x) erase(iterator(_data+i)); return true;
+     for (iterator ii = begin(); ii!=end(); ii++) {
+       if(*ii==x) {
+         erase(ii);
+         return true;
+       }
      }
      return false;
    }
 
    void clear() {
-     _capacity = 0;
+     _size = 0;
    }
 
    // This is done. DO NOT change this one.
