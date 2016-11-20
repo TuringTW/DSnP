@@ -110,7 +110,9 @@ class BSTree
 {
    // TODO: design your own class!!
 public:
-  BSTree(): _root(0), _size(0){}
+  BSTree(): _root(0), _size(0){
+    _root = new BSTreeNode<T>(T("a"));
+  }
   ~BSTree(){ clear();};
 
   class iterator {
@@ -228,7 +230,6 @@ public:
     BSTTrace<T> _trace;
   };
   iterator begin() const {
-
     if(empty()) return iterator(_root);
     iterator ii = iterator(_root);
     while(ii._node->_left!=0) {ii++;}
@@ -245,21 +246,28 @@ public:
   bool empty() const { return _size == 0; }
   size_t size() const { return _size; }
   void insert(const T& x) {
+    if(empty()){
+      _root->_data = x;
+      _root->_right = new BSTreeNode<T>(T("a"));
+      _size++;
+      return;
+    }
     BSTreeNode<T>* ii = _root;
+    BSTreeNode<T>* end_node = end()._node;
     while (true) {
-      if (_root==0) {
-        _root = new BSTreeNode<T>(x);break;
-      }else if (ii->_data>x) {
-        cout << x <<" :left:" << ii->_data <<endl;
+      if (ii == end_node) {
+        ii->_data = x;
+        ii->_right = new BSTreeNode<T>(T("a"));
+        break;
+      }
+      if (ii->_data>x) {
         if (ii->_left==0) {ii->_left = new BSTreeNode<T>(x);break;}
         ii = ii->_left;
       }else{
-        cout << x <<" :right:" << ii->_data <<endl;
         if (ii->_right==0) {ii->_right = new BSTreeNode<T>(x);break;}
         ii = ii->_right;
       }
     }
-    cout << x << " "<<endl;
     _size++;
   }
   void pop_front() {
@@ -356,7 +364,12 @@ public:
       if((ii._trace.top()->_isright&&(ii._node->_right==0)) || (ii._trace.top()->_isleft&&(ii._node->_left==0))){
         cout << setw(3)<< " " <<setw(3) << "[0]";
       }else{
-        cout <<setw(3)<< ii._node->_data;
+        if(ii._node==end()._node) {
+          cout<<setw(3) <<"[0]" << endl;
+          break;
+        }else{
+          cout <<setw(3)<< ii._node->_data;
+        }
       }
       cout << endl;
       ii = ii.next_node();
