@@ -66,8 +66,8 @@ public:
    };
 
    // TODO: implement these functions
-   iterator begin() const { return iterator(_data); }
-   iterator end() const { return iterator(_data+_size); }
+   iterator begin() const { return (_capacity==0)?0:iterator(_data); }
+   iterator end() const { return (_capacity==0)?0:iterator(_data+_size); }
    bool empty() const { return _size==0; }
    size_t size() const { return _size; }
 
@@ -75,9 +75,9 @@ public:
    const T& operator [] (size_t i) const { return *_data[i]; }
 
    void push_back(const T& x) {
-     if(_isSorted&&!empty()&&*(_data+_size-1)==x) _isSorted = false;
+     if(_isSorted&&!empty()&&*(_data+_size-1)>x) _isSorted = false;
      if (_size==_capacity) {
-       _capacity = int(pow(2, _capacity));
+       _capacity = (_capacity==0)?1:(_capacity*2);
        T* temp = _data;
        _data = new T[_capacity];
        for (size_t i = 0; i < _capacity-1 && i<_size; i++) {
@@ -89,33 +89,27 @@ public:
      _size++;
    }
    void pop_front() {
-     for (size_t i = 0; i < _capacity-1 && i<_size; i++) {
-       *(_data+i) = *(_data+i+1);
-     }
+     *(_data) = *(_data+_size-1);
      _size--;
+     _isSorted = false;
    }
    void pop_back() {
+     if (empty()) return;
      _size--;
    }
 
    bool erase(iterator pos) {
-     if (pos._node>_data+_size-1 || pos._node < _data) {
-       return false;
-     }
+     if (empty()) return false;
+     *pos = _data[_size-1];
      _size--;
-     for (iterator ii = pos; ii!=end(); ii++) {
-       *ii = *(ii+1);
-     }
-    //  for (size_t i = pos._node-_data; i < _capacity-1 && i<_size ; i++) {
-    //    *(_data+i) = *(_data+i+1);
-    //  }
+     _isSorted = false;
      return true;
    }
    bool erase(const T& x) {
-     iterator pos;
-     if(find(pos, x)){
-       erase(pos);
-       return true;
+     for (iterator ii = begin(); ii!=end(); ii++) {
+       if(*ii==x) {
+         return erase(ii);
+       }
      }
      return false;
    }
@@ -139,29 +133,6 @@ private:
    mutable bool  _isSorted;   // (optionally) to indicate the array is sorted
 
    // [OPTIONAL TODO] Helper functions; called by public member functions
-   bool find(iterator &result, const T& x){
-     if (_isSorted) {
-       int move = _size/2;
-       int cur_pos = 0;
-       while(move == 0){
-         cur_pos+=move;
-         if (_data[cur_pos]==x) {
-           result = iterator(_data+cur_pos);
-           return true;
-         }
-         move/=2;
-       }
-       return false;
-     }else{
-       for (iterator ii = begin(); ii!=end(); ii++) {
-         if(*ii==x) {
-           result = ii;
-           return true;
-         }
-       }
-     }
-     return false;
-   }
 };
 
 #endif // ARRAY_H

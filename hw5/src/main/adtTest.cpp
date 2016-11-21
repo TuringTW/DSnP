@@ -17,7 +17,7 @@ int AdtTestObj::_strLen = 5;
 
 bool
 initAdtCmd()
-{     
+{
    if (!(cmdMgr->regCmd("ADTReset", 4, new AdtResetCmd) &&
          cmdMgr->regCmd("ADTAdd", 4, new AdtAddCmd) &&
          cmdMgr->regCmd("ADTDelete", 4, new AdtDeleteCmd) &&
@@ -186,7 +186,7 @@ AdtDeleteCmd::help() const
 //----------------------------------------------------------------------
 CmdExecStatus
 AdtSortCmd::exec(const string& option)
-{  
+{
    // check option
    vector<string> options;
    if (!CmdExec::lexOptions(option, options))
@@ -216,7 +216,7 @@ AdtSortCmd::help() const
 //----------------------------------------------------------------------
 CmdExecStatus
 AdtPrintCmd::exec(const string& option)
-{  
+{
    // check option
    vector<string> options;
    if (!CmdExec::lexOptions(option, options))

@@ -2,7 +2,7 @@ adta -s 123
 adta -s 456
 adta -s 123
 adta -s 001
-adtp
+adtp -v
 adtd -s 123
 adtp
 adtd -s 001

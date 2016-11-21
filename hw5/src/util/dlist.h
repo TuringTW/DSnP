@@ -97,9 +97,11 @@ public:
      insert_node(_head->_prev, new DListNode<T>(x));
    }
    void pop_front() {
+     if (empty()) return;
      link_node(_head, _head->_next->_next);
    }
    void pop_back() {
+     if (empty()) return;
      link_node(_head->_prev->_prev, _head);
    }
 

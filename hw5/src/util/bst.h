@@ -131,7 +131,6 @@ public:
             if(_node->_left != 0){
               _node = _node->_left;
               _trace.push(_node);
-
             }
           }else if (!_trace.top()->_ismiddle) { //haven't go through middle
             _trace.top()->_ismiddle = true;
@@ -179,8 +178,13 @@ public:
           }
         }else{
           // back to previous
+
           _trace.pop();
           _node = _trace.topNode();
+          if (_trace.count()==1&&_trace.top()->_isleft&&_trace.top()->_isright&&_trace.top()->_ismiddle) {
+            _trace.top()->_isleft = _trace.top()->_isright = _trace.top()->_ismiddle = false;
+            break;
+          }
         }
       }
       return (*this);
@@ -275,20 +279,42 @@ public:
     erase(begin());
   }
   void pop_back() {
-    erase(end());
+    if(empty()) return;
+    erase(--end());
   }
 
   bool erase(iterator pos) {
     if(empty()) return false;
-    cout << "erase" << *pos<< endl;
+    BSTreeNode<T>* end_node = end()._node;
     iterator suc_node = successor(pos);
     if (suc_node._node == pos._node) {
-      cout << "fdsa" <<endl;
-      if(pos._node == _root) _root = pos._node->_right;
-      else if(pos._trace.top()->_prev->_node->_left == pos._node){
-        pos._trace.top()->_prev->_node->_left = pos._node->_right;
-      } else{
-        pos._trace.top()->_prev->_node->_right = pos._node->_right;
+      if(pos._node == _root) {
+        if (_root->_right==end_node) {
+          BSTreeNode<T>* last_elem = findMax(_root->_left);
+          if (last_elem == 0) {
+            _root = _root->_right;
+          }else{
+            last_elem->_right = _root->_right;
+            _root->_right = pos._node->_left;
+          }
+        }
+        if(_root->_left != 0) _root = pos._node->_left;
+
+      }else if(pos._trace.top()->_prev->_node->_left == pos._node){
+        pos._trace.top()->_prev->_node->_left = pos._node->_left;
+      }else{
+        if (pos._node->_right == end_node) {
+          BSTreeNode<T>* temp = pos._node->_right;
+          BSTreeNode<T>* last_elem = findMax(pos._node->_left);
+          if (last_elem == 0) {
+            pos._trace.top()->_prev->_node->_right = temp;
+          }else{
+            last_elem->_right = temp;
+            pos._trace.top()->_prev->_node->_right = pos._node->_left;
+          }
+        }else{
+          pos._trace.top()->_prev->_node->_right = pos._node->_left;
+        }
       }
       pos._node->_left = pos._node->_right = 0;
     }else{
@@ -300,14 +326,13 @@ public:
         }
       }else{
         if(suc_node._trace.top()->_prev->_node->_left == suc_node._node){
-          suc_node._trace.top()->_prev->_node->_left = 0;
+          suc_node._trace.top()->_prev->_node->_left = suc_node._node->_right;
         }else{
-          suc_node._trace.top()->_prev->_node->_right = 0;
+          suc_node._trace.top()->_prev->_node->_right = suc_node._node->_right;
         }
         suc_node._node->_left = pos._node->_left;
         suc_node._node->_right = pos._node->_right;
       }
-
       if(pos._node == _root){
         _root = suc_node._node;
       }else{
@@ -319,8 +344,8 @@ public:
       }
       pos._node->_left = pos._node->_right = 0;
     }
-    delete pos._node;
     _size--;
+    if(pos._node != _root) delete pos._node;
     return true;
   }
   bool erase(const T& x) {
@@ -329,8 +354,9 @@ public:
     }
     BSTreeNode<T>* ii = _root;
     iterator itr(_root);
+    BSTreeNode<T>* end_node = end()._node;
     while (true) {
-      if (ii == end()._node) {
+      if (ii == end_node) {
         return false;
       }
       if (ii->_data>x) {
@@ -346,13 +372,15 @@ public:
       }else{
         return erase(itr);
       }
-
     }
     return false;
   }
 
   void clear() {
-    _root = 0;
+    delete _root->_left;
+    delete _root->_right;
+    _root->_left = _root->_right = 0;
+    _size = 0;
   }
   void print(){
     iterator ii = iterator(_root);
@@ -382,17 +410,20 @@ private:
     size_t _size;
 
     iterator successor(iterator ori_node){
-      if (ori_node._node->_right==0) {
-        return ori_node;
-      }else{
-        ori_node._trace.top()->_isleft = true;
-        ori_node._trace.top()->_ismiddle = true;
-        ori_node++;
-        return ori_node;
+      if (ori_node._node->_right==0||ori_node._node->_right == end()._node) return ori_node;
+      ori_node._trace.push(ori_node._node->_right);
+      ori_node._node = ori_node._node->_right;
+      while(ori_node._node->_left!=0){
+        ori_node._trace.push(ori_node._node->_left);
+        ori_node._node = ori_node._node->_left;
       }
       return ori_node;
     }
-
+    BSTreeNode<T>* findMax(BSTreeNode<T>* ori_node){
+      BSTreeNode<T>* end_node = end()._node;
+      if (ori_node==0) return 0;
+      while(ori_node->_right!=0&&ori_node->_right!=end_node){ori_node = ori_node->_right;}
+      return ori_node;
+    }
 };
-
 #endif // BST_H

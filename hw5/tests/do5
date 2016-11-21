@@ -1,0 +1,27 @@
+adta -r 20
+adtp -v
+adtd -f 1
+adtp -v
+adtd -f 1
+adtp -v
+adtd -f 1
+adtp -v
+adtd -b 1
+adtp -v
+adtd -b 1
+adtp -v
+adtd -b 1
+adtp -v
+adtd -b 1
+adtp -v
+adtd -b 1
+adtp -v
+adtd -r 1
+adtp -v
+adtd -r 1
+adtp -v
+adtd -r 1
+adtp -v
+adtd -r 1
+adtp -v
+q -f
