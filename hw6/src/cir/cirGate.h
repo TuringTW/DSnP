@@ -51,17 +51,18 @@ public:
    // Basic access methods
    unsigned getLineNo() const { return _lineNo; }
    virtual string getTypeStr() const { return ""; }
+   virtual GateType getType() const { return TOT_GATE; }
    // Printing functions
    void printGate() const;
 
    void reportGate() const;
    void reportFanin(int level);
-   void goFanin(int, int, bool, bool, bool);
+   void goFanin(int, int, bool, bool);
    void reportFanout(int level);
    void goFanout(int, int, bool, bool);
 
-   void getDFSlist();
-
+   void getDFSlist(bool, ostream&);
+   void printDFSlist(bool);
    void addfanin(CirGate* cirg, bool isposi){
      Pin* con_pin = new Pin(cirg, this, isposi);
      _fanin.push_back(con_pin);
@@ -102,12 +103,16 @@ public:
     if(getDef())return "AIG";
     else return "UNDEF";
   }
+  GateType getType() const {
+    if(getDef())return AIG_GATE;
+    else return UNDEF_GATE;
+  }
 
   bool setFanIn(CirGate* cirg, bool isposi){
       if (getfaninSize()<2) {
         addfanin(cirg, isposi);
       }else{
-        //TODO
+        return false;
       }
       return true;
   }
@@ -118,6 +123,7 @@ public:
   PO(int lineNo, int id, bool isdef):CirGate(lineNo, id, isdef) {}
   ~PO(){}
   string getTypeStr() const { return "PO"; }
+  GateType getType() const {return PO_GATE; }
 
   bool setFanIn(CirGate* cirg, bool isposi){
       if (getfaninSize()<1) {
@@ -134,7 +140,7 @@ public:
   PI(int lineNo, int id, bool isdef):CirGate(lineNo, id, isdef) {}
   ~PI(){};
   string getTypeStr() const { return "PI"; };
-
+  GateType getType() const {return PI_GATE; }
   bool setFanIn(CirGate* cirg, bool isposi){
     //TODO
     return true;
@@ -146,6 +152,7 @@ public:
   CG(int lineNo, int id, bool isdef):CirGate(lineNo, id, isdef) {}
   ~CG(){}
   string getTypeStr() const { return "CONST"; }
+  GateType getType() const {return CONST_GATE; }
 
   bool setFanIn(CirGate* cirg, bool isposi){
     //TODO

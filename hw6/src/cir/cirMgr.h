@@ -14,7 +14,6 @@
 #include <sstream>
 #include <fstream>
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
 #include "cirDef.h"
@@ -39,7 +38,7 @@ public:
 
    // Member functions about circuit construction
    bool readCircuit(const string&);
-   CirGate* not_found_then_new(int, GateType, bool);
+   bool not_found_then_new(CirGate*&, int, GateType, bool);
    bool parsing(string, bool, string, int, vector<int>&);
    bool parseAlias(string, bool &);
 

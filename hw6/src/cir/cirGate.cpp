@@ -8,7 +8,6 @@
 
 #include <iostream>
 #include <iomanip>
-#include <sstream>
 #include <stdarg.h>
 #include <cassert>
 #include "cirGate.h"
@@ -44,7 +43,7 @@ CirGate::reportFanin(int level)
 {
    assert (level >= 0);
    _cflag++;
-   goFanin(level, 0, true, true, false);
+   goFanin(level, 0, true, true);
 
 }
 void
@@ -55,13 +54,13 @@ CirGate::reportFanout(int level)
   goFanout(level, 0, true, true);
 
 }
-void CirGate::goFanin(int level, int padding, bool isPosi, bool isPrint, bool isDFS = false) {
+void CirGate::goFanin(int level, int padding, bool isPosi, bool isPrint) {
   if(isPrint){
     ostringstream oss;
     if (!isPosi) oss <<"!";
     oss << getTypeStr() << " " << _id;
     cout  <<  setw(2*padding) <<"" <<oss.str();
-    if(_cflag == _flag&&getTypeStr()!="PI"&&level!=0){ cout << " (*)"; }
+    if(_cflag == _flag&&(getType()!=PI_GATE&&getType()!=CONST_GATE)&&level!=0){ cout << " (*)"; }
     cout << endl;
   }
   if (_cflag != _flag) {
@@ -69,54 +68,64 @@ void CirGate::goFanin(int level, int padding, bool isPosi, bool isPrint, bool is
     _flag = _cflag;
     if (level>0) {
       for (size_t i = 0; i < _fanin.size(); i++) {
-        _fanin[i]->goFanin(level-1, padding+1, isPrint,  isDFS);
+        if(_fanin[i]->_fromGate!=0){_fanin[i]->_fromGate->goFanin(level-1, padding+1, _fanin[i]->_isposi, isPrint);}
       }
-    }
-    if(isDFS) {
-      ostringstream oss;
-      for (size_t i = 0; i < _fanin.size(); i++) {
-        oss << " ";
-        if(!_fanin[i]->_isposi) {oss << "!";}
-        oss << _fanin[i]->_fromGate->getId();
-      }
-      if (_alias.length()>0) oss <<" (" << _alias << ")";
-      cout << "[" << plineNo << "] " << setw(4) << left<< getTypeStr() << getId() << oss.str() << endl;
-      plineNo++;
     }
   }
-}
-void Pin::goFanin(int level, int padding, bool isPrint, bool isDFS){
-  if(_fromGate!=0)_fromGate->goFanin(level, padding, _isposi, isPrint, isDFS);
 }
 void CirGate::goFanout(int level, int padding, bool isPosi, bool isPrint) {
   if(isPrint){
     ostringstream oss;
-    if (!isPosi) oss <<"!";
+    if (!isPosi) {oss <<"!";}
     oss << getTypeStr() << " " << _id;
     cout  <<  setw(2*padding) <<"" <<oss.str();
-    if(getTypeStr()!="PO"&&level!=0&&_cflag==_flag){cout << " (*)";}
+    if(getType()!=PO_GATE&&level!=0&&_cflag==_flag){cout << " (*)";}
     cout << endl;
   }
   if (_cflag != _flag) {
     _flag = _cflag;
     if (level>0) {
       for (size_t i = 0; i < _fanout.size(); i++) {
-        _fanout[i]->goFanout(level-1, padding+1, isPrint);
+        if(_fanout[i]->_toGate!=0){_fanout[i]->_toGate->goFanout(level-1, padding+1, _fanout[i]->_isposi, isPrint);}
       }
     }
   }
 }
-void Pin::goFanout(int level, int padding, bool isPrint){
-  if(_toGate!=0)_toGate->goFanout(level, padding, _isposi, isPrint);
-}
-void CirGate::getDFSlist(){
+void CirGate::getDFSlist(bool isPosi,ostream& os){
   if (_cflag != _flag) {
     _flag = _cflag;
-    if (getTypeStr()=="AIG") {
+    if (getType()==AIG_GATE) {
       plineNo++;
     }
-    for (size_t i = 0; i < _fanout.size(); i++) {
-      _fanin[i]->_fromGate->getDFSlist();
+    for (size_t i = 0; i < _fanin.size(); i++) {
+      _fanin[i]->_fromGate->getDFSlist(_fanin[i]->_isposi, os);
     }
+    int fanin1=0, fanin2=0;
+    if (getType()==AIG_GATE&&_cflag==_flag) {
+      fanin1 = (_fanin[0]->_fromGate->getId())*2;
+      fanin2 = (_fanin[1]->_fromGate->getId())*2;
+      if(!_fanin[0]->_isposi){ fanin1++; }
+      if(!_fanin[1]->_isposi){ fanin2++; }
+      os << getId()*2 << " " << fanin1 << " " << fanin2 << endl;
+    }
+  }
+}
+void CirGate::printDFSlist(bool isPosi){
+  if (_cflag != _flag) {
+    _flag = _cflag;
+    ostringstream oss;
+    for (size_t i = 0; i < _fanin.size(); i++) {
+      oss << " ";
+      if(_fanin[i]->_fromGate->getType()==UNDEF_GATE){
+        oss << "*";
+      }else{
+        _fanin[i]->_fromGate->printDFSlist(_fanin[i]->_isposi);
+      }
+      if(!_fanin[i]->_isposi) {oss << "!";}
+      oss << _fanin[i]->_fromGate->getId();
+    }
+    if (_alias.length()>0) oss <<" (" << _alias << ")";
+    cout << "[" << plineNo << "] " << setw(4) << left<< getTypeStr() << getId() << oss.str() << endl;
+    plineNo++;
   }
 }

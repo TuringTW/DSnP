@@ -180,23 +180,32 @@ CirMgr::readCircuit(const string& fileName)
     }else if((int)lineNo>0&&(int)lineNo<=(init_vals[1])){
       vector<int> pi_vals;
       if(!parsing(line, false, "", 1, pi_vals)){return false;}
-      not_found_then_new(pi_vals[0]/2, PI_GATE, true);
+      CirGate* gate;
+      if(pi_vals[0]%2==1){return parseError(ILLEGAL_NUM);}
+      if(!not_found_then_new(gate, pi_vals[0]/2, PI_GATE, true)){return false;}
     }else if((int)lineNo>init_vals[1]&&(int)lineNo<=init_vals[1]+init_vals[3]){
       vector<int> po_vals;
       if(!parsing(line, false, "", 1, po_vals)){return false;}
-      CirGate* gate = not_found_then_new(lineNo+1-init_vals[1]-1+init_vals[0], PO_GATE, true);
-      CirGate* fanin = not_found_then_new(po_vals[0]/2, UNDEF_GATE, false);
+      CirGate* gate;
+      CirGate* fanin;
+      if(!not_found_then_new(gate, lineNo+1-init_vals[1]-1+init_vals[0], PO_GATE, true)){return false;}
+      if(!not_found_then_new(fanin, po_vals[0]/2, UNDEF_GATE, false)){return false;}
       if(!gate->setFanIn(fanin, po_vals[0]%2==0))return parseError(REDEF_GATE);
     }else if((int)lineNo>init_vals[1]+init_vals[3]&&(int)lineNo<=init_vals[1]+init_vals[3]+init_vals[4]){
       vector<int> aig_vals;
       if(!parsing(line, false, "", 3, aig_vals)){return false;}
-      CirGate* gate = not_found_then_new(aig_vals[0]/2, AIG_GATE, true);
-
+      if(aig_vals[0]%2==1){return parseError(ILLEGAL_NUM);}
+      CirGate* gate;
+       CirGate* fanin1;
+       CirGate* fanin2;
+      if(!not_found_then_new(gate, aig_vals[0]/2, AIG_GATE, true)){return false;}
       gate->setLineNo(lineNo+1);
-      CirGate* fanin1 = not_found_then_new(aig_vals[1]/2, UNDEF_GATE, false);
-      CirGate* fanin2 = not_found_then_new(aig_vals[2]/2, UNDEF_GATE, false);
-      if(!gate->setFanIn(fanin1, aig_vals[1]%2==0))return parseError(REDEF_GATE);
-      if(!gate->setFanIn(fanin2, aig_vals[2]%2==0))return parseError(REDEF_GATE);
+
+      if(!not_found_then_new(fanin1, aig_vals[1]/2, UNDEF_GATE, false)){return false;}
+      if(!not_found_then_new(fanin2, aig_vals[2]/2, UNDEF_GATE, false)){return false;}
+
+      if(!gate->setFanIn(fanin1, aig_vals[1]%2==0)){return parseError(REDEF_GATE);};
+      if(!gate->setFanIn(fanin2, aig_vals[2]%2==0)){return parseError(REDEF_GATE);};
     }else{
       colNo = 0;
       bool iscomment =false;
@@ -213,56 +222,41 @@ CirMgr::readCircuit(const string& fileName)
   }
   return true;
 }
-CirGate* CirMgr::not_found_then_new(int id, GateType type, bool is_defi){
-  CirGate* gate = getGate(id);
+bool CirMgr::not_found_then_new(CirGate* &gate, int id, GateType type, bool is_defi){
+  gate = getGate(id);
   if(gate!=0){
     if(is_defi){
-      if(gate->getDef()){return 0;}
+      if(gate->getDef()){errGate = gate; return parseError(REDEF_GATE);}
       gate->setDef();
       if(type==AIG_GATE){_aigCounter++;}
     }
-    return gate;
+    return true;
   }
-  // for (size_t i = 0; i < _totalGate.size(); i++) {
-  //   if(_totalGate[i]->getId() == id){
-  //     if(is_defi){
-  //       if(!_totalGate[i]->getDef()){
-  //         _totalGate[i]->setDef();
-  //         if(type==AIG_GATE){_aigCounter++;}
-  //       }else{
-  //         //TODO
-  //       }
-  //     }
-  //     return _totalGate[i];
-  //   }
-  // }
-  // not found
   if(id==0) type=CONST_GATE;
-  CirGate* new_gate;
   switch (type) {
     case PI_GATE:
-      new_gate = new PI(lineNo+1, id, is_defi);
-      _piGate.push_back(new_gate);
+      gate = new PI(lineNo+1, id, is_defi);
+      _piGate.push_back(gate);
       break;
     case PO_GATE:
-      new_gate = new PO(lineNo+1, id, is_defi);
-      _poGate.push_back(new_gate);
+      gate = new PO(lineNo+1, id, is_defi);
+      _poGate.push_back(gate);
       break;
     case AIG_GATE:
-      new_gate = new And(lineNo+1, id, is_defi);
+      gate = new And(lineNo+1, id, is_defi);
       if(is_defi)_aigCounter++;
       break;
     case CONST_GATE:
-      new_gate = new CG(lineNo+1, id, is_defi);
+      gate = new CG(lineNo+1, id, is_defi);
       break;
       case UNDEF_GATE:
-        new_gate = new And(lineNo+1, id, false);
+        gate = new And(lineNo+1, id, false);
         break;
     default:
       break;
   }
-  _totalGate.push_back(new_gate);
-  return new_gate;
+  _totalGate.push_back(gate);
+  return true;
 }
 bool CirMgr::parsing(string values, bool is_prefix, string prefix, int n_cols, vector<int> &vals){
   if (!isalnum(values[0])) return parseError(EXTRA_SPACE);
@@ -284,6 +278,8 @@ bool CirMgr::parsing(string values, bool is_prefix, string prefix, int n_cols, v
       if(!myStr2Int(temp, val)){
         return parseError(EXTRA_SPACE);
       }
+      if(val<0){return parseError(ILLEGAL_NUM);}
+      if(lineNo>0&&val/2>init_vals[0]){errInt = val; return parseError(NUM_TOO_BIG);}
       vals.push_back(val);
     }
     else{ return parseError(EXTRA_SPACE); }
@@ -377,7 +373,7 @@ CirMgr::printNetlist() const
     cout << endl;
     CirGate::plineNo=0;
     for (size_t i = 0; i < _poGate.size(); i++) {
-      _poGate[i]->goFanin(len, 0, true, false, true);
+      _poGate[i]->printDFSlist(true);
     }
   }
 
@@ -419,21 +415,25 @@ CirMgr::printFloatGates() const
   size_t len = _poGate.size();
   size_t depth = _totalGate.size();
   for (size_t i = 0; i < len; i++) {
-    _poGate[i]->goFanin(depth, 0, true, false, false);
+    int temp = _poGate[i]->_flag;
+    _poGate[i]->goFanin(depth, 0, true, false);
+    _poGate[i]->_flag = temp;
   }
   CirGate::_cflag++;
   len = _piGate.size();
   for (size_t i = 0; i < len; i++) {
+    int temp = _piGate[i]->_flag;
     _piGate[i]->goFanout(depth, 0, true, false);
+    _piGate[i]->_flag = temp;
   }
-  CirGate::_cflag++;
-  if (getGate(0)!=0) {
-    getGate(0)->goFanout(depth, 0, true, false);
-  }
+  // CirGate::_cflag++;
+  // if (getGate(0)!=0) {
+  //   getGate(0)->goFanout(depth, 0, true, false);
+  // }
   CirGate::_cflag++;
   len = _totalGate.size();
   for (size_t i = 0; i < len; i++) {
-    if(_totalGate[i]->getTypeStr()=="UNDEF"){
+    if(_totalGate[i]->getType()==UNDEF_GATE){
       _totalGate[i]->goFanout(1, 0, true, false);
       _totalGate[i]->_flag = CirGate::_cflag-1;
     }
@@ -452,7 +452,7 @@ CirMgr::printFloatGates() const
   oss.str("");
   counter = 0;
   for (size_t i = 0; i < _totalGate.size(); i++) {
-    if(_totalGate[i]->getfanoutSize()==0&&_totalGate[i]->getTypeStr()!="PO"){
+    if(_totalGate[i]->getfanoutSize()==0&&_totalGate[i]->getType()!=PO_GATE){
       oss << " " << _totalGate[i]->getId();
       counter++;
     }
@@ -469,29 +469,32 @@ CirMgr::writeAag(ostream& outfile) const
   size_t len = _poGate.size();
   CirGate::_cflag++;
   CirGate::plineNo=0;
+  ostringstream oss;
   for (size_t i = 0; i < len; i++) {
-    _poGate[i]->getDFSlist();
+    _poGate[i]->getDFSlist(true, oss);
   }
 
   outfile << "aag " << init_vals[0] << " " << init_vals[1] << " " << init_vals[2] << " " << init_vals[3] << " " << CirGate::plineNo << endl;
+
   for (size_t i = 0; i < _piGate.size(); i++) {
     outfile << _piGate[i]->getId()*2 << endl;
   }
+
   for (size_t i = 0; i < _poGate.size(); i++) {
     outfile << (_poGate[i]->_fanin[0]->_fromGate->getId()*2+(int)!_poGate[i]->_fanin[0]->_isposi) << endl;
   }
-  for (size_t i = 0; i < _totalGate.size(); i++) {
-    if (_totalGate[i]->getTypeStr()=="AIG"&&CirGate::_cflag==_totalGate[i]->_flag) {
-      int fanin1 = (_poGate[i]->_fanin[0]->_fromGate->getId()*2+(int)!_poGate[i]->_fanin[0]->_isposi);
-      int fanin2 = (_poGate[i]->_fanin[1]->_fromGate->getId()*2+(int)!_poGate[i]->_fanin[1]->_isposi);
-      outfile << (_totalGate[i]->getId()*2) << " " << fanin1 << " " << fanin2 << endl;
+
+  outfile << oss.str();
+
+  for (size_t i = 0; i < _piGate.size(); i++) {
+    if(_piGate[i]->_alias.length()>0){
+      outfile <<"i"<< i << " " << _piGate[i]->_alias << endl;
     }
   }
-  for (size_t i = 0; i < _piGate.size(); i++) {
-    outfile <<"i"<< i << " " << _piGate[i]->_alias << endl;
-  }
   for (size_t i = 0; i < _poGate.size(); i++) {
-    outfile <<"o"<< i << " " << _piGate[i]->_alias << endl;
+    if(_poGate[i]->_alias.length()>0){
+      outfile <<"o"<< i << " " << _poGate[i]->_alias << endl;
+    }
   }
 
 }
