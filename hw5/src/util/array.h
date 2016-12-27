@@ -56,7 +56,7 @@ public:
       }
       iterator& operator += (int i) { _node = _node + i; return (*this); }
 
-      iterator& operator = (const iterator& i) { return (*this); }
+      iterator& operator = (const iterator& i) {_node = i._node; return (*this); }
 
       bool operator != (const iterator& i) const { return (_node!=i._node); }
       bool operator == (const iterator& i) const { return (_node==i._node); }
