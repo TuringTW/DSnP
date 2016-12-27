@@ -1,0 +1,11 @@
+taski 1000000
+taskn -r 1000000
+taskq -hash
+taska 100
+taskq -hash
+taska 1000
+taska 1000 -r 100000
+taskq -hash
+taskq -min
+usage
+q -f

@@ -1,0 +1,16 @@
+taski 5
+taskn -r 5
+taskn -n aaaaa 555
+taskq -he
+taskq -he
+taska 10
+taskq -he
+taskq -ha
+taskr -r 2
+taskq -he
+taskq -ha
+taskq -min
+taskq aaaaa
+taskr -n aaaaa
+usage
+q -f
