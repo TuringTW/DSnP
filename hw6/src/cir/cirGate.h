@@ -45,13 +45,31 @@ class CirGate
 {
   friend class CirMgr;
 public:
-   CirGate(int lineNo, int id, bool isdef):_lineNo(lineNo), _id(id), _flag(0), _isDef(isdef) {}
+   CirGate(GateType Gtype, int lineNo, int id, bool isdef):_type(Gtype), _lineNo(lineNo), _id(id), _flag(0), _isDef(isdef) {};
    virtual ~CirGate() {}
 
    // Basic access methods
    unsigned getLineNo() const { return _lineNo; }
-   virtual string getTypeStr() const { return ""; }
-   virtual GateType getType() const { return TOT_GATE; }
+   string getTypeStr() const { 
+    switch(_type){
+      case PI_GATE:
+        return "PI";
+      case PO_GATE:
+        return "PO";
+      case AIG_GATE:
+        if (_isDef){return "AIG";}
+        else{return "UNDEF";}
+      case CONST_GATE:
+        return "CONST";
+      default:
+        break;
+    }
+    return "";
+  }
+   GateType getType() const { 
+    if(_type==AIG_GATE&&!_isDef){return UNDEF_GATE;}
+    return _type; 
+  }
    // Printing functions
    void printGate() const;
 
@@ -74,14 +92,30 @@ public:
    void setLineNo(int lineNo){
      _lineNo = lineNo;
    }
-   virtual bool setFanIn(CirGate* cirg, bool isposi)=0;
+   virtual bool setFanIn(CirGate* cirg, bool isposi){
+    if (_type==AIG_GATE){
+      if (getfaninSize()<2) {
+        addfanin(cirg, isposi);
+      }else{
+        return false;
+      }
+      return true;
+    }else if(_type==PO_GATE){
+      if (getfaninSize()<1) {
+        addfanin(cirg, isposi);
+      }else{
+        return false;
+      }
+    }
+    return true;
+   }
    size_t getfaninSize(){return _fanin.size();}
    size_t getfanoutSize(){return _fanout.size();}
    int getId(){return _id;}
    void setDef(){_isDef = true;}
    bool getDef() const{return _isDef;}
 private:
-protected:
+  GateType _type;
   int _lineNo, _id;
   string _alias;
   vector<Pin*> _fanin;
@@ -91,79 +125,5 @@ protected:
   int _flag;
   bool _isDef;
 
-};
-
-
-class And : public CirGate
-{
-public:
-  And(int lineNo, int id, bool isdef):CirGate(lineNo, id, isdef){};
-  ~And(){}
-  string getTypeStr() const {
-    if(getDef())return "AIG";
-    else return "UNDEF";
-  }
-  GateType getType() const {
-    if(getDef())return AIG_GATE;
-    else return UNDEF_GATE;
-  }
-
-  bool setFanIn(CirGate* cirg, bool isposi){
-      if (getfaninSize()<2) {
-        addfanin(cirg, isposi);
-      }else{
-        return false;
-      }
-      return true;
-  }
-};
-class PO : public CirGate
-{
-public:
-  PO(int lineNo, int id, bool isdef):CirGate(lineNo, id, isdef) {}
-  ~PO(){}
-  string getTypeStr() const { return "PO"; }
-  GateType getType() const {return PO_GATE; }
-
-  bool setFanIn(CirGate* cirg, bool isposi){
-      if (getfaninSize()<1) {
-        addfanin(cirg, isposi);
-      }else{
-        //TODO
-      }
-      return true;
-  }
-};
-class PI : public CirGate
-{
-public:
-  PI(int lineNo, int id, bool isdef):CirGate(lineNo, id, isdef) {}
-  ~PI(){};
-  string getTypeStr() const { return "PI"; };
-  GateType getType() const {return PI_GATE; }
-  bool setFanIn(CirGate* cirg, bool isposi){
-    //TODO
-    return true;
-  }
-};
-class CG : public CirGate
-{
-public:
-  CG(int lineNo, int id, bool isdef):CirGate(lineNo, id, isdef) {}
-  ~CG(){}
-  string getTypeStr() const { return "CONST"; }
-  GateType getType() const {return CONST_GATE; }
-
-  bool setFanIn(CirGate* cirg, bool isposi){
-    //TODO
-    return true;
-  }
-};
-class Undef : public And
-{
-public:
-  Undef(int lineNo, int id):And(lineNo, id, false) {}
-  ~Undef(){}
-  string getTypeStr() const { return "UNDEF"; }
 };
 #endif // CIR_GATE_H

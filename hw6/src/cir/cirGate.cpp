@@ -64,7 +64,6 @@ void CirGate::goFanin(int level, int padding, bool isPosi, bool isPrint) {
     cout << endl;
   }
   if (_cflag != _flag) {
-
     _flag = _cflag;
     if (level>0) {
       for (size_t i = 0; i < _fanin.size(); i++) {

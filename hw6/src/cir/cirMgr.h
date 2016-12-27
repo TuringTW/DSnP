@@ -39,8 +39,8 @@ public:
    // Member functions about circuit construction
    bool readCircuit(const string&);
    bool not_found_then_new(CirGate*&, int, GateType, bool);
-   bool parsing(string, bool, string, int, vector<int>&);
-   bool parseAlias(string, bool &);
+   bool parsing(string&, bool, int, vector<int>&);
+   bool parseAlias(string&, bool &);
 
    // Member functions about circuit reporting
    void printSummary() const;

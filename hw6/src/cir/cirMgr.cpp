@@ -153,10 +153,10 @@ parseError(CirParseError err)
 /*   class CirMgr member functions for circuit construction   */
 /**************************************************************/
 CirGate* CirMgr::getGate(unsigned gid) const {
-  for (size_t i = 0; i < _totalGate.size(); i++) {
-    if((unsigned)_totalGate[i]->getId() == gid) return _totalGate[i];
-  }
-  return 0;
+  // for (size_t i = 0; i < _totalGate.size(); i++) {
+  //   if((unsigned)_totalGate[i]->getId() == gid) return _totalGate[i];
+  // }
+  return _totalGate[gid];
 }
 bool
 CirMgr::readCircuit(const string& fileName)
@@ -166,6 +166,9 @@ CirMgr::readCircuit(const string& fileName)
   lineNo = 0;
   bool is_empty_line = false;
   init_vals.clear();
+  _piGate.clear();
+  _poGate.clear();
+  _totalGate.clear();
   if (file.fail()) {
     errMsg = fileName;
     return parseError(FILE_CANT_OPEN);
@@ -176,16 +179,19 @@ CirMgr::readCircuit(const string& fileName)
 
   	getline(file, line,  '\n');
     if (lineNo==0) {
-      if(!parsing(line, true, "aag", 5, init_vals)) return false;
+      if(!parsing(line, true, 5, init_vals)) return false;
+      for (int i = 0; i < init_vals[0]+init_vals[3]+1; ++i){
+        _totalGate.push_back(0);
+      }
     }else if((int)lineNo>0&&(int)lineNo<=(init_vals[1])){
       vector<int> pi_vals;
-      if(!parsing(line, false, "", 1, pi_vals)){return false;}
+      if(!parsing(line, false, 1, pi_vals)){return false;}
       CirGate* gate;
       if(pi_vals[0]%2==1){return parseError(ILLEGAL_NUM);}
       if(!not_found_then_new(gate, pi_vals[0]/2, PI_GATE, true)){return false;}
     }else if((int)lineNo>init_vals[1]&&(int)lineNo<=init_vals[1]+init_vals[3]){
       vector<int> po_vals;
-      if(!parsing(line, false, "", 1, po_vals)){return false;}
+      if(!parsing(line, false, 1, po_vals)){return false;}
       CirGate* gate;
       CirGate* fanin;
       if(!not_found_then_new(gate, lineNo+1-init_vals[1]-1+init_vals[0], PO_GATE, true)){return false;}
@@ -193,9 +199,9 @@ CirMgr::readCircuit(const string& fileName)
       if(!gate->setFanIn(fanin, po_vals[0]%2==0))return parseError(REDEF_GATE);
     }else if((int)lineNo>init_vals[1]+init_vals[3]&&(int)lineNo<=init_vals[1]+init_vals[3]+init_vals[4]){
       vector<int> aig_vals;
-      if(!parsing(line, false, "", 3, aig_vals)){return false;}
+      if(!parsing(line, false, 3, aig_vals)){return false;}
       if(aig_vals[0]%2==1){return parseError(ILLEGAL_NUM);}
-      CirGate* gate;
+       CirGate* gate;
        CirGate* fanin1;
        CirGate* fanin2;
       if(!not_found_then_new(gate, aig_vals[0]/2, AIG_GATE, true)){return false;}
@@ -235,33 +241,34 @@ bool CirMgr::not_found_then_new(CirGate* &gate, int id, GateType type, bool is_d
   if(id==0) type=CONST_GATE;
   switch (type) {
     case PI_GATE:
-      gate = new PI(lineNo+1, id, is_defi);
+      gate = new CirGate(PI_GATE, lineNo+1, id, is_defi);
       _piGate.push_back(gate);
       break;
     case PO_GATE:
-      gate = new PO(lineNo+1, id, is_defi);
+      gate = new CirGate(PO_GATE, lineNo+1, id, is_defi);
       _poGate.push_back(gate);
       break;
     case AIG_GATE:
-      gate = new And(lineNo+1, id, is_defi);
+      gate = new CirGate(AIG_GATE, lineNo+1, id, is_defi);
       if(is_defi)_aigCounter++;
       break;
     case CONST_GATE:
-      gate = new CG(lineNo+1, id, is_defi);
+      gate = new CirGate(CONST_GATE, lineNo+1, id, is_defi);
       break;
-      case UNDEF_GATE:
-        gate = new And(lineNo+1, id, false);
-        break;
+    case UNDEF_GATE:
+      gate = new CirGate(AIG_GATE, lineNo+1, id, false);
+      break;
     default:
       break;
   }
-  _totalGate.push_back(gate);
+  _totalGate[id] = gate;
   return true;
 }
-bool CirMgr::parsing(string values, bool is_prefix, string prefix, int n_cols, vector<int> &vals){
+bool CirMgr::parsing(string& values, bool is_prefix, int n_cols, vector<int> &vals){
   if (!isalnum(values[0])) return parseError(EXTRA_SPACE);
-  int pf_pos = values.find(prefix, 0);
   if (is_prefix) {
+    string prefix = "aag";
+    int pf_pos = values.find(prefix, 0);
     if (pf_pos>0) return parseError(MISSING_IDENTIFIER);
 
     values.erase(0, prefix.length());
@@ -289,7 +296,7 @@ bool CirMgr::parsing(string values, bool is_prefix, string prefix, int n_cols, v
   if(counter!=n_cols) return parseError(MISSING_NUM);
 	return true;
 }
-bool CirMgr::parseAlias(string values, bool& istoBreak){
+bool CirMgr::parseAlias(string& values, bool& istoBreak){
   if (values.find_first_not_of(" ")!=0) {return parseError(EXTRA_SPACE);}
   if (values.length()==0) {return parseError(ILLEGAL_SYMBOL_TYPE);}
 
@@ -433,6 +440,7 @@ CirMgr::printFloatGates() const
   CirGate::_cflag++;
   len = _totalGate.size();
   for (size_t i = 0; i < len; i++) {
+    if(_totalGate[i]==0)continue;
     if(_totalGate[i]->getType()==UNDEF_GATE){
       _totalGate[i]->goFanout(1, 0, true, false);
       _totalGate[i]->_flag = CirGate::_cflag-1;
@@ -440,6 +448,7 @@ CirMgr::printFloatGates() const
   }
   int counter = 0;
   for (size_t i = 0; i < len; i++) {
+    if(_totalGate[i]==0)continue;
     if(_totalGate[i]->_flag>=CirGate::_cflag||_totalGate[i]->_flag<CirGate::_cflag-4){
       oss << " " << _totalGate[i]->getId();
       counter++;
@@ -452,6 +461,7 @@ CirMgr::printFloatGates() const
   oss.str("");
   counter = 0;
   for (size_t i = 0; i < _totalGate.size(); i++) {
+    if(_totalGate[i]==0)continue;
     if(_totalGate[i]->getfanoutSize()==0&&_totalGate[i]->getType()!=PO_GATE){
       oss << " " << _totalGate[i]->getId();
       counter++;
