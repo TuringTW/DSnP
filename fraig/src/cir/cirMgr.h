@@ -11,6 +11,7 @@
 
 #include <vector>
 #include <string>
+#include <sstream>
 #include <fstream>
 #include <iostream>
 
@@ -30,10 +31,12 @@ public:
 
    // Access functions
    // return '0' if "gid" corresponds to an undefined gate.
-   CirGate* getGate(unsigned gid) const { return 0; }
+   CirGate* getGate(unsigned gid) const;
 
    // Member functions about circuit construction
    bool readCircuit(const string&);
+
+   bool not_found_then_new(CirGate*&, int, GateType, bool);
 
    // Member functions about circuit optimization
    void sweep();
@@ -59,9 +62,20 @@ public:
    void writeAag(ostream&) const;
    void writeGate(ostream&, CirGate*) const;
 
+   // DFS
+   void getDFSlist();
+
 private:
    ofstream           *_simLog;
 
+   GateList _totalGate;
+   GateList _poGate;
+   GateList _piGate;
+   GateList _dfsList;
+   
+   vector<int> initV;
+
+   int _aigCounter;
 };
 
 #endif // CIR_MGR_H

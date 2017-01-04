@@ -149,10 +149,144 @@ parseError(CirParseError err)
 /**************************************************************/
 /*   class CirMgr member functions for circuit construction   */
 /**************************************************************/
+CirGate* CirMgr::getGate(unsigned gid) const {
+  if(gid>=_totalGate.size()) return 0;
+  return _totalGate[gid];
+}
+
 bool
 CirMgr::readCircuit(const string& fileName)
 {
-   return true;
+  // init
+  string line;
+  lineNo = 0;
+  initV.resize(5);
+  initV.clear();
+  _piGate.clear();
+  _poGate.clear();
+  _totalGate.clear();
+  _aigCounter = 0;
+  
+  ifstream file(fileName.c_str());
+  if (file.fail()) {
+    // delete file;
+    cerr << "Cannot open design \"" << fileName << "\"!!" << endl;
+    return false;
+  }
+
+  while(file.good()){
+    colNo = 0;
+    getline(file, line,  '\n');
+
+    if(lineNo == 0){
+      if(5 != sscanf(line.c_str(), "aag %d %d %d %d %d", &initV[0], &initV[1], &initV[2], &initV[3], &initV[4])){return parseError(ILLEGAL_IDENTIFIER); }
+      _totalGate.resize(initV[0]+initV[3]+1);      
+    }else if((int)lineNo>0&&(int)lineNo<=(initV[1])){
+      int PiNum;
+      if(1 != sscanf(line.c_str(), "%d", &PiNum)){return parseError(ILLEGAL_IDENTIFIER); }
+      if(PiNum%2==1){ return parseError(ILLEGAL_NUM); }
+      CirGate* gate;
+      if(!not_found_then_new(gate, PiNum/2, PI_GATE, true)){return false;}
+    }else if((int)lineNo>initV[1]&&(int)lineNo<=initV[1]+initV[3]){
+      int faninNum;
+      if(1 != sscanf(line.c_str(), "%d", &faninNum)){return parseError(ILLEGAL_IDENTIFIER); }
+      CirGate* gate;
+      CirGate* fanin;
+      if(!not_found_then_new(gate, lineNo+1-initV[1]-1+initV[0], PO_GATE, true)){return false;}
+      if(!not_found_then_new(fanin, faninNum/2, UNDEF_GATE, false)){return false;}
+      if(!gate->setFanIn(fanin, faninNum%2==0))return parseError(REDEF_GATE);
+    }else if((int)lineNo>initV[1]+initV[3]&&(int)lineNo<=initV[1]+initV[3]+initV[4]){
+      int gid, fid1, fid2;
+      if(3 != sscanf(line.c_str(), "%d %d %d", &gid, &fid1, &fid2)){return parseError(ILLEGAL_IDENTIFIER); }
+      if(gid%2==1){return parseError(ILLEGAL_NUM);}
+       CirGate* gate;
+       CirGate* fanin1;
+       CirGate* fanin2;
+      if(!not_found_then_new(gate, gid/2, AIG_GATE, true)){return false;}
+      gate->setLineNo(lineNo+1);
+
+      if(!not_found_then_new(fanin1, fid1/2, UNDEF_GATE, false)){return false;}
+      if(!not_found_then_new(fanin2, fid2/2, UNDEF_GATE, false)){return false;}
+
+      if(!gate->setFanIn(fanin1, fid1%2==0)){return parseError(REDEF_GATE);};
+      if(!gate->setFanIn(fanin2, fid2%2==0)){return parseError(REDEF_GATE);};
+    }else{
+      char prefix;
+      int index;
+      char a[200];
+      CirGate* gate = 0;
+      int counter = sscanf(line.c_str(), "%c%d %[^\n]", &prefix, &index, a);
+      if(line.length()==0){ continue; }
+      if(prefix == 'c'){ break; }
+      if(prefix != 'i'&&prefix != 'l'&&prefix != 'o'){ errMsg = prefix;return parseError(ILLEGAL_SYMBOL_TYPE); }
+      if(counter<2){ colNo++; errMsg = "symbol index"; return parseError(MISSING_NUM); }
+
+      if (prefix=='i') {
+        if(_piGate.size()<=(size_t)index){errMsg = "PI index"; errInt = index;return parseError(NUM_TOO_BIG);}
+        if(0>index){errMsg = "PI index"; errInt = index;return parseError(NUM_TOO_SMALL);}
+        if(_piGate[index]->_alias.length()>0) {return parseError(REDEF_SYMBOLIC_NAME);}
+        gate = _piGate[index];
+      }else if (prefix=='o'){
+        if(_poGate.size()<=(size_t)index){ errMsg = "PO index"; errInt = index;return parseError(NUM_TOO_BIG); }
+        if(0>index){ errMsg = "PO index"; errInt = index;return parseError(NUM_TOO_SMALL); }
+        gate = _poGate[index];
+      }
+      if(gate!=0){
+        gate->_alias = string(a);      
+      }
+    }
+    lineNo++;
+  }
+  getDFSlist();
+    return true;
+}
+
+bool 
+CirMgr::not_found_then_new(CirGate* &gate, int id, GateType type, bool is_defi){
+  gate = getGate(id);
+  if(gate!=0){
+    if(is_defi){
+      if(gate->getDef()){ errGate = gate; return parseError(REDEF_GATE); }
+      gate->setDef();
+      if(type==AIG_GATE){ _aigCounter++; }
+    }
+    return true;
+  }
+  if(id==0) type=CONST_GATE;
+  switch (type) {
+    case PI_GATE:
+      gate = new PiGate(lineNo+1, id);
+      _piGate.push_back(gate);
+      break;
+    case PO_GATE:
+      gate = new PoGate(lineNo+1, id);
+      _poGate.push_back(gate);
+      break;
+    case AIG_GATE:
+      gate = new AigGate(lineNo+1, id, is_defi);
+      if(is_defi)_aigCounter++;
+      break;
+    case CONST_GATE:
+      gate = new ConstGate(lineNo+1, id);
+      break;
+    case UNDEF_GATE:
+      gate = new AigGate(lineNo+1, id, false);
+      break;
+    default:
+      return false;
+      break;
+  }
+  _totalGate[id] = gate;
+  return true;
+}
+
+void
+CirMgr::getDFSlist(){
+  _dfsList.clear();
+  CirGate::_cflag++;
+  for (size_t i = 0; i < _poGate.size(); ++i){
+    _poGate[i]->getDFS(_dfsList);
+  }
 }
 
 /**********************************************************/
@@ -170,37 +304,105 @@ Circuit Statistics
 void
 CirMgr::printSummary() const
 {
+  size_t pi_count = _piGate.size();
+  size_t po_count = _poGate.size();
+  if (pi_count+po_count+_aigCounter==0) return;
+
+  cout << endl;
+  cout << "Circuit Statistics" << endl;
+  cout << "==================" << endl;
+  cout << setw(2) << "" << left << setw(5) << "PI" << right << setw(9) <<  pi_count << endl;
+  cout << setw(2) << "" << left << setw(5) << "PO" << right << setw(9) <<  po_count << endl;
+  cout << setw(2) << "" << left <<  setw(5) << "AIG" << right <<  setw(9) <<  _aigCounter << endl;
+  cout <<  "------------------" << endl;
+  cout << setw(2) << "" << left <<  setw(5) << "Total" << right <<  setw(9) << (_aigCounter+pi_count+po_count)  << endl;
 }
 
 void
 CirMgr::printNetlist() const
 {
-/*
-   cout << endl;
-   for (unsigned i = 0, n = _dfsList.size(); i < n; ++i) {
-      cout << "[" << i << "] ";
-      _dfsList[i]->printGate();
-   }
-*/
+  cout << endl;
+  for (unsigned i = 0, n = _dfsList.size(); i < n; ++i) {
+    cout << "[" << i << "] ";
+    _dfsList[i]->printGate();
+  }
 }
 
 void
-CirMgr::printPIs() const
-{
-   cout << "PIs of the circuit:";
-   cout << endl;
+CirMgr::printPIs() const{
+  ostringstream oss;
+  int counter = 0;
+  for (size_t i = 0; i < _piGate.size(); i++) {
+    oss  << " "<< _piGate[i]->getId();
+    counter++;
+  }
+  if (counter>0) {
+    cout << "PIs of the circuit:" << oss.str() << endl;
+  }
 }
 
 void
 CirMgr::printPOs() const
 {
-   cout << "POs of the circuit:";
-   cout << endl;
+  ostringstream oss;
+  int counter = 0;
+  for (size_t i = 0; i < _poGate.size(); i++) {
+    oss  << " "<< _poGate[i]->getId();
+    counter++;
+  }
+  if (counter>0) {
+    cout << "POs of the circuit:" << oss.str() << endl;
+  }
 }
 
 void
 CirMgr::printFloatGates() const
 {
+  CirGate::_cflag++;
+  ostringstream oss;
+  size_t depth = _totalGate.size();
+  for (size_t i = 0; i < _poGate.size(); i++) {
+    int temp = _poGate[i]->_flag;
+    _poGate[i]->goFanin(depth, 0, true);
+    _poGate[i]->_flag = temp;
+  }
+  CirGate::_cflag++;
+  for (size_t i = 0; i < _piGate.size(); i++) {
+    int temp = _piGate[i]->_flag;
+    _piGate[i]->goFanout(depth, 0, true);
+    _piGate[i]->_flag = temp;
+  }
+  // CirGate::_cflag++;
+  // if (getGate(0)!=0) {
+  //   getGate(0)->goFanout(depth, 0, true, false);
+  // }
+  CirGate::_cflag++;
+  for (size_t i = 0; i < _totalGate.size(); i++) {
+    if(_totalGate[i]==0)continue;
+    if(_totalGate[i]->getType()==UNDEF_GATE){
+      _totalGate[i]->goFanout(1, 0, true);
+      _totalGate[i]->_flag = CirGate::_cflag-1;
+    }
+  }
+  int counter = 0, counter1 = 0;
+  ostringstream oss1;
+  for (size_t i = 0; i < _totalGate.size(); i++) {
+    if(_totalGate[i]==0)continue;
+    if(_totalGate[i]->_flag>=CirGate::_cflag||_totalGate[i]->_flag<CirGate::_cflag-4){
+      oss << " " << _totalGate[i]->getId();
+      counter++;
+    }
+    if(_totalGate[i]->getfanoutSize()==0&&_totalGate[i]->getType()!=PO_GATE){
+      oss << " " << _totalGate[i]->getId();
+      counter1++;
+    }
+  }
+  if (counter>0) {
+    cout << "Gates with floating fanin(s):" << oss.str() << endl;
+  }
+  if (counter1>0) {
+    cout << "Gates defined but not used  :" << oss1.str() << endl;
+  }
 }
 
 void
@@ -211,10 +413,75 @@ CirMgr::printFECPairs() const
 void
 CirMgr::writeAag(ostream& outfile) const
 {
+  ostringstream oss;
+  int numAig;
+
+  for (size_t i = 0; i < _piGate.size(); i++) {
+    oss << _piGate[i]->getId()*2 << endl;
+  }
+
+  for (size_t i = 0; i < _poGate.size(); i++) {
+    oss << (_poGate[i]->_fanin[0]->_fromGate->getId()*2+(int)!_poGate[i]->_fanin[0]->_isposi) << endl;
+  }
+  for (size_t i = 0; i < _dfsList.size(); ++i){
+    if(_dfsList[i]->getType()==AIG_GATE){
+      numAig++;
+      int fanin1 = (_dfsList[i]->_fanin[0]->_fromGate->getId())*2;
+      int fanin2 = (_dfsList[i]->_fanin[1]->_fromGate->getId())*2;
+      if(!_dfsList[i]->_fanin[0]->_isposi){ fanin1++; }
+      if(!_dfsList[i]->_fanin[1]->_isposi){ fanin2++; }
+      oss << _dfsList[i]->getId()*2 << " " << fanin1 << " " << fanin2 << endl;
+    }
+  }
+
+  outfile << "aag " << initV[0] << " " << initV[1] << " " << initV[2] << " " << initV[3] << " " << numAig << endl;
+  outfile << oss.str();
+  for (size_t i = 0; i < _piGate.size(); i++) {
+    if(_piGate[i]->_alias.length()>0){
+      outfile <<"i"<< i << " " << _piGate[i]->_alias << endl;
+    }
+  }
+  for (size_t i = 0; i < _poGate.size(); i++) {
+    if(_poGate[i]->_alias.length()>0){
+      outfile <<"o"<< i << " " << _poGate[i]->_alias << endl;
+    }
+  }
 }
 
 void
 CirMgr::writeGate(ostream& outfile, CirGate *g) const
 {
-}
+  GateList _tempDfs;
+  CirGate::_cflag++;
+  ostringstream ossAig;
+  ostringstream ossPI;
+  ostringstream ossPIa;
+  unsigned maxId = 0;
+  int numPi = 0, numAig = 0;
 
+  g->getDFS(_tempDfs);
+
+  for (size_t i = 0; i < _tempDfs.size(); ++i){
+    if(_tempDfs[i]->getType()==PI_GATE){
+      ossPI << _tempDfs[i]->getId()*2 << endl;
+      ossPIa << "i" << numPi << " " << _tempDfs[i]->_alias << endl;
+      numPi++;
+    }
+    if(_tempDfs[i]->getType()==AIG_GATE){
+      int fanin1 = (_tempDfs[i]->_fanin[0]->_fromGate->getId())*2;
+      int fanin2 = (_tempDfs[i]->_fanin[1]->_fromGate->getId())*2;
+      if(!_tempDfs[i]->_fanin[0]->_isposi){ fanin1++; }
+      if(!_tempDfs[i]->_fanin[1]->_isposi){ fanin2++; }
+      ossAig << _tempDfs[i]->getId()*2 << " " << fanin1 << " " << fanin2 << endl;
+      numAig++;
+    }
+    if(_tempDfs[i]->getId() > maxId){ maxId = _tempDfs[i]->getId(); }
+  }
+
+  outfile << "aag " << maxId << " " << numPi << " 0 1 " << numAig << endl;
+  outfile << ossPI.str();
+  outfile << g->getId()*2 << endl;
+  outfile << ossAig.str();
+  outfile << ossPIa.str();
+  outfile << "o0 " << g->getId() << endl;
+}
