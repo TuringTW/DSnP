@@ -49,8 +49,8 @@ public:
    virtual ~CirGate() {}
 
    // Basic access methods
-   unsigned getLineNo() const { return _lineNo; }
-   string getTypeStr() const { 
+   const unsigned getLineNo() const { return _lineNo; }
+   const string getTypeStr() const { 
     switch(_type){
       case PI_GATE:
         return "PI";
@@ -109,11 +109,11 @@ public:
     }
     return true;
    }
-   size_t getfaninSize(){return _fanin.size();}
-   size_t getfanoutSize(){return _fanout.size();}
+   const size_t getfaninSize(){return _fanin.size();}
+   const size_t getfanoutSize(){return _fanout.size();}
    int getId(){return _id;}
    void setDef(){_isDef = true;}
-   bool getDef() const{return _isDef;}
+   const bool getDef() const{return _isDef;}
 private:
   GateType _type;
   int _lineNo, _id;

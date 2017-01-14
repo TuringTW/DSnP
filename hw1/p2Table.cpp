@@ -52,6 +52,8 @@ bool Table::read(const string& csvFile){
 		string values;
 		while(file.good()){
 			getline ( file, values,  '\r');
+			cout << "[" << int(values[0]) << "]" << endl;
+			// if(values.length()==0){continue;}
 			parsing(values, 1);
 		}
 		return true; // TODO

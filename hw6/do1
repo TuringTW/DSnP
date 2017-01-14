@@ -1,12 +1,6 @@
 cirr tests.fraig/sim13.aag
 usage
-cirg 10 -fanin 10
-cirg 1 -fanout 10
-usage
-cirp -net
-usage
 cirp -fl
-cirp -po
-cirp -pi
-cirp -s
+usage
+do do1
 q -f

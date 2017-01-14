@@ -153,9 +153,6 @@ parseError(CirParseError err)
 /*   class CirMgr member functions for circuit construction   */
 /**************************************************************/
 CirGate* CirMgr::getGate(unsigned gid) const {
-  // for (size_t i = 0; i < _totalGate.size(); i++) {
-  //   if((unsigned)_totalGate[i]->getId() == gid) return _totalGate[i];
-  // }
   return _totalGate[gid];
 }
 bool
@@ -175,14 +172,11 @@ CirMgr::readCircuit(const string& fileName)
   }
   while(file.good()){
     colNo = 0;
-    // getGate(0);
 
   	getline(file, line,  '\n');
     if (lineNo==0) {
-      if(!parsing(line, true, 5, init_vals)) return false;
-      for (int i = 0; i < init_vals[0]+init_vals[3]+1; ++i){
-        _totalGate.push_back(0);
-      }
+      if(!parsing(line, true, 5, init_vals)) {return false;}
+      _totalGate.resize(init_vals[0]+init_vals[3]+1);
     }else if((int)lineNo>0&&(int)lineNo<=(init_vals[1])){
       vector<int> pi_vals;
       if(!parsing(line, false, 1, pi_vals)){return false;}
@@ -228,7 +222,8 @@ CirMgr::readCircuit(const string& fileName)
   }
   return true;
 }
-bool CirMgr::not_found_then_new(CirGate* &gate, int id, GateType type, bool is_defi){
+bool 
+CirMgr::not_found_then_new(CirGate* &gate, int id, GateType type, bool is_defi){
   gate = getGate(id);
   if(gate!=0){
     if(is_defi){
@@ -259,6 +254,7 @@ bool CirMgr::not_found_then_new(CirGate* &gate, int id, GateType type, bool is_d
       gate = new CirGate(AIG_GATE, lineNo+1, id, false);
       break;
     default:
+      return false;
       break;
   }
   _totalGate[id] = gate;
@@ -418,7 +414,6 @@ void
 CirMgr::printFloatGates() const
 {
   CirGate::_cflag++;
-  ostringstream oss;
   size_t len = _poGate.size();
   size_t depth = _totalGate.size();
   for (size_t i = 0; i < len; i++) {
@@ -446,29 +441,26 @@ CirMgr::printFloatGates() const
       _totalGate[i]->_flag = CirGate::_cflag-1;
     }
   }
-  int counter = 0;
+  int counter = 0, counter1 = 0;
+  ostringstream oss;
+  ostringstream oss1;
   for (size_t i = 0; i < len; i++) {
     if(_totalGate[i]==0)continue;
     if(_totalGate[i]->_flag>=CirGate::_cflag||_totalGate[i]->_flag<CirGate::_cflag-4){
       oss << " " << _totalGate[i]->getId();
       counter++;
     }
+    if(_totalGate[i]->getfanoutSize()==0&&_totalGate[i]->getType()!=PO_GATE){
+      oss1 << " " << _totalGate[i]->getId();
+      counter1++;
+    }
   }
   if (counter>0) {
     cout << "Gates with floating fanin(s):" << oss.str() << endl;
   }
 
-  oss.str("");
-  counter = 0;
-  for (size_t i = 0; i < _totalGate.size(); i++) {
-    if(_totalGate[i]==0)continue;
-    if(_totalGate[i]->getfanoutSize()==0&&_totalGate[i]->getType()!=PO_GATE){
-      oss << " " << _totalGate[i]->getId();
-      counter++;
-    }
-  }
-  if (counter>0) {
-    cout << "Gates defined but not used  :" << oss.str() << endl;
+  if (counter1>0) {
+    cout << "Gates defined but not used  :" << oss1.str() << endl;
   }
 
 }
@@ -506,5 +498,4 @@ CirMgr::writeAag(ostream& outfile) const
       outfile <<"o"<< i << " " << _poGate[i]->_alias << endl;
     }
   }
-
 }
