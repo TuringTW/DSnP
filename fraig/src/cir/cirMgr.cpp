@@ -311,7 +311,7 @@ CirMgr::getDFSlist(){
 
   for (size_t i = 0; i < _totalGate.size(); i++) {
     if(_totalGate[i]==0)continue;
-    if(_totalGate[i]->_flag>=CirGate::_cflag||_totalGate[i]->_flag<CirGate::_cflag-2){
+    if(_totalGate[i]->getType()!=UNDEF_GATE&&(_totalGate[i]->_flag>=CirGate::_cflag||_totalGate[i]->_flag<CirGate::_cflag-2)){
       _floatingList.push_back(_totalGate[i]);
     }
     if(_totalGate[i]->getfanoutSize()==0&&_totalGate[i]->getType()!=PO_GATE){

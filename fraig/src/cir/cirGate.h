@@ -102,7 +102,7 @@ private:
   string _alias;
   vector<Pin*> _fanin;
   vector<Pin*> _fanout;
-  
+
   static int _cflag;
 };
 class AigGate : public CirGate
@@ -122,10 +122,9 @@ public:
   bool setFanIn(CirGate* cirg, bool isposi){
     if (getfaninSize()<2) {
       addfanin(cirg, isposi);
-    }else{
-      return false;
+      return true;
     }
-    return true;
+    return false;
   }
 
   void setDef(){
@@ -157,10 +156,9 @@ public:
   bool setFanIn(CirGate* cirg, bool isposi){
       if (getfaninSize()<1) {
         addfanin(cirg, isposi);
-      }else{
-        return false;
+        return true;
       }
-      return true;
+      return false;
   }
 };
 class PiGate : public CirGateS
@@ -170,9 +168,7 @@ public:
   ~PiGate(){};
   string getTypeStr() const { return "PI"; };
   GateType getType() const {return PI_GATE; }
-  bool setFanIn(CirGate* cirg, bool isposi){
-    return false;
-  }
+  bool setFanIn(CirGate* cirg, bool isposi){ return false; }
 };
 class ConstGate : public CirGateS
 {
@@ -181,9 +177,7 @@ public:
   ~ConstGate(){}
   string getTypeStr() const { return "CONST"; }
   GateType getType() const {return CONST_GATE; }
-  bool setFanIn(CirGate* cirg, bool isposi){
-    return false;
-  }
+  bool setFanIn(CirGate* cirg, bool isposi){ return false; }
 };
 
 #endif // CIR_GATE_H
