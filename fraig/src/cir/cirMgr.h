@@ -27,7 +27,7 @@ class CirMgr
 {
 public:
    CirMgr() {}
-   ~CirMgr() {} 
+   ~CirMgr() {}
 
    // Access functions
    // return '0' if "gid" corresponds to an undefined gate.
@@ -71,8 +71,11 @@ private:
    GateList _totalGate;
    GateList _poGate;
    GateList _piGate;
+
    GateList _dfsList;
-   
+   GateList _unusedList;
+   GateList _floatingList;
+
    vector<int> initV;
 
    int _aigCounter;

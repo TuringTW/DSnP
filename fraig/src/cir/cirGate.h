@@ -35,22 +35,7 @@ class Pin
   friend class CirMgr;
 public:
   Pin(CirGate* from, CirGate* to, bool isposi): _fromGate(from), _toGate(to), _isposi(isposi){};
-  ~Pin(){
-    // for (int i = 0; i < _fromGate->_fanout.size(); ++i){
-    //   if(_fromGate->_fanout[i]==this){
-    //     _fromGate->_fanout.erase(_fromGate->_fanout.begin()+i);
-    //     break;
-    //   }
-    // }
-    // for (int i = 0; i < _toGate->_fanin.size(); ++i){
-    //   if(_toGate->_fanin[i]==this){
-    //     _toGate->_fanin.erase(_toGate->_fanin.begin()+i);
-    //     break;
-    //   }
-    // }
-  }
-  void goFanin(int, int, bool, bool);
-  void goFanout(int, int, bool);
+  ~Pin();
 private:
   CirGate* _fromGate;
   CirGate* _toGate;
@@ -60,9 +45,17 @@ private:
 class CirGate
 {
   friend class CirMgr;
+  friend class Pin;
 public:
   CirGate(int lineNo, int id):_lineNo(lineNo), _id(id), _flag(0){}
-  virtual ~CirGate() {}
+  virtual ~CirGate() {
+    for (size_t i = 0; i < _fanin.size(); ++i){
+      delete _fanin[i];
+    }
+    for (size_t i = 0; i < _fanout.size(); ++i){
+      delete _fanout[i];
+    }
+  }
   // Basic access methods
   virtual string getTypeStr() const =0;
   unsigned getLineNo() const { return _lineNo; }
@@ -100,7 +93,8 @@ public:
   void goFaninPrint(int, int, bool) const;
   //DFS
   void getDFS(GateList &_dfslist);
-   
+  void getDFSfanout() const;
+
 private:
 
   int _lineNo, _id;

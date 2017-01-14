@@ -166,7 +166,7 @@ CirMgr::readCircuit(const string& fileName)
   _poGate.clear();
   _totalGate.clear();
   _aigCounter = 0;
-  
+
   ifstream file(fileName.c_str());
   if (file.fail()) {
     // delete file;
@@ -180,7 +180,7 @@ CirMgr::readCircuit(const string& fileName)
 
     if(lineNo == 0){
       if(5 != sscanf(line.c_str(), "aag %d %d %d %d %d", &initV[0], &initV[1], &initV[2], &initV[3], &initV[4])){return parseError(ILLEGAL_IDENTIFIER); }
-      _totalGate.resize(initV[0]+initV[3]+1);      
+      _totalGate.resize(initV[0]+initV[3]+1);
     }else if((int)lineNo>0&&(int)lineNo<=(initV[1])){
       int PiNum;
       if(1 != sscanf(line.c_str(), "%d", &PiNum)){return parseError(ILLEGAL_IDENTIFIER); }
@@ -232,16 +232,16 @@ CirMgr::readCircuit(const string& fileName)
         gate = _poGate[index];
       }
       if(gate!=0){
-        gate->_alias = string(a);      
+        gate->_alias = string(a);
       }
     }
     lineNo++;
   }
   getDFSlist();
-    return true;
+  return true;
 }
 
-bool 
+bool
 CirMgr::not_found_then_new(CirGate* &gate, int id, GateType type, bool is_defi){
   gate = getGate(id);
   if(gate!=0){
@@ -283,9 +283,40 @@ CirMgr::not_found_then_new(CirGate* &gate, int id, GateType type, bool is_defi){
 void
 CirMgr::getDFSlist(){
   _dfsList.clear();
+  _unusedList.clear();
+  _floatingList.clear();
+
   CirGate::_cflag++;
   for (size_t i = 0; i < _poGate.size(); ++i){
     _poGate[i]->getDFS(_dfsList);
+  }
+  CirGate::_cflag++;
+  for (size_t i = 0; i < _piGate.size(); ++i){
+    _piGate[i]->getDFSfanout();
+  }
+  CirGate::_cflag++;
+  for (size_t i = 0; i < _totalGate.size(); i++) {
+    if(_totalGate[i]!=0&&_totalGate[i]->getType()==UNDEF_GATE){
+      for (size_t j = 0; j < _totalGate[i]->_fanout.size(); j++) {
+        if(_totalGate[i]->_fanout[j]->_toGate!=0){
+          _totalGate[i]->_fanout[j]->_toGate->_flag = CirGate::_cflag;
+        }
+      }
+    }
+  }
+  // CirGate::_cflag++;
+  // if (getGate(0)!=0) {
+  //   getGate(0)->goFanout(depth, 0, true, false);
+  // }
+
+  for (size_t i = 0; i < _totalGate.size(); i++) {
+    if(_totalGate[i]==0)continue;
+    if(_totalGate[i]->_flag>=CirGate::_cflag||_totalGate[i]->_flag<CirGate::_cflag-2){
+      _floatingList.push_back(_totalGate[i]);
+    }
+    if(_totalGate[i]->getfanoutSize()==0&&_totalGate[i]->getType()!=PO_GATE){
+      _unusedList.push_back(_totalGate[i]);
+    }
   }
 }
 
@@ -358,50 +389,19 @@ CirMgr::printPOs() const
 void
 CirMgr::printFloatGates() const
 {
-  CirGate::_cflag++;
-  ostringstream oss;
-  size_t depth = _totalGate.size();
-  for (size_t i = 0; i < _poGate.size(); i++) {
-    int temp = _poGate[i]->_flag;
-    _poGate[i]->goFanin(depth, 0, true);
-    _poGate[i]->_flag = temp;
-  }
-  CirGate::_cflag++;
-  for (size_t i = 0; i < _piGate.size(); i++) {
-    int temp = _piGate[i]->_flag;
-    _piGate[i]->goFanout(depth, 0, true);
-    _piGate[i]->_flag = temp;
-  }
-  // CirGate::_cflag++;
-  // if (getGate(0)!=0) {
-  //   getGate(0)->goFanout(depth, 0, true, false);
-  // }
-  CirGate::_cflag++;
-  for (size_t i = 0; i < _totalGate.size(); i++) {
-    if(_totalGate[i]==0)continue;
-    if(_totalGate[i]->getType()==UNDEF_GATE){
-      _totalGate[i]->goFanout(1, 0, true);
-      _totalGate[i]->_flag = CirGate::_cflag-1;
+  if (_floatingList.size()>0) {
+    cout << "Gates with floating fanin(s):";
+    for (size_t i = 0; i < _floatingList.size(); ++i){
+      cout << " " << _floatingList[i]->getId();
     }
+    cout << endl;
   }
-  int counter = 0, counter1 = 0;
-  ostringstream oss1;
-  for (size_t i = 0; i < _totalGate.size(); i++) {
-    if(_totalGate[i]==0)continue;
-    if(_totalGate[i]->_flag>=CirGate::_cflag||_totalGate[i]->_flag<CirGate::_cflag-4){
-      oss << " " << _totalGate[i]->getId();
-      counter++;
+  if (_unusedList.size()>0) {
+    cout << "Gates defined but not used  :";
+    for (size_t i = 0; i < _unusedList.size(); ++i){
+      cout << " " << _unusedList[i]->getId();
     }
-    if(_totalGate[i]->getfanoutSize()==0&&_totalGate[i]->getType()!=PO_GATE){
-      oss << " " << _totalGate[i]->getId();
-      counter1++;
-    }
-  }
-  if (counter>0) {
-    cout << "Gates with floating fanin(s):" << oss.str() << endl;
-  }
-  if (counter1>0) {
-    cout << "Gates defined but not used  :" << oss1.str() << endl;
+    cout << endl;
   }
 }
 

@@ -29,6 +29,21 @@ int CirGate::_cflag=0;
 /**************************************/
 /*   class CirGate member functions   */
 /**************************************/
+Pin::~Pin()
+{
+	for (size_t i = 0; i < _fromGate->_fanout.size(); ++i){
+    if(_fromGate->_fanout[i]==this){
+      _fromGate->_fanout.erase(_fromGate->_fanout.begin()+i);
+      break;
+    }
+  }
+  for (size_t i = 0; i < _toGate->_fanin.size(); ++i){
+    if(_toGate->_fanin[i]==this){
+      _toGate->_fanin.erase(_toGate->_fanin.begin()+i);
+      break;
+    }
+  }
+}
 void
 CirGate::reportGate() const
 {
@@ -53,6 +68,7 @@ void
 CirGate::reportFanout(int level) const
 {
    assert (level >= 0);
+   _cflag++;
    goFanoutPrint(level, 0, true);
 }
 
@@ -69,18 +85,6 @@ CirGate::goFaninPrint(int level, int padding, bool isPosi) const {
     if (level>0) {
       for (size_t i = 0; i < _fanin.size(); i++) {
         if(_fanin[i]->_fromGate!=0){_fanin[i]->_fromGate->goFaninPrint(level-1, padding+1, _fanin[i]->_isposi);}
-      }
-    }
-  }
-}
-
-void 
-CirGate::goFanin(int level, int padding, bool isPosi) const {
-  if (_cflag != _flag) {
-    _flag = _cflag;
-    if (level>0) {
-      for (size_t i = 0; i < _fanin.size(); i++) {
-        if(_fanin[i]->_fromGate!=0){_fanin[i]->_fromGate->goFanin(level-1, padding+1, _fanin[i]->_isposi);}
       }
     }
   }
@@ -106,28 +110,28 @@ CirGate::goFanoutPrint(int level, int padding, bool isPosi) const {
   }
 }
 void 
-CirGate::goFanout(int level, int padding, bool isPosi) const {
-  if (_cflag != _flag) {
-    _flag = _cflag;
-    if (level>0) {
-      for (size_t i = 0; i < _fanout.size(); i++) {
-        if(_fanout[i]->_toGate!=0){_fanout[i]->_toGate->goFanout(level-1, padding+1, _fanout[i]->_isposi);}
-      }
-    }
-  }
-}
-
-void 
 CirGate::getDFS(GateList &_dfslist){
 	if (_cflag != _flag) {
-		if(getType()==UNDEF_GATE)return;
     _flag = _cflag;
+		if(getType()==UNDEF_GATE)return;
     for (size_t i = 0; i < _fanin.size(); i++) {
       if(_fanin[i]->_fromGate!=0){_fanin[i]->_fromGate->getDFS(_dfslist);}
     }
     _dfslist.push_back(this);
   }
 }
+
+void 
+CirGate::getDFSfanout() const{
+	if (_cflag != _flag) {
+    _flag = _cflag;
+		if(getType()==UNDEF_GATE)return;
+    for (size_t i = 0; i < _fanout.size(); i++) {
+      if(_fanout[i]->_toGate!=0){_fanout[i]->_toGate->getDFSfanout();}
+    }
+  }	
+}
+
 
 void 
 CirGate::printGate() const {

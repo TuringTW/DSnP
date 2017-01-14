@@ -1,0 +1,4 @@
+cirr ./tests.fraig/cirp-n.aag
+usage
+cirp -n
+q -f
