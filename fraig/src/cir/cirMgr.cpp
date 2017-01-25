@@ -165,8 +165,7 @@ CirMgr::readCircuit(const string& fileName)
   _piGate.clear();
   _poGate.clear();
   _totalGate.clear();
-  _aigCounter = 0;
-
+  _isSim = false;
   ifstream file(fileName.c_str());
   if (file.fail()) {
     // delete file;
@@ -248,7 +247,6 @@ CirMgr::not_found_then_new(CirGate* &gate, int id, GateType type, bool is_defi){
     if(is_defi){
       if(gate->getDef()){ errGate = gate; return parseError(REDEF_GATE); }
       gate->setDef();
-      if(type==AIG_GATE){ _aigCounter++; }
     }
     return true;
   }
@@ -264,7 +262,6 @@ CirMgr::not_found_then_new(CirGate* &gate, int id, GateType type, bool is_defi){
       break;
     case AIG_GATE:
       gate = new AigGate(lineNo+1, id, is_defi);
-      if(is_defi)_aigCounter++;
       break;
     case CONST_GATE:
       gate = new ConstGate(lineNo+1, id);
@@ -285,6 +282,7 @@ CirMgr::getDFSlist(){
   _dfsList.clear();
   _unusedList.clear();
   _floatingList.clear();
+  _aigList.clear();
 
   CirGate::_cflag++;
   for (size_t i = 0; i < _poGate.size(); ++i){
@@ -317,6 +315,10 @@ CirMgr::getDFSlist(){
     if(_totalGate[i]->getfanoutSize()==0&&_totalGate[i]->getType()!=PO_GATE){
       _unusedList.push_back(_totalGate[i]);
     }
+    if(_totalGate[i]->getType()==AIG_GATE){
+      _aigList.push_back(_totalGate[i]);
+
+    }
   }
 }
 
@@ -337,16 +339,16 @@ CirMgr::printSummary() const
 {
   size_t pi_count = _piGate.size();
   size_t po_count = _poGate.size();
-  if (pi_count+po_count+_aigCounter==0) return;
+  if (pi_count+po_count+_aigList.size()==0) return;
 
   cout << endl;
   cout << "Circuit Statistics" << endl;
   cout << "==================" << endl;
   cout << setw(2) << "" << left << setw(5) << "PI" << right << setw(9) <<  pi_count << endl;
   cout << setw(2) << "" << left << setw(5) << "PO" << right << setw(9) <<  po_count << endl;
-  cout << setw(2) << "" << left <<  setw(5) << "AIG" << right <<  setw(9) <<  _aigCounter << endl;
+  cout << setw(2) << "" << left <<  setw(5) << "AIG" << right <<  setw(9) <<  _aigList.size() << endl;
   cout <<  "------------------" << endl;
-  cout << setw(2) << "" << left <<  setw(5) << "Total" << right <<  setw(9) << (_aigCounter+pi_count+po_count)  << endl;
+  cout << setw(2) << "" << left <<  setw(5) << "Total" << right <<  setw(9) << (_aigList.size()+pi_count+po_count)  << endl;
 }
 
 void
@@ -408,13 +410,24 @@ CirMgr::printFloatGates() const
 void
 CirMgr::printFECPairs() const
 {
+
+  for (size_t i = 0; i < _fecGrps.size(); i++) {
+    cout << "[" << i << "]";
+    // sort(_fecGrps[i].begin(), _fecGrps.end(), CirMgr::compareCirgate);
+    for (size_t j = 0; j < _fecGrps[i].size(); j++) {
+      cout << " ";
+      if(_fecGrps[i][j]->invEqvlnt!=_fecGrps[i][0]->invEqvlnt){ cout << "!"; }
+      cout << _fecGrps[i][j]->getId();
+    }
+    cout << endl;
+  }
 }
 
 void
 CirMgr::writeAag(ostream& outfile) const
 {
   ostringstream oss;
-  int numAig;
+  int numAig = 0;
 
   for (size_t i = 0; i < _piGate.size(); i++) {
     oss << _piGate[i]->getId()*2 << endl;

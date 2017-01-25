@@ -1,2 +1,21 @@
-cirr ./tests.fraig/sim13.aag
+cirr ./tests.fraig/sim10.aag
 usage
+cirp -fl
+cirp -s
+cirsw
+usage
+cirp -s
+ciropt
+usage
+cirp -s
+cirstra
+usage
+cirp -s
+cirsim -r -o output.self
+usage
+cirp -fec
+usage
+cirf
+usage
+cirp -s
+q -f

@@ -65,6 +65,10 @@ public:
    // DFS
    void getDFSlist();
 
+  //  simulation
+  void simulation();
+  void Rndsimulation();
+
 private:
    ofstream           *_simLog;
 
@@ -75,10 +79,21 @@ private:
    GateList _dfsList;
    GateList _unusedList;
    GateList _floatingList;
+   GateList _aigList;
 
    vector<int> initV;
 
-   int _aigCounter;
+
+   vector<GateList> _fecGrps;
+   bool _isSim;
+   size_t _falseCount;
+
+  //  private functionsvoid
+  void merge(CirGate*, CirGate*, bool);
+  void registerFECGrp();
+  void updateFECgrps();
+
+
 };
 
 #endif // CIR_MGR_H

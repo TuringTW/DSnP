@@ -11,6 +11,7 @@
 #include <sstream>
 #include <stdarg.h>
 #include <cassert>
+#include <bitset>
 #include "cirGate.h"
 #include "cirMgr.h"
 #include "util.h"
@@ -25,7 +26,6 @@ extern CirMgr *cirMgr;
 
 // static variable
 int CirGate::_cflag=0;
-
 /**************************************/
 /*   class CirGate member functions   */
 /**************************************/
@@ -44,15 +44,26 @@ Pin::~Pin()
     }
   }
 }
+
 void
 CirGate::reportGate() const
 {
   ostringstream oss;
   oss << getTypeStr() << "(" << _id << ")";
+	ostringstream oss1;
+	for (size_t i = 0; i < _selfFECgroup.size(); i++) {
+		oss1 << " ";
+		if(_selfFECgroup[i]->invEqvlnt){ oss1 << "!"; }
+		oss1 << _selfFECgroup[i]->getId();
+	}
+	ostringstream oss2;
+	oss2 << bitset<32> (simPattern);
   if (_alias.length()>0) oss <<"\"" << _alias << "\"";
   oss << ", line " << _lineNo;
   cout << "==================================================" << endl;
   cout << "= " << left  << setfill(' ')<< setw(47)<<  oss.str() << "=" << endl;
+	cout << "= FECs:" << left  << setfill(' ')<< setw(42)<<  oss1.str() << "=" << endl;
+	cout << "= Values:" << left  << setfill(' ')<< setw(40)<<  oss2.str() << "=" << endl;
   cout << "==================================================" << endl;
 }
 
@@ -72,7 +83,7 @@ CirGate::reportFanout(int level) const
    goFanoutPrint(level, 0, true);
 }
 
-void 
+void
 CirGate::goFaninPrint(int level, int padding, bool isPosi) const {
 	ostringstream oss;
 	if (!isPosi) oss <<"!";
@@ -90,9 +101,9 @@ CirGate::goFaninPrint(int level, int padding, bool isPosi) const {
   }
 }
 
-void 
+void
 CirGate::goFanoutPrint(int level, int padding, bool isPosi) const {
-  
+
   ostringstream oss;
   if (!isPosi) {oss <<"!";}
   oss << getTypeStr() << " " << _id;
@@ -109,7 +120,7 @@ CirGate::goFanoutPrint(int level, int padding, bool isPosi) const {
     }
   }
 }
-void 
+void
 CirGate::getDFS(GateList &_dfslist){
 	if (_cflag != _flag) {
     _flag = _cflag;
@@ -121,7 +132,7 @@ CirGate::getDFS(GateList &_dfslist){
   }
 }
 
-void 
+void
 CirGate::getDFSfanout() const{
 	if (_cflag != _flag) {
     _flag = _cflag;
@@ -129,11 +140,11 @@ CirGate::getDFSfanout() const{
     for (size_t i = 0; i < _fanout.size(); i++) {
       if(_fanout[i]->_toGate!=0){_fanout[i]->_toGate->getDFSfanout();}
     }
-  }	
+  }
 }
 
 
-void 
+void
 CirGate::printGate() const {
 	ostringstream oss;
   for (size_t i = 0; i < _fanin.size(); i++) {

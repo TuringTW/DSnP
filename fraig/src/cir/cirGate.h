@@ -12,6 +12,8 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <cmath>
+#include <climits>
 #include "cirDef.h"
 #include "sat.h"
 
@@ -36,6 +38,8 @@ class Pin
 public:
   Pin(CirGate* from, CirGate* to, bool isposi): _fromGate(from), _toGate(to), _isposi(isposi){};
   ~Pin();
+
+  // bool operator == (const Pin& other) const { return other._fromGate==_fromGate&&other._isposi==_isposi; }
 private:
   CirGate* _fromGate;
   CirGate* _toGate;
@@ -47,13 +51,13 @@ class CirGate
   friend class CirMgr;
   friend class Pin;
 public:
-  CirGate(int lineNo, int id):_lineNo(lineNo), _id(id), _flag(0){}
+  CirGate(int lineNo, int id):_lineNo(lineNo), _id(id), _flag(0), simPattern(0), invEqvlnt(false){}
   virtual ~CirGate() {
-    for (size_t i = 0; i < _fanin.size(); ++i){
-      delete _fanin[i];
+    while(_fanin.size()>0){
+      delete _fanin[0];
     }
-    for (size_t i = 0; i < _fanout.size(); ++i){
-      delete _fanout[i];
+    while(_fanout.size()>0){
+      delete _fanout[0];
     }
   }
   // Basic access methods
@@ -94,6 +98,23 @@ public:
   //DFS
   void getDFS(GateList &_dfslist);
   void getDFSfanout() const;
+  // fraig
+  Var getVar() const { return _var; }
+  void setVar(const Var& v) { _var = v; }
+
+  bool simulate() const {
+    size_t result = ~0;
+    for (size_t i = 0; i < _fanin.size(); i++) {
+      if(_fanin[i]->_isposi){
+        result &= _fanin[i]->_fromGate->simPattern;
+      }else{
+        result &= (~_fanin[i]->_fromGate->simPattern);
+      }
+    }
+    bool status = (simPattern == result);
+    simPattern = result;
+    return status;
+  }
 
 private:
 
@@ -102,6 +123,13 @@ private:
   string _alias;
   vector<Pin*> _fanin;
   vector<Pin*> _fanout;
+  // signal
+  mutable unsigned simPattern;
+  bool invEqvlnt;
+  GateList _selfFECgroup;
+
+  // fraig
+  Var _var;
 
   static int _cflag;
 };
