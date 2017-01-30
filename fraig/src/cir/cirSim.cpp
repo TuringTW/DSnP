@@ -41,6 +41,7 @@ CirMgr::randomSim()
   cout << "MAX_FAILS = " << max_fail << endl;
   while(_falseCount<max_fail){
     Rndsimulation();
+    cout << _falseCount << " " << _fecGrps.size()<< endl;
     counter++;
   }
   cout << counter*32 << " patterns simulated" << endl;
@@ -100,10 +101,10 @@ CirMgr::simulation() {
 }
 void
 CirMgr::Rndsimulation() {
-  for (size_t i = 0; i < _dfsList.size(); i++) {
-    if(_dfsList[i]->getType()==PI_GATE){ _dfsList[i]->simPattern = rnGen(INT_MAX)*2349809821%INT_MAX;  continue;}
-    if(_dfsList[i]->getType()==AIG_GATE){
-      _dfsList[i]->simulate();
+  for (size_t i = 0; i < _totalGate.size(); i++) {
+    if(_totalGate[i]->getType()==PI_GATE){ _totalGate[i]->simPattern = rnGen(INT_MAX)*2349809821%INT_MAX;  continue;}
+    if(_totalGate[i]->getType()==AIG_GATE){
+      _totalGate[i]->simulate();
     }
   }
   updateFECgrps();

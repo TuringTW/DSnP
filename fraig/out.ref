@@ -1,0 +1,3944 @@
+fraig> cirr ./tests.fraig/sim13.aag
+
+fraig> usage
+Period time used : 0.05 seconds
+Total time used  : 0.05 seconds
+Total memory used: 12 M Bytes
+
+fraig> cirp -fl
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI        3357
+  PO        3343
+  AIG      81710
+------------------
+  Total    88410
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI        3357
+  PO        3343
+  AIG      81710
+------------------
+  Total    88410
+
+fraig> ciropt
+
+fraig> usage
+Period time used : 0.01 seconds
+Total time used  : 0.06 seconds
+Total memory used: 12.86 M Bytes
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI        3357
+  PO        3343
+  AIG      81710
+------------------
+  Total    88410
+
+fraig> cirstra
+
+fraig> usage
+Period time used : 0.01 seconds
+Total time used  : 0.07 seconds
+Total memory used: 15.7 M Bytes
+
+fraig> cirp -s
+
+Circuit Statistics
+==================
+  PI        3357
+  PO        3343
+  AIG      81710
+------------------
+  Total    88410
+
+fraig> cirsim -r -o output.self
+MAX_FAILS = 181
+Total #FEC Group = 0                              Total #FEC Group = 7994                              Total #FEC Group = 7500                              Total #FEC Group = 6984                              Total #FEC Group = 6439                              Total #FEC Group = 6264                              Total #FEC Group = 6177                              Total #FEC Group = 6214                              Total #FEC Group = 6219                              Total #FEC Group = 6228                              Total #FEC Group = 6230                              Total #FEC Group = 6268                              Total #FEC Group = 6235                              Total #FEC Group = 6239                              Total #FEC Group = 6255                              Total #FEC Group = 6258                              Total #FEC Group = 6284                              Total #FEC Group = 6307                              Total #FEC Group = 6274                              Total #FEC Group = 6264                              Total #FEC Group = 6281                              Total #FEC Group = 6304                              Total #FEC Group = 6287                              Total #FEC Group = 6290                              Total #FEC Group = 6280                              Total #FEC Group = 6281                              Total #FEC Group = 6297                              Total #FEC Group = 6272                              Total #FEC Group = 6249                              Total #FEC Group = 6221                              Total #FEC Group = 6207                              Total #FEC Group = 6186                              Total #FEC Group = 6181                              Total #FEC Group = 6158                              Total #FEC Group = 6166                              Total #FEC Group = 6165                              Total #FEC Group = 6119                              Total #FEC Group = 6113                              Total #FEC Group = 6097                              Total #FEC Group = 6071                              Total #FEC Group = 6047                              Total #FEC Group = 6031                              Total #FEC Group = 6009                              Total #FEC Group = 5981                              Total #FEC Group = 5975                              Total #FEC Group = 5930                              Total #FEC Group = 5897                              Total #FEC Group = 5867                              Total #FEC Group = 5850                              Total #FEC Group = 5845                              Total #FEC Group = 5832                              Total #FEC Group = 5802                              Total #FEC Group = 5772                              Total #FEC Group = 5748                              Total #FEC Group = 5734                              Total #FEC Group = 5712                              Total #FEC Group = 5692                              Total #FEC Group = 5661                              Total #FEC Group = 5629                              Total #FEC Group = 5597                              Total #FEC Group = 5575                              Total #FEC Group = 5555                              Total #FEC Group = 5545                              Total #FEC Group = 5526                              Total #FEC Group = 5514                              Total #FEC Group = 5499                              Total #FEC Group = 5487                              Total #FEC Group = 5468                              Total #FEC Group = 5446                              Total #FEC Group = 5427                              Total #FEC Group = 5424                              Total #FEC Group = 5421                              Total #FEC Group = 5389                              Total #FEC Group = 5359                              Total #FEC Group = 5342                              Total #FEC Group = 5319                              Total #FEC Group = 5302                              Total #FEC Group = 5274                              Total #FEC Group = 5256                              Total #FEC Group = 5233                              Total #FEC Group = 5205                              Total #FEC Group = 5189                              Total #FEC Group = 5181                              Total #FEC Group = 5148                              Total #FEC Group = 5138                              Total #FEC Group = 5126                              Total #FEC Group = 5114                              Total #FEC Group = 5103                              Total #FEC Group = 5088                              Total #FEC Group = 5074                              Total #FEC Group = 5060                              Total #FEC Group = 5054                              Total #FEC Group = 5043                              Total #FEC Group = 5019                              Total #FEC Group = 5007                              Total #FEC Group = 4980                              Total #FEC Group = 4978                              Total #FEC Group = 4962                              Total #FEC Group = 4945                              Total #FEC Group = 4900                              Total #FEC Group = 4884                              Total #FEC Group = 4877                              Total #FEC Group = 4865                              Total #FEC Group = 4860                              Total #FEC Group = 4851                              Total #FEC Group = 4854                              Total #FEC Group = 4834                              Total #FEC Group = 4819                              Total #FEC Group = 4812                              Total #FEC Group = 4798                              Total #FEC Group = 4785                              Total #FEC Group = 4755                              Total #FEC Group = 4742                              Total #FEC Group = 4732                              Total #FEC Group = 4723                              Total #FEC Group = 4706                              Total #FEC Group = 4699                              Total #FEC Group = 4687                              Total #FEC Group = 4679                              Total #FEC Group = 4677                              Total #FEC Group = 4670                              Total #FEC Group = 4663                              Total #FEC Group = 4654                              Total #FEC Group = 4637                              Total #FEC Group = 4631                              Total #FEC Group = 4613                              Total #FEC Group = 4608                              Total #FEC Group = 4606                              Total #FEC Group = 4601                              Total #FEC Group = 4581                              Total #FEC Group = 4588                              Total #FEC Group = 4584                              Total #FEC Group = 4580                              Total #FEC Group = 4573                              Total #FEC Group = 4568                              Total #FEC Group = 4568                              Total #FEC Group = 4561                              Total #FEC Group = 4560                              Total #FEC Group = 4555                              Total #FEC Group = 4554                              Total #FEC Group = 4546                              Total #FEC Group = 4540                              Total #FEC Group = 4517                              Total #FEC Group = 4513                              Total #FEC Group = 4508                              Total #FEC Group = 4503                              Total #FEC Group = 4499                              Total #FEC Group = 4494                              Total #FEC Group = 4490                              Total #FEC Group = 4487                              Total #FEC Group = 4484                              Total #FEC Group = 4474                              Total #FEC Group = 4472                              Total #FEC Group = 4469                              Total #FEC Group = 4464                              Total #FEC Group = 4459                              Total #FEC Group = 4454                              Total #FEC Group = 4453                              Total #FEC Group = 4451                              Total #FEC Group = 4451                              Total #FEC Group = 4445                              Total #FEC Group = 4433                              Total #FEC Group = 4437                              Total #FEC Group = 4438                              Total #FEC Group = 4437                              Total #FEC Group = 4427                              Total #FEC Group = 4423                              Total #FEC Group = 4418                              Total #FEC Group = 4413                              Total #FEC Group = 4406                              Total #FEC Group = 4398                              Total #FEC Group = 4388                              Total #FEC Group = 4384                              Total #FEC Group = 4383                              Total #FEC Group = 4376                              Total #FEC Group = 4372                              Total #FEC Group = 4372                              Total #FEC Group = 4365                              Total #FEC Group = 4369                              Total #FEC Group = 4365                              Total #FEC Group = 4368                              Total #FEC Group = 4361                              Total #FEC Group = 4360                              Total #FEC Group = 4360                              Total #FEC Group = 4358                              Total #FEC Group = 4360                              Total #FEC Group = 4356                              Total #FEC Group = 4351                              Total #FEC Group = 4347                              Total #FEC Group = 4350                              Total #FEC Group = 4346                              Total #FEC Group = 4348                              Total #FEC Group = 4347                              Total #FEC Group = 4349                              Total #FEC Group = 4349                              Total #FEC Group = 4349                              Total #FEC Group = 4348                              Total #FEC Group = 4349                              Total #FEC Group = 4348                              Total #FEC Group = 4344                              Total #FEC Group = 4349                              Total #FEC Group = 4350                              Total #FEC Group = 4350                              Total #FEC Group = 4352                              Total #FEC Group = 4349                              Total #FEC Group = 4340                              Total #FEC Group = 4338                              Total #FEC Group = 4331                              Total #FEC Group = 4326                              Total #FEC Group = 4325                              Total #FEC Group = 4323                              Total #FEC Group = 4323                              Total #FEC Group = 4318                              Total #FEC Group = 4317                              Total #FEC Group = 4317                              Total #FEC Group = 4305                              Total #FEC Group = 4304                              Total #FEC Group = 4295                              Total #FEC Group = 4292                              Total #FEC Group = 4291                              Total #FEC Group = 4288                              Total #FEC Group = 4279                              Total #FEC Group = 4278                              Total #FEC Group = 4275                              Total #FEC Group = 4253                              Total #FEC Group = 4254                              Total #FEC Group = 4253                              Total #FEC Group = 4256                              Total #FEC Group = 4257                              Total #FEC Group = 4257                              Total #FEC Group = 4257                              Total #FEC Group = 4247                              Total #FEC Group = 4251                              Total #FEC Group = 4248                              Total #FEC Group = 4244                              Total #FEC Group = 4238                              Total #FEC Group = 4238                              Total #FEC Group = 4238                              Total #FEC Group = 4219                              Total #FEC Group = 4214                              Total #FEC Group = 4209                              Total #FEC Group = 4209                              Total #FEC Group = 4210                              Total #FEC Group = 4212                              Total #FEC Group = 4208                              Total #FEC Group = 4207                              Total #FEC Group = 4205                              Total #FEC Group = 4205                              Total #FEC Group = 4199                              Total #FEC Group = 4197                              Total #FEC Group = 4193                              Total #FEC Group = 4192                              Total #FEC Group = 4190                              Total #FEC Group = 4190                              Total #FEC Group = 4190                              Total #FEC Group = 4185                              Total #FEC Group = 4185                              Total #FEC Group = 4181                              Total #FEC Group = 4178                              Total #FEC Group = 4179                              Total #FEC Group = 4178                              Total #FEC Group = 4177                              Total #FEC Group = 4180                              Total #FEC Group = 4179                              Total #FEC Group = 4177                              Total #FEC Group = 4184                              Total #FEC Group = 4184                              Total #FEC Group = 4183                              Total #FEC Group = 4182                              Total #FEC Group = 4178                              Total #FEC Group = 4181                              Total #FEC Group = 4191                              Total #FEC Group = 4191                              Total #FEC Group = 4187                              Total #FEC Group = 4185                              Total #FEC Group = 4177                              Total #FEC Group = 4180                              Total #FEC Group = 4176                              Total #FEC Group = 4180                              Total #FEC Group = 4182                              Total #FEC Group = 4181                              Total #FEC Group = 4180                              Total #FEC Group = 4184                              Total #FEC Group = 4188                              Total #FEC Group = 4188                              Total #FEC Group = 4188                              Total #FEC Group = 4187                              Total #FEC Group = 4187                              Total #FEC Group = 4186                              Total #FEC Group = 4189                              Total #FEC Group = 4189                              Total #FEC Group = 4189                              Total #FEC Group = 4187                              Total #FEC Group = 4185                              Total #FEC Group = 4183                              Total #FEC Group = 4183                              Total #FEC Group = 4167                              Total #FEC Group = 4167                              Total #FEC Group = 4169                              Total #FEC Group = 4169                              Total #FEC Group = 4165                              Total #FEC Group = 4157                              Total #FEC Group = 4157                              Total #FEC Group = 4157                              Total #FEC Group = 4157                              Total #FEC Group = 4160                              Total #FEC Group = 4160                              Total #FEC Group = 4161                              Total #FEC Group = 4161                              Total #FEC Group = 4161                              Total #FEC Group = 4160                              Total #FEC Group = 4160                              Total #FEC Group = 4159                              Total #FEC Group = 4159                              Total #FEC Group = 4159                              Total #FEC Group = 4158                              Total #FEC Group = 4158                              Total #FEC Group = 4163                              Total #FEC Group = 4162                              Total #FEC Group = 4162                              Total #FEC Group = 4162                              Total #FEC Group = 4162                              Total #FEC Group = 4161                              Total #FEC Group = 4167                              Total #FEC Group = 4167                              Total #FEC Group = 4166                              Total #FEC Group = 4164                              Total #FEC Group = 4164                              Total #FEC Group = 4165                              Total #FEC Group = 4165                              Total #FEC Group = 4168                              Total #FEC Group = 4170                              Total #FEC Group = 4170                              Total #FEC Group = 4175                              Total #FEC Group = 4174                              Total #FEC Group = 4157                              Total #FEC Group = 4157                              Total #FEC Group = 4159                              Total #FEC Group = 4159                              Total #FEC Group = 4159                              Total #FEC Group = 4162                              Total #FEC Group = 4162                              Total #FEC Group = 4162                              Total #FEC Group = 4162                              Total #FEC Group = 4163                              Total #FEC Group = 4158                              Total #FEC Group = 4157                              Total #FEC Group = 4157                              Total #FEC Group = 4155                              Total #FEC Group = 4145                              Total #FEC Group = 4145                              Total #FEC Group = 4143                              Total #FEC Group = 4141                              Total #FEC Group = 4140                              Total #FEC Group = 4140                              Total #FEC Group = 4138                              Total #FEC Group = 4137                              Total #FEC Group = 4137                              Total #FEC Group = 4135                              Total #FEC Group = 4135                              Total #FEC Group = 4135                              Total #FEC Group = 4136                              Total #FEC Group = 4134                              Total #FEC Group = 4132                              Total #FEC Group = 4133                              Total #FEC Group = 4131                              Total #FEC Group = 4127                              Total #FEC Group = 4128                              Total #FEC Group = 4132                              Total #FEC Group = 4132                              Total #FEC Group = 4137                              Total #FEC Group = 4135                              Total #FEC Group = 4134                              Total #FEC Group = 4134                              Total #FEC Group = 4134                              Total #FEC Group = 4133                              Total #FEC Group = 4133                              Total #FEC Group = 4133                              Total #FEC Group = 4132                              Total #FEC Group = 4131                              Total #FEC Group = 4128                              Total #FEC Group = 4126                              Total #FEC Group = 4126                              Total #FEC Group = 4131                              Total #FEC Group = 4131                              Total #FEC Group = 4131                              Total #FEC Group = 4131                              Total #FEC Group = 4131                              Total #FEC Group = 4131                              Total #FEC Group = 4130                              Total #FEC Group = 4130                              Total #FEC Group = 4114                              Total #FEC Group = 4113                              Total #FEC Group = 4114                              Total #FEC Group = 4114                              Total #FEC Group = 4114                              Total #FEC Group = 4114                              Total #FEC Group = 4112                              Total #FEC Group = 4108                              Total #FEC Group = 4108                              Total #FEC Group = 4108                              Total #FEC Group = 4108                              Total #FEC Group = 4112                              Total #FEC Group = 4112                              Total #FEC Group = 4111                              Total #FEC Group = 4111                              Total #FEC Group = 4095                              Total #FEC Group = 4095                              Total #FEC Group = 4095                              Total #FEC Group = 4095                              Total #FEC Group = 4094                              Total #FEC Group = 4091                              Total #FEC Group = 4091                              Total #FEC Group = 4092                              Total #FEC Group = 4092                              Total #FEC Group = 4089                              Total #FEC Group = 4089                              Total #FEC Group = 4087                              Total #FEC Group = 4087                              Total #FEC Group = 4087                              Total #FEC Group = 4087                              Total #FEC Group = 4087                              Total #FEC Group = 4085                              Total #FEC Group = 4082                              Total #FEC Group = 4081                              Total #FEC Group = 4079                              Total #FEC Group = 4078                              Total #FEC Group = 4078                              Total #FEC Group = 4076                              Total #FEC Group = 4069                              Total #FEC Group = 4069                              Total #FEC Group = 4069                              Total #FEC Group = 4069                              Total #FEC Group = 4069                              Total #FEC Group = 4069                              Total #FEC Group = 4068                              Total #FEC Group = 4057                              Total #FEC Group = 4057                              Total #FEC Group = 4053                              Total #FEC Group = 4053                              Total #FEC Group = 4053                              Total #FEC Group = 4052                              Total #FEC Group = 4062                              Total #FEC Group = 4058                              Total #FEC Group = 4057                              Total #FEC Group = 4057                              Total #FEC Group = 4054                              Total #FEC Group = 4050                              Total #FEC Group = 4049                              Total #FEC Group = 4052                              Total #FEC Group = 4049                              Total #FEC Group = 4050                              Total #FEC Group = 4050                              Total #FEC Group = 4049                              Total #FEC Group = 4049                              Total #FEC Group = 4045                              Total #FEC Group = 4045                              Total #FEC Group = 4045                              Total #FEC Group = 4045                              Total #FEC Group = 4045                              Total #FEC Group = 4043                              Total #FEC Group = 4045                              Total #FEC Group = 4045                              Total #FEC Group = 4045                              Total #FEC Group = 4045                              Total #FEC Group = 4044                              Total #FEC Group = 4035                              Total #FEC Group = 4035                              Total #FEC Group = 4034                              Total #FEC Group = 4034                              Total #FEC Group = 4033                              Total #FEC Group = 4033                              Total #FEC Group = 4033                              Total #FEC Group = 4034                              Total #FEC Group = 4034                              Total #FEC Group = 4034                              Total #FEC Group = 4033                              Total #FEC Group = 4034                              Total #FEC Group = 4034                              Total #FEC Group = 4036                              Total #FEC Group = 4034                              Total #FEC Group = 4034                              Total #FEC Group = 4041                              Total #FEC Group = 4033                              Total #FEC Group = 4030                              Total #FEC Group = 4033                              Total #FEC Group = 4037                              Total #FEC Group = 4038                              Total #FEC Group = 4037                              Total #FEC Group = 4037                              Total #FEC Group = 4037                              Total #FEC Group = 4037                              Total #FEC Group = 4038                              Total #FEC Group = 4038                              Total #FEC Group = 4025                              Total #FEC Group = 4025                              Total #FEC Group = 4024                              Total #FEC Group = 4023                              Total #FEC Group = 4030                              Total #FEC Group = 4030                              Total #FEC Group = 4029                              Total #FEC Group = 4029                              Total #FEC Group = 4035                              Total #FEC Group = 4034                              Total #FEC Group = 4034                              Total #FEC Group = 4034                              Total #FEC Group = 4034                              Total #FEC Group = 4030                              Total #FEC Group = 4030                              Total #FEC Group = 4030                              Total #FEC Group = 4030                              Total #FEC Group = 4030                              Total #FEC Group = 4030                              Total #FEC Group = 4030                              Total #FEC Group = 4030                              Total #FEC Group = 4024                              Total #FEC Group = 4020                              Total #FEC Group = 4020                              Total #FEC Group = 4020                              Total #FEC Group = 4022                              Total #FEC Group = 4015                              Total #FEC Group = 4015                              Total #FEC Group = 4014                              Total #FEC Group = 4014                              Total #FEC Group = 4014                              Total #FEC Group = 4009                              Total #FEC Group = 4009                              Total #FEC Group = 4009                              Total #FEC Group = 4009                              Total #FEC Group = 4009                              Total #FEC Group = 4009                              Total #FEC Group = 4009                              Total #FEC Group = 4009                              Total #FEC Group = 4009                              Total #FEC Group = 4011                              Total #FEC Group = 4011                              Total #FEC Group = 4011                              Total #FEC Group = 4009                              Total #FEC Group = 4009                              Total #FEC Group = 4009                              Total #FEC Group = 4009                              Total #FEC Group = 4009                              Total #FEC Group = 4009                              Total #FEC Group = 4005                              Total #FEC Group = 4005                              Total #FEC Group = 3999                              Total #FEC Group = 3999                              Total #FEC Group = 3998                              Total #FEC Group = 3993                              Total #FEC Group = 3991                              Total #FEC Group = 3991                              Total #FEC Group = 3992                              Total #FEC Group = 3992                              Total #FEC Group = 3990                              Total #FEC Group = 3990                              Total #FEC Group = 3990                              Total #FEC Group = 3989                              Total #FEC Group = 3982                              Total #FEC Group = 3982                              Total #FEC Group = 3981                              Total #FEC Group = 3981                              Total #FEC Group = 3976                              Total #FEC Group = 3976                              Total #FEC Group = 3976                              Total #FEC Group = 3984                              Total #FEC Group = 3984                              Total #FEC Group = 3983                              Total #FEC Group = 3983                              Total #FEC Group = 3981                              Total #FEC Group = 3981                              Total #FEC Group = 3981                              Total #FEC Group = 3979                              Total #FEC Group = 3984                              Total #FEC Group = 3984                              Total #FEC Group = 3984                              Total #FEC Group = 3984                              Total #FEC Group = 3984                              Total #FEC Group = 3984                              Total #FEC Group = 3984                              Total #FEC Group = 3984                              Total #FEC Group = 3981                              Total #FEC Group = 3981                              Total #FEC Group = 3981                              Total #FEC Group = 3981                              Total #FEC Group = 3981                              Total #FEC Group = 3979                              Total #FEC Group = 3979                              Total #FEC Group = 3979                              Total #FEC Group = 3967                              Total #FEC Group = 3967                              Total #FEC Group = 3967                              Total #FEC Group = 3966                              Total #FEC Group = 3966                              Total #FEC Group = 3966                              Total #FEC Group = 3965                              Total #FEC Group = 3964                              Total #FEC Group = 3964                              Total #FEC Group = 3953                              Total #FEC Group = 3953                              Total #FEC Group = 3951                              Total #FEC Group = 3936                              Total #FEC Group = 3936                              Total #FEC Group = 3936                              Total #FEC Group = 3933                              Total #FEC Group = 3933                              Total #FEC Group = 3931                              Total #FEC Group = 3931                              Total #FEC Group = 3931                              Total #FEC Group = 3931                              Total #FEC Group = 3931                              Total #FEC Group = 3931                              Total #FEC Group = 3931                              Total #FEC Group = 3926                              Total #FEC Group = 3925                              Total #FEC Group = 3923                              Total #FEC Group = 3923                              Total #FEC Group = 3922                              Total #FEC Group = 3922                              Total #FEC Group = 3922                              Total #FEC Group = 3921                              Total #FEC Group = 3921                              Total #FEC Group = 3919                              Total #FEC Group = 3916                              Total #FEC Group = 3916                              Total #FEC Group = 3916                              Total #FEC Group = 3916                              Total #FEC Group = 3916                              Total #FEC Group = 3916                              Total #FEC Group = 3913                              Total #FEC Group = 3913                              Total #FEC Group = 3913                              Total #FEC Group = 3900                              Total #FEC Group = 3894                              Total #FEC Group = 3897                              Total #FEC Group = 3894                              Total #FEC Group = 3894                              Total #FEC Group = 3893                              Total #FEC Group = 3893                              Total #FEC Group = 3890                              Total #FEC Group = 3883                              Total #FEC Group = 3883                              Total #FEC Group = 3882                              Total #FEC Group = 3882                              Total #FEC Group = 3880                              Total #FEC Group = 3873                              Total #FEC Group = 3868                              Total #FEC Group = 3863                              Total #FEC Group = 3863                              20704 patterns simulated.
+
+fraig> usage
+Period time used : 8.91 seconds
+Total time used  : 8.98 seconds
+Total memory used: 16.03 M Bytes
+
+fraig> cirp -fec
+[0] 0 3393 3394 3438 3439 5795 5796 5828 5829 5830 6136 6137 6138 6171 6172 6584 6606 6613 6632 6653 6673 6674 6680 6694 6701 6726 6749 6755 6768 6782 6789 6800 6817 6829 6835 6840 6842 6845 7928 7982 7991 8052 8119 8176 8177 8189 8242 8243 8255 8304 8305 8314 8363 8364 8373 8420 8421 8430 8480 8481 8490 8537 8538 8547 8599 8600 8611 8654 8655 8666 8712 8713 8724 8769 8770 8781 8834 8835 8843 8902 8917 8926 9419 9654 10431 10444 10919 10934 10973 10995 10996 10997 11144 12475 12482 12492 12500 12522 12529 12539 12554 12555 12557 12576 12577 12578 12599 12607 12608 12615 12623 12634 12647 12650 12658 12666 12667 12680 12681 12698 12712 12713 12725 12726 12727 12732 12736 12737 12740 13933 13949 14015 14073 14082 14089 14163 14219 14220 14229 14233 14287 14288 14297 14351 14352 14361 14363 14417 14418 14427 14484 14485 14494 14496 14550 14551 14560 14619 14620 14629 14631 14683 14684 14693 14750 14751 14760 14816 14817 14823 14885 14960 14971 15472 15598 16379 16387 16399 16954 17011 17012 17013 17144 17237 20858 22379 22449 22460 22522 22597 22747 22748 22752 22753 22793 22794 22818 22819 22839 22840 22846 22847 22912 22913 22920 22921 22947 22948 22984 22985 22992 22993 23012 23013 23046 23047 23053 23054 23062 23063 23123 23124 23130 23131 23139 23140 23200 23201 23207 23208 23220 23221 23274 23275 23281 23282 23290 23293 23296 23297 23327 23329 23368 23372 23373 23380 23381 23393 23394 23406 23438 23443 23444 23451 23452 23464 23465 23476 23516 23518 23522 23523 23530 23531 23543 23544 23555 23557 23590 23594 23595 23602 23603 23615 23616 23628 23662 23667 23668 23675 23676 23688 23689 23700 23723 23724 23728 23729 23735 23736 23741 23742 23775 23776 23837 23906 24090 24108 24132 24149 24150 24167 24168 24172 24173 24177 24190 24191 24195 24196 24213 24214 24218 24219 24236 24237 24241 24242 24246 24259 24260 24264 24265 24282 24283 24287 24288 24305 24306 24310 24311 24316 24328 24329 24333 24334 24351 24352 24357 24358 24374 24375 24380 24381 24397 24398 24403 24404 24420 24421 24426 24427 24443 24445 24446 24450 24451 24468 24469 24473 24474 24491 24492 24496 24497 24513 24514 24518 24519 24520 24552 24586 24697 24717 24786 24791 24811 24821 24901 24988 25292 25405 25407 25447 25449 25450 25494 25496 25538 25539 25583 25585 25592 25627 25628 25726 25728 25774 25775 25823 25825 25869 25871 25872 25917 25920 25922 25967 25968 25976 26016 26018 26064 26065 26074 26075 26076 26234 26235 26244 26246 26253 26254 26263 26265 26272 26273 26282 26284 26291 26292 26301 26303 26310 26311 26320 26322 26329 26330 26339 26341 26348 26349 26358 26360 26367 26368 26375 26376 26397 26398 26400 !26406 26425 26451 26456 !26460 26462 26482 26486 !26492 26494 26512 26513 !26514 26520 26526 26546 26547 !26548 26558 26580 26587 26608 26613 26614 26640 26641 26668 26688 26694 26695 26721 26722 26749 26770 26776 26802 26803 26808 26830 26833 26846 26847 26856 26857 26862 26874 26875 26878 26884 26887 26900 26901 26908 26911 26916 26928 26929 26934 26938 26941 26954 26955 26958 26960 26963 26969 26981 26982 26987 26988 26991 !26992 26993 27006 27007 27012 27015 27021 27033 27034 27039 27040 27043 !27044 27045 27058 27059 27064 27067 27069 !27070 27073 27085 27086 27091 27092 27095 !27096 27097 27110 27111 27114 27116 27119 27125 27137 27138 27143 27144 27149 27162 27163 27166 27168 27171 27177 27189 27190 27193 27195 27197 27199 !27200 27202 27214 27215 27218 27220 27221 27224 !27225 27226 27239 27242 27245 27248 27249 27250 27253 27295 27296 27297 27298 27302 27311 27314 27319 31399 31469 31690 31691 31696 31697 31743 31744 31770 31771 31781 31782 31788 31789 31840 31841 31846 31847 31892 31893 31934 31935 31942 31943 31956 31969 31970 31980 31994 31995 31999 32000 32013 32019 32020 32038 32068 32069 32075 32076 32084 32085 32093 32131 32145 32146 32152 32153 32161 32162 32170 32173 32207 32209 32222 32223 32229 32230 32238 32242 32243 32273 32296 32297 32303 32304 32312 32315 32318 32319 32347 32349 32388 32392 32393 32400 32401 32413 32414 32426 32458 32463 32464 32471 32472 32484 32485 32496 32536 32538 32542 32543 32550 32551 32563 32564 32575 32577 32610 32614 32615 32622 32623 32635 32636 32648 32681 32686 32687 32694 32695 32707 32708 32719 32742 32743 32747 32748 32754 32755 32760 32761 32794 32795 32830 32831 32855 32870 32888 32921 32943 32966 32967 32989 32990 33012 33035 33036 33058 33081 33104 33127 33145 33146 33150 33163 33164 33168 33169 33173 33186 33187 33191 33192 33196 33209 33210 33214 33215 33219 33232 33233 33237 33238 33242 33255 33256 33260 33261 33265 33278 33279 33283 33284 33288 33296 33301 33302 33306 33307 33319 33324 33325 33329 33330 33331 33335 33347 33348 33352 33353 33354 33370 33371 33375 33376 33377 33381 33393 33394 33398 33399 33400 33416 33417 33421 33422 33423 33439 33440 33444 33445 33446 33462 33463 33464 33465 33469 33470 !33481 33485 33487 33488 33492 33493 33508 33510 33511 33515 33516 33531 33532 33533 33537 33538 33539 33562 33580 33588 33624 33630 33654 33655 !33657 33692 !33694 33729 33735 33740 33745 33755 33765 33770 33775 33785 33790 33800 33805 33813 33814 33819 33824 33829 33834 33839 33844 33849 33854 33859 33864 33869 33874 33879 33884 33921 33944 34073 34244 34287 34329 34403 34404 34412 34445 34448 34450 34492 34493 34537 34539 34581 34582 34626 34628 34670 34671 34679 34769 34771 34817 34818 34866 34868 34914 34915 34918 34963 34965 35010 35011 35059 35061 35107 35108 35118 35119 35147 35219 35247 35259 35277 35278 35287 35289 35296 35297 35306 35308 35315 35316 35323 35325 35327 35333 35334 35335 35344 35346 35352 35353 35354 35363 35365 35372 35373 35380 35382 35384 35391 35392 35401 35403 35410 35411 35418 35419 35435 35436 35440 35441 35468 35476 35494 35525 35529 !35535 35563 35569 35589 35590 !35591 35592 35601 !35606 35629 35630 35657 35684 35705 35710 35711 35731 35737 35738 35764 35765 35791 35792 35813 35819 35822 35836 35839 35846 35851 35869 35873 35876 35890 35897 35900 35905 35918 35923 35926 35927 35930 35948 35951 35953 35954 35959 35971 35972 35977 35980 35981 35984 35997 35998 36003 36006 36008 !36009 36012 36024 36025 36028 36030 36031 36036 36049 36050 36055 36058 36064 36076 36077 36082 36083 36086 !36087 36088 36101 36102 36105 36107 36110 36116 36128 36129 36132 36133 36134 36135 36138 !36139 36140 !36149 !36150 36153 36154 36157 36159 36162 36164 !36165 36168 36180 36181 36184 36186 36187 36190 !36191 36192 36205 36206 36211 36214 36220 36232 36233 36238 36240 36245 36257 36258 36263 36264 36269 36282 36285 36288 36291 36292 36293 36296 36339 36340 36341 36345 36354 36357 36362 45149 46754 46904 46905 46923 46924 46976 46977 46997 46998 47004 47005 47055 47056 47074 47075 47081 47082 47126 47127 47149 47150 47156 47157 47206 47207 47225 47226 47232 47233 47282 47283 47292 47302 47303 47309 47310 47320 47355 47356 47363 47374 47375 47381 47382 47391 47432 47433 47440 47443 47453 47454 47460 47461 47470 47474 47511 47512 47519 47530 47531 47537 47538 47547 47585 47586 47593 47596 47606 47607 47613 47614 47623 47625 47665 47666 47674 47684 47685 47691 47692 47702 47740 47741 47748 47759 47760 47766 47767 47776 47811 47812 47819 47823 47833 47834 47840 47841 47850 47856 47907 47908 47915 47916 47929 47942 47943 47953 47979 47980 47987 47988 48000 48014 48015 48024 48059 48060 48067 48068 48081 48082 48096 48097 48106 48107 48242 48264 48315 48471 48484 48485 48489 48490 48507 48508 48512 48513 48530 48531 48535 48536 48553 48554 48558 48559 48576 48577 48581 48582 48591 48599 48600 48604 48605 48622 48623 48627 48628 48645 48646 48650 48651 48668 48669 48673 48674 48691 48692 48696 48697 48714 48715 48719 48720 48737 48738 48742 48743 48747 48760 48761 48765 48766 48783 48784 48788 48789 48806 48807 48811 48812 48829 48830 48834 48835 48886 48991 49005 49014 49184 49219 49229 49239 49648 49649 49746 49748 49749 49793 49794 49837 49838 49881 49882 49925 49926 49931 49967 49969 49970 49980 49981 50024 50025 50122 50123 50170 50171 50218 50219 50266 50267 50314 50315 50362 50363 50410 50411 50453 50457 50458 50598 50616 50617 50626 50628 50635 50636 50647 50649 50656 50657 50666 50668 50675 50676 50685 50687 50694 50695 50704 50706 50713 50714 50723 50725 50732 50733 50742 50744 50751 50752 50759 50760 50781 50782 50783 50784 !50790 50809 50810 !50815 50835 50840 !50844 50866 50870 50873 !50876 50904 50910 50913 50930 50931 !50932 50937 50942 50970 50971 50997 50998 51024 51025 51051 51052 51072 51078 51079 51105 51106 51126 51132 51133 51154 51159 51160 51186 51187 51205 51210 51213 51214 51217 51238 51240 51241 51246 51258 51259 51264 51267 51268 51271 51284 51285 51288 51292 51294 51295 51300 51312 51313 51318 51321 51322 51325 51338 51339 51342 51345 51347 !51349 51354 51365 51366 51369 51370 51373 !51375 51378 51390 51391 51394 51397 51399 !51401 51406 51417 51418 51421 51422 51425 !51427 51430 51442 51443 51448 51451 51453 !51454 51457 51469 51470 51475 51476 51479 !51480 51481 51494 51495 51500 51503 51505 !51506 51509 51521 51522 51527 51528 51531 !51532 51533 51546 51547 51552 51555 51557 51560 51573 51574 51579 51581 51583 !51584 51586 51598 51599 51604 51605 51608 51618 51623 51624 51629 51630 51633 51637 51640 51643 51678 51679 51680 51684 51693 51696 51701 54185 55783 55794 55933 55934 55944 55945 55951 55952 56004 56005 56010 56011 56057 56058 56084 56085 56095 56096 56102 56103 56154 56155 56160 56161 56206 56207 56248 56249 56256 56257 56283 56284 56308 56309 56313 56314 56333 56334 56382 56383 56389 56390 56398 56399 56407 56445 56459 56460 56466 56467 56475 56476 56487 56523 56536 56537 56543 56544 56552 56556 56557 56587 56610 56611 56617 56618 56626 56629 56632 56633 56661 56663 56702 56706 56707 56714 56715 56727 56728 56740 56772 56777 56778 56785 56786 56798 56799 56810 56850 56852 56856 56857 56864 56865 56877 56878 56889 56891 56924 56928 56929 56936 56937 56949 56950 56962 56995 57000 57001 57008 57009 57021 57022 57033 57056 57057 57061 57062 57068 57069 57074 57075 57108 57109 57146 57147 57170 57185 57203 57234 57258 57281 57304 57326 57327 57350 57373 57396 57418 57419 57442 57459 57460 57465 57482 57483 57488 57500 57501 57505 57506 57511 57523 57524 57528 57529 57534 57546 57547 57551 57552 57557 57569 57570 57574 57575 57580 57592 57593 57597 57598 57602 57615 57616 57620 57621 57625 57638 57639 57643 57644 57645 57649 57661 57662 57667 57668 57672 57684 57685 57690 57691 57695 57707 57708 57713 57714 57718 57730 57731 57736 57737 57741 57753 57754 57759 57760 57764 57776 57777 57778 57779 57783 57784 !57795 57800 57801 57802 57806 57807 57813 57823 57824 57825 57829 57830 57846 57847 57851 57852 57853 57910 57934 58045 58085 58104 58109 58114 58139 58144 58174 58180 58190 58200 58223 58246 58321 58406 58491 58581 58625 58738 58740 58782 58783 58791 58827 58829 58869 58871 58872 58875 58913 58916 58918 58960 58961 59059 59061 59105 59107 59108 59156 59158 59202 59204 59205 59250 59253 59255 59299 59300 59301 59309 59349 59351 59396 59397 59398 59408 59409 59548 59549 59556 59558 59560 59567 59568 59577 59579 59586 59587 59594 59596 59598 59605 59606 59615 59617 59624 59625 59634 59636 59643 59644 59653 59655 59662 59663 59672 59674 59681 59682 59691 59693 59700 59701 59708 59709 59730 59731 59733 !59739 59758 59759 !59764 59784 59815 59827 59845 59846 !59847 59859 59879 59880 !59881 59891 59919 59920 59947 59974 60001 60021 60028 60049 60054 60055 60081 60082 60105 60109 60112 60133 60135 60136 60141 60154 60159 60163 60166 60180 60187 60190 60195 60208 60213 60217 60220 60234 60237 60241 60244 60249 60262 60265 60267 60271 60274 60288 60293 60296 60302 60320 60321 60326 60339 60340 60345 60348 60354 60366 60367 60372 60373 60378 60391 60392 60397 60400 60406 60418 60419 60424 60425 60430 60443 60444 60449 60452 60458 60470 60471 60476 60477 60480 !60481 60482 60495 60496 60501 60504 60510 60522 60523 60526 60528 60530 60535 60547 60548 60553 60554 60557 !60558 60559 60572 60575 60578 60581 60582 60583 60586 60590 60629 60630 60631 60635 60644 60647 60652 64874 64875 64886 64893 64952 64953 65023 65024 65029 65030 65076 65077 65103 65104 65114 65115 65121 65122 65173 65174 65179 65180 65225 65226 65267 65268 65275 65276 65302 65303 65327 65328 65332 65333 65346 65352 65353 65371 65401 65402 65408 65409 65417 65418 65426 65464 65478 65479 65485 65486 65494 65495 65503 65506 65540 65542 65555 65556 65562 65563 65571 65575 65576 65606 65629 65630 65636 65637 65645 65648 65651 65652 65680 65682 65721 65725 65726 65733 65734 65746 65747 65759 65791 65796 65797 65804 65805 65817 65818 65829 65869 65871 65875 65876 65883 65884 65896 65897 65908 65910 65943 65947 65948 65955 65956 65968 65969 65981 66014 66019 66020 66027 66028 66040 66041 66052 66075 66076 66080 66081 66087 66088 66093 66094 66127 66128 66166 66175 66189 66213 66221 66281 66304 66322 66373 66392 66396 66437 66465 66483 66488 66497 66502 66507 66511 66534 66547 66548 66565 66566 66570 66571 66576 66580 66588 66589 66593 66594 66598 66599 66611 66612 66616 66617 66621 66625 66629 66634 66635 66639 66640 66644 66648 66652 66657 66658 66663 66664 66672 66680 66681 66686 66687 66691 66703 66704 66709 66710 66718 66726 66727 66731 66732 66733 66737 66741 66749 66750 66754 66755 66756 66762 66772 66773 66778 66779 66785 66796 66797 66798 66802 66803 66808 66819 66820 66821 66825 66826 66842 66843 66844 66848 66849 66855 66864 66865 66866 66871 66872 66897 66937 66973 66988 66997 67045 67068 67083 67093 67103 67113 67138 67147 67157 67162 67182 67192 67207 67212 67217 67577 67583 67668 67744 67781 67783 67825 67826 67833 67870 67872 67878 67914 67915 67959 67961 67967 68003 68004 68011 68102 68104 68110 68150 68151 68158 68199 68201 68207 68247 68248 68296 68298 68343 68344 68352 68392 68394 68440 68441 68450 68451 68452 68480 68509 68528 68610 68611 68620 68622 68628 68629 68630 68639 68641 68648 68649 68658 68660 68667 68668 68677 68679 68686 68687 68696 68698 68705 68706 68715 68717 68724 68725 68734 68736 68743 68744 68751 68752 68765 68769 68772 68801 68853 68858 68862 !68868 68891 68922 68923 !68924 68925 68934 !68939 68957 68963 68985 68990 69011 69017 69039 69044 69071 69093 69098 69119 69152 69176 69201 69202 69206 69222 69223 69230 69238 69250 69251 69255 69256 69263 69276 69277 69284 69292 69304 69305 69310 69317 69330 69331 69336 69339 69345 69357 69358 69364 69369 69382 69383 69387 69388 69391 69397 69409 69410 69415 69416 69421 69434 69435 69440 69443 69449 69461 69462 69466 69468 69473 69486 69487 69491 69492 69495 69501 69513 69514 69518 69519 69520 69525 69538 69539 69544 69547 69553 69565 69566 69571 69573 69578 69590 69591 69595 69596 69597 69602 69615 69618 69620 69621 69624 69625 69626 69629 !69635 !69636 69671 69672 69673 69674 69678 69687 69690 69695 80152 80163 80170 80301 80306 80307 80380 80381 80392 80399 80456 80457 80544 80545 80552 80553 80580 80604 80605 80609 80610 80678 80679 80685 80686 80694 80695 80755 80756 80762 80763 80771 80772 80783 80819 80832 80833 80839 80840 80848 80852 80853 80883 80906 80907 80913 80914 80922 80925 80928 80929 80957 80959 80998 81002 81003 81010 81011 81023 81024 81036 81068 81073 81074 81081 81082 81094 81095 81106 81146 81148 81152 81153 81160 81161 81173 81174 81185 81187 81220 81224 81225 81232 81233 81245 81246 81258 81291 81296 81297 81304 81305 81317 81318 81329 81369 81370 81375 81376 81383 81384 81396 81397 81408 81409 81479 81488 81551 81556 81625 81667 81712 81754 81782 81795 81800 81840 81841 81845 81846 81863 81864 81868 81869 81886 81887 81891 81892 81909 81910 81914 81915 81932 81933 81938 81939 81943 81955 81956 81960 81961 81962 81978 81979 81984 81985 82001 82002 82007 82008 82024 82025 82030 82031 82037 82047 82048 82053 82054 82058 82072 82073 82077 82078 82095 82096 82100 82101 82118 82119 82123 82124 82130 82140 82141 82146 82147 82180 82214 82257 82291 82296 82301 82304 82309 82310 !82312 82314 82319 82324 82325 !82327 82369 !82371 82499 82554 82555 82565 82566 !82573 82575 82586 82597 82608 82619 82626 82637 82700 82742 82784 82826 82863 82905 82907 82947 82989 82991 83054 83056 83059 !83065 83100 83101 83104 83108 !83109 83144 83145 83148 !83153 83188 83189 !83197 83232 83233 83235 83236 !83241 83276 83277 83279 83280 !83285 83320 83321 83323 83324 !83329 83418 83419 83421 83422 !83427 83466 83469 83470 83474 83514 83517 83518 83562 83563 83565 83566 !83571 83610 83613 83614 83619 83624 83625 83664 83672 83673 83712 83720 83721 83760 83767 83768 83774 83870 83889 83900 83902 83909 83910 83919 83921 83928 83929 83938 83940 83947 83948 83957 83959 83965 83966 83967 83976 83978 83985 83986 83993 83995 83997 84003 84004 84005 84014 84016 84023 84024 84033 84035 84041 84042 84043 84052 84054 84061 84062 84069 84070 84083 84085 !84088 84090 84102 84103 84127 84141 84150 84151 84156 84171 84176 84180 !84186 84188 84209 84214 84220 84223 84240 84241 !84242 84243 84247 84255 !84257 84274 84275 !84294 84302 84308 84328 84356 84361 84382 84388 84389 84410 84415 84416 84436 84437 84442 !84456 84464 84469 84470 84490 84518 84519 84523 84527 !84536 84541 84544 84548 84551 84556 84572 84573 84574 84578 84581 !84590 84594 84595 84598 84602 84605 84610 84622 84623 84626 84627 84628 84632 84635 !84644 84648 84649 84652 84654 84657 84663 84675 84676 84679 84680 84681 84682 84687 !84696 84700 84701 84704 84709 84715 84727 84728 84731 84734 84739 84752 84753 84756 84758 84761 84767 84779 84780 84783 84784 84785 84786 84789 !84790 84791 !84800 !84801 84804 84805 84808 84809 84813 84815 84819 !84827 84831 84832 84835 84836 84837 84838 84843 !84852 84856 84857 84860 84861 84865 84871 !84879 84883 84884 84887 84888 84889 84891 84893 !84894 84896 !84904 !84905 84908 84909 84912 84913 84914 84915 84918 !84919 84920 !84929 !84930 84933 84934 84937 84939 84940 84943 !84944 84948 84950 84953 84987 84988 84989 84990 84994 85003 85006 85011
+[1] 3702 !3706
+[2] 3765 !3769
+[3] 3787 !3791
+[4] 3825 !3827
+[5] 3947 !3949
+[6] 3961 !3963
+[7] 4042 !4046
+[8] 4174 !4176
+[9] 4188 !4190
+[10] 4272 !4276
+[11] 4291 !4295
+[12] 4310 !4314
+[13] 4329 !4333
+[14] 4445 !4447
+[15] 4459 !4461
+[16] 4473 !4475
+[17] 4555 !4559
+[18] 4574 !4578
+[19] 4593 !4597
+[20] 4615 !4619
+[21] 4720 !4724
+[22] 4742 !4746
+[23] 4761 !4765
+[24] 4780 !4784
+[25] 4799 !4803
+[26] 4818 !4822
+[27] 4968 !4970
+[28] 4992 !4994
+[29] 5006 !5008
+[30] 5052 !5054
+[31] 5126 !5128
+[32] 5161 !5163
+[33] 5212 !5214
+[34] 5432 !5434
+[35] 5463 !5465
+[36] 5522 !5524
+[37] 5606 !5608
+[38] 5632 !5634
+[39] 5648 !5650
+[40] 5663 !5665
+[41] 5692 !5694
+[42] 5720 !5722
+[43] 5839 5842 6098
+[44] 6181 6184 6440
+[45] 6447 6448
+[46] 6486 6646
+[47] 6520 6623
+[48] 6530 6651
+[49] 6557 6664
+[50] 6566 6576
+[51] 6583 !6585
+[52] 6591 !6607
+[53] 6596 6644 6688
+[54] 6614 !6615
+[55] 6621 !6633
+[56] 6631 6652 6693
+[57] 6639 !6654
+[58] 6641 6709
+[59] 6648 6742 6777
+[60] 6658 !6841 !6846
+[61] 6660 !6675
+[62] 6666 6809
+[63] 6681 !6682
+[64] 6695 !6702
+[65] 6707 !6727
+[66] 6718 6767
+[67] 6732 !6750
+[68] 6736 6764
+[69] 6744 6812
+[70] 6748 6781
+[71] 6756 !6757
+[72] 6769 !6783
+[73] 6776 6799
+[74] 6788 !6790
+[75] 6801 !6818
+[76] 6823 !6830
+[77] 6836 !6837
+[78] 6843 !6844
+[79] 6868 !6963 !6993
+[80] 6998 9659
+[81] 7001 9655
+[82] 7014 !9652
+[83] 7034 10758
+[84] 7044 10797
+[85] 7045 11064
+[86] 7047 !10958
+[87] 7087 10745
+[88] 7102 !7113
+[89] 7143 10732
+[90] 7159 !7165
+[91] 7163 11054
+[92] 7164 11066
+[93] 7208 10719
+[94] 7225 11036
+[95] 7226 11055
+[96] 7227 !7231
+[97] 7239 11070
+[98] 7274 10781
+[99] 7287 11035
+[100] 7288 11037
+[101] 7289 !7298
+[102] 7294 7415
+[103] 7344 10705
+[104] 7363 11034
+[105] 7364 11043
+[106] 7365 !10949
+[107] 7405 11039
+[108] 7406 11030
+[109] 7407 !7421
+[110] 7435 10692
+[111] 7484 11031
+[112] 7485 11028
+[113] 7486 !10952
+[114] 7502 10678
+[115] 7561 10665
+[116] 7569 11026
+[117] 7570 11027
+[118] 7571 !7575
+[119] 7629 10825
+[120] 7631 11025
+[121] 7632 11049
+[122] 7633 !7639
+[123] 7685 10637
+[124] 7699 11023
+[125] 7700 11052
+[126] 7701 !10974
+[127] 7745 11017
+[128] 7746 11022
+[129] 7747 !7768
+[130] 7795 10649
+[131] 7815 11014
+[132] 7816 11018
+[133] 7817 !7834
+[134] 7818 11024
+[135] 7861 10622
+[136] 7881 11076
+[137] 7882 11015
+[138] 7883 !10962
+[139] 7925 10609
+[140] 7929 !7930
+[141] 7939 !11079
+[142] 7946 !7992 7993
+[143] 7947 11077
+[144] 7948 11013
+[145] 7949 !10959
+[146] 7981 8042
+[147] 7983 !7984
+[148] 7988 10594
+[149] 8007 !8053 8054
+[150] 8008 11082
+[151] 8009 11012
+[152] 8010 !10965
+[153] 8012 !11081
+[154] 8049 10554
+[155] 8068 !8120 8121
+[156] 8069 11085
+[157] 8070 11104
+[158] 8071 !8089
+[159] 8073 11083
+[160] 8109 8110
+[161] 8116 10579
+[162] 8135 !8190 8191
+[163] 8136 11091
+[164] 8137 11105
+[165] 8138 !10968
+[166] 8178 !8179
+[167] 8183 10566
+[168] 8203 !8256 8257
+[169] 8204 11087
+[170] 8205 11092
+[171] 8206 !8223
+[172] 8244 !8245
+[173] 8249 10540
+[174] 8266 !8315 8316
+[175] 8267 11086
+[176] 8268 11088
+[177] 8269 !8284
+[178] 8306 !8307
+[179] 8311 10528
+[180] 8325 8374 !8375 8431 !8432 8491 !8492 8548 !8549 8612 !8613 8667 !8668 8687 8725 !8726 8782 !8783 8844 !8845 8903 !8904 8918 !8919 8927 !8928 !11135 11321 11342 11343 11350 11351
+[181] 8326 11095
+[182] 8327 11112 11113
+[183] 8328 !10985
+[184] 8365 !8366
+[185] 8370 10518
+[186] 8376 8433 8493 8550 8614 8669 8727 8784 8846 8905 8920
+[187] 8386 8561 11097
+[188] 8387 11114 11115
+[189] 8388 !10943
+[190] 8422 !8423
+[191] 8427 10872
+[192] 8441 11096 11178
+[193] 8442 11110
+[194] 8443 !10942
+[195] 8482 !8483
+[196] 8487 10892
+[197] 8501 11008 11010 11011 11155
+[198] 8502 11109
+[199] 8503 !10944
+[200] 8539 !8540
+[201] 8544 10882
+[202] 8558 11123
+[203] 8559 11007
+[204] 8560 !8580
+[205] 8562 !8563
+[206] 8601 !8602
+[207] 8606 10491
+[208] 8620 11122
+[209] 8621 11009
+[210] 8622 !8635
+[211] 8656 !8657
+[212] 8661 10470
+[213] 8675 11126
+[214] 8676 11006
+[215] 8677 !10940
+[216] 8686 8805
+[217] 8714 !8715
+[218] 8719 10480
+[219] 8733 11131
+[220] 8734 11005 11352
+[221] 8735 !10969
+[222] 8737 11129
+[223] 8745 !8746 !8809
+[224] 8771 !8772
+[225] 8776 10505
+[226] 8791 11344
+[227] 8792 !10990
+[228] 8794 !8796
+[229] 8798 !11133
+[230] 8837 8838 10455
+[231] 8857 11138 11347
+[232] 8859 !10988
+[233] 8915 !10428 10432
+[234] 8922 !8932
+[235] 8923 8933
+[236] 9028 9031
+[237] 9035 9653
+[238] 9053 11399
+[239] 9313 !9425
+[240] 9314 9326 9338 9356 9362 9374 9386 9405 9417 9424 9432 9437
+[241] 9448 9657
+[242] 9514 10114
+[243] 9613 10092
+[244] 9734 !9736
+[245] 9746 !9748
+[246] 9860 !9862
+[247] 9872 !9874
+[248] 9890 !9892
+[249] 9902 !9904
+[250] 9960 !9962
+[251] 9972 !9974
+[252] 9990 !9992
+[253] 10002 !10004
+[254] 10058 !10060
+[255] 10070 !10072
+[256] 10138 !10140
+[257] 10151 !10153
+[258] 10203 10316
+[259] 10214 !10216
+[260] 10228 !10230
+[261] 10244 !10248
+[262] 10425 !10935
+[263] 10439 !10920
+[264] 10441 10921 !10922
+[265] 10443 !10445
+[266] 10513 10514
+[267] 10904 10905
+[268] 10910 10911
+[269] 10917 10918
+[270] 10926 10927
+[271] 10971 10972
+[272] 10981 11139 11146
+[273] 10982 11322
+[274] 10998 10999 !11000
+[275] 11002 11248
+[276] 11056 11237
+[277] 11124 !11125
+[278] 11140 11141
+[279] 11142 !11145 11183
+[280] 11241 11242
+[281] 11246 11247
+[282] 11260 11261
+[283] 11285 11286
+[284] 11332 !11333 !11334 !11335
+[285] 11353 11354
+[286] 11396 !11627
+[287] 11400 !11631
+[288] 11647 11656 11665 11727 11735 11762 11771 12181
+[289] 11802 !11804
+[290] 11833 !11835
+[291] 11861 !11863
+[292] 11925 !11928
+[293] 11996 !11998
+[294] 12059 !12061
+[295] 12079 !12081
+[296] 12099 !12101
+[297] 12206 !12212
+[298] 12230 !12232
+[299] 12402 12570
+[300] 12446 12575
+[301] 12471 !12476
+[302] 12483 !12484
+[303] 12490 !12493
+[304] 12499 !12501
+[305] 12507 !12523
+[306] 12509 12547
+[307] 12512 12568 12602
+[308] 12530 !12531
+[309] 12537 !12540
+[310] 12550 12587
+[311] 12556 !12558
+[312] 12565 12690
+[313] 12572 12644
+[314] 12579 !12580
+[315] 12589 12707
+[316] 12591 12701
+[317] 12600 !12609
+[318] 12616 !12617
+[319] 12624 !12625
+[320] 12631 !12635
+[321] 12648 !12651
+[322] 12657 !12659
+[323] 12668 !12669
+[324] 12682 !12683
+[325] 12714 !12715
+[326] 12728 !12729
+[327] 12733 !12734 !12741
+[328] 12738 !12739
+[329] 12763 !12859 !12889
+[330] 12821 17014
+[331] 12894 15607
+[332] 12897 15599
+[333] 12928 16853
+[334] 12936 16868
+[335] 12937 17313
+[336] 12939 !16967
+[337] 12946 !15592
+[338] 12958 !15590
+[339] 12984 !13007
+[340] 12996 16831
+[341] 13005 17314
+[342] 13006 17311
+[343] 13040 !13046
+[344] 13044 17310
+[345] 13045 17306
+[346] 13057 16819
+[347] 13100 16797
+[348] 13117 17307
+[349] 13118 17288
+[350] 13119 !13123
+[351] 13134 17316
+[352] 13163 17289
+[353] 13164 17283
+[354] 13165 !13174
+[355] 13188 16785
+[356] 13238 16763
+[357] 13257 17279
+[358] 13258 17282
+[359] 13259 !16956
+[360] 13302 16751
+[361] 13316 17280
+[362] 13317 17276
+[363] 13318 !13332
+[364] 13377 16729
+[365] 13396 17270
+[366] 13397 17277
+[367] 13398 !16959
+[368] 13407 17281
+[369] 13411 17290
+[370] 13446 16717
+[371] 13454 13518
+[372] 13465 17269
+[373] 13466 17296
+[374] 13467 !13471
+[375] 13515 16695
+[376] 13530 17271
+[377] 13531 17295
+[378] 13532 !13538
+[379] 13549 17273
+[380] 13584 16683
+[381] 13592 13651
+[382] 13603 17272
+[383] 13604 17293
+[384] 13605 !16992
+[385] 13648 16661
+[386] 13666 !13698
+[387] 13669 13699
+[388] 13670 17324
+[389] 13671 17302
+[390] 13672 !13676
+[391] 13673 13700
+[392] 13677 13701
+[393] 13678 13702
+[394] 13727 16649
+[395] 13735 13802 13809 13878 13942
+[396] 13740 17322
+[397] 13741 17300
+[398] 13742 !13748
+[399] 13743 13770
+[400] 13744 13771
+[401] 13745 13772
+[402] 13749 13773
+[403] 13750 13774
+[404] 13799 16627
+[405] 13808 !13810
+[406] 13818 13841
+[407] 13819 13842
+[408] 13820 17327
+[409] 13821 17299
+[410] 13822 !16971
+[411] 13824 13843
+[412] 13825 13844
+[413] 13826 13845
+[414] 13870 16615
+[415] 13877 !13879
+[416] 13888 13910
+[417] 13889 13911
+[418] 13890 17326
+[419] 13891 17268
+[420] 13892 !16968
+[421] 13893 13912
+[422] 13894 13913
+[423] 13895 13914
+[424] 13932 14000
+[425] 13934 !13935
+[426] 13939 16593
+[427] 13950 !13951
+[428] 13956 13978
+[429] 13957 13979
+[430] 13958 17333
+[431] 13959 17267
+[432] 13960 !16974
+[433] 13961 13980
+[434] 13962 13981
+[435] 13963 13982
+[436] 13968 17331
+[437] 13969 17332
+[438] 14007 16581
+[439] 14014 !14016 14017
+[440] 14020 17336
+[441] 14021 17266
+[442] 14022 !14030
+[443] 14025 14050
+[444] 14026 14051
+[445] 14027 14052
+[446] 14031 14053
+[447] 14032 14054
+[448] 14042 17334
+[449] 14072 14148 14149
+[450] 14074 !14075
+[451] 14079 16559
+[452] 14088 !14090 14091
+[453] 14098 14126
+[454] 14099 14127
+[455] 14100 17347
+[456] 14101 17340
+[457] 14102 !16962
+[458] 14104 14128
+[459] 14105 14129
+[460] 14106 14130
+[461] 14117 17342
+[462] 14155 16547
+[463] 14162 !14164 14165
+[464] 14172 14197
+[465] 14173 14198
+[466] 14174 17263
+[467] 14175 17338
+[468] 14176 !14180
+[469] 14177 14199
+[470] 14181 14200
+[471] 14182 14201
+[472] 14221 !14222
+[473] 14226 16525
+[474] 14232 !14234 14235
+[475] 14238 17344
+[476] 14239 17264
+[477] 14240 !14246
+[478] 14241 14265
+[479] 14242 14266
+[480] 14243 14267
+[481] 14247 14268
+[482] 14248 14269
+[483] 14289 !14290
+[484] 14294 16513
+[485] 14296 14298 !14299
+[486] 14306 14329
+[487] 14307 14330
+[488] 14308 17345
+[489] 14309 17260
+[490] 14310 !17002
+[491] 14312 14331
+[492] 14313 14332
+[493] 14314 14333
+[494] 14353 !14354
+[495] 14358 16493
+[496] 14362 14364 !14365
+[497] 14368 17261
+[498] 14369 17354
+[499] 14370 !16985
+[500] 14371 14395
+[501] 14376 14396
+[502] 14377 14397
+[503] 14379 14398
+[504] 14380 14399
+[505] 14419 !14420
+[506] 14424 16481
+[507] 14426 14428 !14429
+[508] 14440 14462
+[509] 14441 14463
+[510] 14442 17258
+[511] 14443 17353
+[512] 14444 !16984
+[513] 14445 14464
+[514] 14446 14465
+[515] 14447 14466
+[516] 14452 !17356
+[517] 14486 !14487
+[518] 14491 16461
+[519] 14495 14497 !14498
+[520] 14503 14528
+[521] 14504 14529
+[522] 14505 17257
+[523] 14506 17256
+[524] 14507 !16982
+[525] 14508 14530
+[526] 14509 14531
+[527] 14510 14532
+[528] 14516 17357
+[529] 14552 !14553
+[530] 14557 16449
+[531] 14559 14561 !14562
+[532] 14567 14597
+[533] 14568 14598
+[534] 14569 17255
+[535] 14570 17359
+[536] 14571 !14575
+[537] 14572 14599
+[538] 14576 14600
+[539] 14577 14601
+[540] 14582 17259
+[541] 14588 17360
+[542] 14621 !14622
+[543] 14626 16429
+[544] 14630 14632 !14633
+[545] 14638 !14644
+[546] 14639 14661
+[547] 14640 14662
+[548] 14641 14663
+[549] 14645 14664
+[550] 14646 14665
+[551] 14652 !17362
+[552] 14685 !14686
+[553] 14690 16909
+[554] 14692 14694 !14695
+[555] 14698 14726
+[556] 14703 14727
+[557] 14704 14728
+[558] 14705 14729
+[559] 14706 17364
+[560] 14707 17254
+[561] 14708 !16988
+[562] 14709 14730
+[563] 14710 14731
+[564] 14711 14732
+[565] 14752 !14753
+[566] 14757 16932
+[567] 14759 14761 !14762
+[568] 14767 14792
+[569] 14768 14793
+[570] 14769 14794
+[571] 14770 17253
+[572] 14771 17369
+[573] 14772 !16980
+[574] 14773 14795
+[575] 14774 14796
+[576] 14775 14797
+[577] 14784 17368
+[578] 14819 14820 16417
+[579] 14822 14824 !14825
+[580] 14831 14863
+[581] 14832 14864
+[582] 14836 14865
+[583] 14837 14866
+[584] 14840 !16979
+[585] 14841 14867
+[586] 14842 14868
+[587] 14843 14869
+[588] 14854 !17373
+[589] 14884 14886 !14887
+[590] 14890 14929
+[591] 14891 14930
+[592] 14893 14931
+[593] 14894 14932
+[594] 14895 17246
+[595] 14897 !17007
+[596] 14898 14933
+[597] 14899 14934
+[598] 14900 14935
+[599] 14951 14961 !14962
+[600] 14957 !16376 16380
+[601] 14969 14972 !14973
+[602] 15096 17420
+[603] 15100 !17404
+[604] 15471 !15478
+[605] 15693 15695
+[606] 16127 16136
+[607] 16131 16135
+[608] 16147 16257
+[609] 16369 !16955
+[610] 16370 16386
+[611] 16382 !16388
+[612] 16389 !16390 16392
+[613] 16391 16394
+[614] 16398 !16400
+[615] 17022 17297
+[616] 17029 17301
+[617] 17032 17339
+[618] 17046 17251
+[619] 17072 17073
+[620] 17150 !17179
+[621] 17185 17186
+[622] 17191 !17225
+[623] 17192 17245
+[624] 17236 17238
+[625] 17417 !17652
+[626] 17421 !17656
+[627] 17839 !17843
+[628] 17878 !17880
+[629] 17906 !17908
+[630] 17972 !17976
+[631] 18045 !18047
+[632] 18108 !18110
+[633] 18130 !18132
+[634] 18150 !18152
+[635] 18266 !18274
+[636] 18292 !18294
+[637] 18697 20988
+[638] 18699 21028 24942 25334 25663
+[639] 18701 20997
+[640] 18703 21022 24944 25336 25665
+[641] 18706 20994
+[642] 18708 21020 24950 25338 25667
+[643] 18710 20991
+[644] 18712 21018 24952 25344 25669
+[645] 18715 25651
+[646] 18716 20989 24978 25322 25652 26508
+[647] 18718 21034 24980 25324 25654
+[648] 18720 21032 24938 25326 25656
+[649] 18722 21030 24940 25332 25658
+[650] 18727 25674
+[651] 18728 21016 24954 25346 25675 26487
+[652] 18730 21010 24956 25348 25677
+[653] 18732 21008 24962 25350 25679
+[654] 18734 21006 24964 25308 25681
+[655] 18739 21004 24966 25310 25640
+[656] 18742 20998 24968 25312 25642
+[657] 18744 20995 24974 25314 25644
+[658] 18746 20992 24976 25320 25646
+[659] 19029 19032
+[660] 19046 !26383
+[661] 19073 19081
+[662] 19074 19082
+[663] 19093 !19094
+[664] 19099 !23807
+[665] 19104 !19240
+[666] 19105 !19238
+[667] 19107 19241
+[668] 19180 !27337
+[669] 19191 19276
+[670] 19225 19231
+[671] 19233 24936
+[672] 19291 !26427
+[673] 19319 20892
+[674] 19332 19383
+[675] 19342 26410
+[676] 19387 19416 19562
+[677] 19389 20608 20682
+[678] 19399 19915 20002
+[679] 19403 19412 19422 19736
+[680] 19404 19406 19650 19738
+[681] 19405 !19417
+[682] 19407 19557 20692 20766
+[683] 19408 20697
+[684] 19413 19415 19418
+[685] 19427 20001 20086 20252
+[686] 19435 20085 20255 20339
+[687] 19438 19564 19648 19733
+[688] 19440 19560 19645 20775
+[689] 19441 19649
+[690] 19447 23816
+[691] 19561 20780
+[692] 19563 19652 19821
+[693] 19565 !19742
+[694] 19651 19739 19825 19910
+[695] 19653 19826
+[696] 19737 19829 19913 19996
+[697] 19740 19914
+[698] 19828 19916 19999 20082
+[699] 19830 20000
+[700] 19917 !20089
+[701] 20003 20169
+[702] 20087 20256
+[703] 20171 20258 20342 20428
+[704] 20172 20343
+[705] 20257 20345 20514
+[706] 20259 !20431
+[707] 20344 20425 20517 20600
+[708] 20346 20518
+[709] 20436 20511 20602 20684
+[710] 20441 20603
+[711] 20524 20598 20686 20768
+[712] 20529 20687
+[713] 20613 !20770
+[714] 20855 !20859
+[715] 20861 26488
+[716] 20945 21115 23827 26521 !26527 !26528 !26615 !26616 !26642 !26643 !26696 !26697 !26723 !26724 !26804 !26805 !26858 !26859
+[717] 20969 20971
+[718] 21044 !21092
+[719] 21116 23828
+[720] 21121 23843
+[721] 21219 23859
+[722] 21223 !21308
+[723] 21238 !21542
+[724] 21239 21287
+[725] 21276 !21291
+[726] 21277 21288
+[727] 21278 21292
+[728] 21279 21293
+[729] 21321 !21328
+[730] 21342 23881
+[731] 21363 21410
+[732] 21364 21411
+[733] 21399 !21414
+[734] 21400 21419
+[735] 21401 21420
+[736] 21402 !21406 21421
+[737] 21404 21417
+[738] 21405 21415
+[739] 21408 !21423
+[740] 21416 21545
+[741] 21473 23904
+[742] 21525 !21549
+[743] 21526 21554
+[744] 21527 21555
+[745] 21528 !21533 !21552 21556
+[746] 21529 21546
+[747] 21531 21550
+[748] 21532 21551
+[749] 21536 !21558
+[750] 21585 !21595
+[751] 21609 23927
+[752] 21628 21678
+[753] 21629 21679
+[754] 21631 21681
+[755] 21632 21682
+[756] 21666 21814
+[757] 21667 !21685
+[758] 21668 21686
+[759] 21669 21687
+[760] 21670 21688
+[761] 21671 21689
+[762] 21672 21690
+[763] 21673 21691
+[764] 21742 23950
+[765] 21762 !21812
+[766] 21763 21811
+[767] 21764 21813
+[768] 21796 21914
+[769] 21798 !21817
+[770] 21799 21818
+[771] 21800 21819
+[772] 21801 21820
+[773] 21802 21821
+[774] 21803 21822
+[775] 21804 21823
+[776] 21873 23973
+[777] 21892 21910
+[778] 21893 21911
+[779] 21894 21912
+[780] 21895 21913
+[781] 21898 22009 22720 !23316 23501 23580 23581 !23654 23656 23657 23760 !23768
+[782] 21899 !21917
+[783] 21900 21918
+[784] 21901 21919
+[785] 21902 21920
+[786] 21903 21921
+[787] 21904 21922
+[788] 21905 21923
+[789] 21971 23996
+[790] 21991 !22007
+[791] 21992 22006
+[792] 21993 22008
+[793] 21994 22098
+[794] 21995 22099
+[795] 21996 !22012
+[796] 21998 22100
+[797] 21999 !22015
+[798] 22011 22082
+[799] 22061 24019
+[800] 22081 !22083
+[801] 22084 !22198 !22246 !22315 !22498
+[802] 22087 !22091
+[803] 22145 24042
+[804] 22202 !22206
+[805] 22219 24065
+[806] 22291 24088
+[807] 22312 !22322
+[808] 22318 !22400
+[809] 22371 24111
+[810] 22378 22448 22521 22596 22668 22669 22689 22690
+[811] 22380 !22381
+[812] 22446 24134
+[813] 22450 !22451
+[814] 22459 22532
+[815] 22461 !22462
+[816] 22499 !22573
+[817] 22519 24157
+[818] 22523 !22524
+[819] 22533 22540
+[820] 22550 22583
+[821] 22574 !22623
+[822] 22595 24180
+[823] 22598 !22599 22603 !22662
+[824] 22602 22644
+[825] 22629 22729
+[826] 22667 24203
+[827] 22670 22691 22698
+[828] 22671 22692 22741
+[829] 22677 22707
+[830] 22696 22697
+[831] 22730 22731
+[832] 22746 24226
+[833] 22749 !22750 22754 !22755 22795 !22796 !22812
+[834] 22766 22804
+[835] 22772 !22773
+[836] 22774 !22873 !23083 !23161 !23236 !23317
+[837] 22817 24249
+[838] 22820 !22821 22841 !22842 22848 !22849 !22890
+[839] 22826 22856
+[840] 22827 22857
+[841] 22829 22858
+[842] 22830 22859
+[843] 22871 !22879
+[844] 22880 22907
+[845] 22895 24271
+[846] 22899 !22974
+[847] 22901 !22975
+[848] 22908 22909
+[849] 22914 !22915 22922 !22923 22949 !22950 !22967
+[850] 22933 22957
+[851] 22934 22958 23006 23031
+[852] 22935 22959
+[853] 22971 24294
+[854] 22986 !22987 22994 !22995 !23005 23014 !23015 !23029 !23040
+[855] 23007 23032
+[856] 23044 24318
+[857] 23048 !23049 23055 !23056 23064 !23065 !23117
+[858] 23071 23109
+[859] 23072 23110
+[860] 23073 23111
+[861] 23088 23164 23239 23318 23357 !23363 !23429 23430 !23509 !23579
+[862] 23093 23162
+[863] 23121 24341
+[864] 23125 !23126 23132 !23133 23141 !23142 !23149 !23186 !23194
+[865] 23148 23151 23185 23187 23216 23251
+[866] 23152 23188
+[867] 23169 23237
+[868] 23198 24364
+[869] 23202 !23203 23209 !23210 23217 23222 !23223 23252 !23268
+[870] 23218 23253
+[871] 23244 23313
+[872] 23272 24387
+[873] 23276 !23277 23283 !23284 !23291 23294 23298 !23299 !23328 23330 !23348
+[874] 23312 !23322
+[875] 23321 23323
+[876] 23352 24412
+[877] 23367 !23369 !23374 23375 !23382 23383 !23395 23396 23405 !23407 23422
+[878] 23427 24435
+[879] 23435 23511
+[880] 23439 !23440 23445 !23446 23453 !23454 23466 !23467 23477 !23478 !23493
+[881] 23498 24458
+[882] 23506 23507
+[883] 23512 23513
+[884] 23517 !23519 !23524 23525 !23532 23533 !23545 23546 23556 !23558 23573
+[885] 23578 24479
+[886] 23582 23585
+[887] 23586 23653 23655
+[888] 23587 23589 !23591 !23596 23597 !23604 23605 !23617 23618 23627 !23629 23644
+[889] 23649 24502
+[890] 23650 23658
+[891] 23659 23770
+[892] 23660 !23663 23664 !23669 23670 !23677 23678 !23690 23691 !23701 23702 23717
+[893] 23722 24525
+[894] 23725 !23726 23730 !23731 23737 !23738 23743 !23744 23773 23777 !23778
+[895] 23763 23764
+[896] 23771 23772
+[897] 23808 27325
+[898] 23811 23836 !23847 23869 23993 24040 24131
+[899] 23812 24016 24178 24379 24466 24489
+[900] 23813 23925 23948 23971 24017 24062 24200 24223 24362 24431 24467
+[901] 23814 23852 23901 23994 24269 24292 24339 24385 24408
+[902] 23822 23952 24343
+[903] 23841 24456
+[904] 23851 24063 24085 24201 24277 24300 24338 24356
+[905] 23870 24039 24086 24109 24155 24444 !24462 24490
+[906] 23883 24136
+[907] 23902 23924 23947 24224 24315 24425
+[908] 23908 23909
+[909] 23929 24159 24366
+[910] 23970 24154
+[911] 23975 24389
+[912] 24021 24182 24205 24251 24433 24526
+[913] 24044 24067 24113
+[914] 24083 !26752
+[915] 24092 24093
+[916] 24105 26780
+[917] 24117 24118
+[918] 24126 24127
+[919] 24141 24142
+[920] 24144 24145
+[921] 24146 24151 !24152 26834 !26835
+[922] 24169 !24170 24174 !24175 26860 !26863
+[923] 24186 24187
+[924] 24192 !24193 24197 !24198 26888 !26889
+[925] 24215 !24216 24220 !24221 26914 !26917
+[926] 24238 !24239 24243 !24244 26942 !26943
+[927] 24247 24402 24512
+[928] 24255 24256
+[929] 24261 !24262 24266 !24267 26967 !26970
+[930] 24273 24320
+[931] 24284 !24285 24289 !24290 26994 !26995
+[932] 24296 24503
+[933] 24307 !24308 24312 !24313 27019 !27022
+[934] 24325 24326
+[935] 24330 !24331 24335 !24336 27046 !27047
+[936] 24353 !24354 24359 !24360 27071 !27074
+[937] 24376 !24377 24382 !24383 27098 !27099
+[938] 24399 !24400 24405 !24406 27123 !27126
+[939] 24410 24480
+[940] 24422 !24423 24428 !24429 27150 !27151
+[941] 24447 !24448 24452 !24453 27175 !27178
+[942] 24470 !24471 24475 !24476 27201 !27203
+[943] 24493 !24494 24498 !24499 27227 !27228
+[944] 24515 !24516 24521 !24522 !27240 27241 27243
+[945] 24531 24532
+[946] 24538 !24549
+[947] 24539 24540 24546 24561 24581 24596 25212 25299 25503 25636 25880 26026
+[948] 24541 24547 24617 26390
+[949] 24551 !24554 24591 24601 25458 25547 25977 !26021 26662 26716 26742 26796 26824
+[950] 24556 25929
+[951] 24557 24653 !24655 24673
+[952] 24566 24571 25783 25832
+[953] 24576 24611 25369 25735
+[954] 24582 26609 !26626
+[955] 24587 !24589 24637
+[956] 24592 24649
+[957] 24606 25414
+[958] 24616 25300
+[959] 24633 24722 24747 24762 24771 24776 24781 24801 24826 24841
+[960] 24641 27244 !27259 !27260
+[961] 24645 26743
+[962] 24681 24687
+[963] 24683 24685 24686 24707 24742
+[964] 24692 24757 24770 24831 26392 26393 26797
+[965] 24698 !24700
+[966] 24702 24796 24806 24816 24836
+[967] 24718 !24720
+[968] 24727 24737 24752 26429 26458 26490
+[969] 24785 24787
+[970] 24790 24792
+[971] 24810 24812
+[972] 24820 24822
+[973] 24846 24857 24867 25158 25244 25286 25402 25536 25772 25966 26063
+[974] 24847 24878 24913 24924 25358 25491
+[975] 24879 24902 !24911 25169
+[976] 24890 25030 25073 25115 25201 25580 25625 25723 25820 26014
+[977] 24914 25413
+[978] 24925 !25925
+[979] 24989 !24997 !25410
+[980] 25116 25254 !25543 !25731
+[981] 25290 25360 25361
+[982] 25291 !25293
+[983] 25297 25928
+[984] 25298 25546 25879
+[985] 25368 25591 !25632
+[986] 25406 !25408
+[987] 25415 !25448
+[988] 25451 !25452
+[989] 25457 25831 26025 26402
+[990] 25495 !25497
+[991] 25502 25635 25734 26428
+[992] 25540 !25541
+[993] 25584 !25586
+[994] 25629 !25630
+[995] 25727 !25729
+[996] 25776 !25777
+[997] 25824 !25826
+[998] 25833 !25870
+[999] 25873 !25874
+[1000] 25881 !25918
+[1001] 25921 !25923
+[1002] 25969 !25970
+[1003] 26017 !26019
+[1004] 26066 !26067
+[1005] 26073 !26080
+[1006] 26077 !26078
+[1007] 26087 26095
+[1008] 26133 26223 26347
+[1009] 26225 26227
+[1010] 26226 26827
+[1011] 26236 !26237 26852
+[1012] 26245 !26247 26881
+[1013] 26255 !26256
+[1014] 26264 !26266 26935 !26936
+[1015] 26274 !26275 26961 !26964
+[1016] 26283 !26285 26989 !26990
+[1017] 26293 !26294 27013 !27016
+[1018] 26302 !26304 27041 !27042
+[1019] 26312 !26313 27065 !27068
+[1020] 26321 !26323 27093 !27094
+[1021] 26331 !26332 27117 !27120
+[1022] 26340 !26342 27145 !27146
+[1023] 26350 !26351 27169 !27172
+[1024] 26359 !26361 27196 !27198
+[1025] 26369 !26370 27222 !27223
+[1026] 26377 !26378 !27246 27247
+[1027] 26384 26386 27361
+[1028] 26399 26426 !26431 26553 26586 26667 26748 26775 26829 26883 26910 26937 26965 !26966 27017 !27018 27121 !27122 27147 !27148 27173 !27174
+[1029] 26401 26489
+[1030] 26405 26407
+[1031] 26408 26433 26561 26634 26985 27010 27037 27062 27141 27257
+[1032] 26409 26529 26850 26904 26932 27089
+[1033] 26417 !27263
+[1034] 26459 26461
+[1035] 26473 26474
+[1036] 26477 26879 !26896
+[1037] 26491 26493
+[1038] 26504 26505
+[1039] 26515 !26531
+[1040] 26549 !26563
+[1041] 26559 26560 26588 26589 26669 26670 26750 26751 26777 26778 26831 26832 26885 26886 26912 26913 26939 26940
+[1042] 26581 !26600
+[1043] 26689 !26708
+[1044] 26725 26754
+[1045] 26771 !26788
+[1046] 26772 26800 26826 26854 26880
+[1047] 26806 !26809
+[1048] 26820 26821
+[1049] 26848 !26849
+[1050] 26876 !26877
+[1051] 26902 !26903
+[1052] 26906 !26909
+[1053] 26930 !26931
+[1054] 26956 !26957
+[1055] 26959 !26977
+[1056] 26983 !26984
+[1057] 27002 27003
+[1058] 27008 !27009
+[1059] 27035 !27036
+[1060] 27054 27055
+[1061] 27060 !27061
+[1062] 27081 27082
+[1063] 27087 !27088
+[1064] 27106 27107
+[1065] 27112 !27113
+[1066] 27115 !27133
+[1067] 27139 !27140
+[1068] 27142 27167 !27185
+[1069] 27164 !27165
+[1070] 27191 !27192
+[1071] 27194 !27210 !27211
+[1072] 27216 !27217
+[1073] 27219 !27235 !27236
+[1074] 27251 !27252
+[1075] 27261 !27265
+[1076] 27299 !27303 !27304
+[1077] 27312 !27313
+[1078] 27315 !27316 !27317
+[1079] 27320 !27321
+[1080] 27638 30001
+[1081] 27640 30041 33985 34377 34706
+[1082] 27642 30010
+[1083] 27644 30035 33987 34379 34708
+[1084] 27647 30007
+[1085] 27649 30033 33993 34381 34710
+[1086] 27651 30004
+[1087] 27653 30031 33995 34387 34712
+[1088] 27656 34694
+[1089] 27657 30002 34021 34365 34695 35551
+[1090] 27659 30047 34023 34367 34697
+[1091] 27661 30045 33981 34369 34699
+[1092] 27663 30043 33983 34375 34701
+[1093] 27668 34717
+[1094] 27669 30029 33997 34389 34718 35530
+[1095] 27671 30023 33999 34391 34720
+[1096] 27673 30021 34005 34393 34722
+[1097] 27675 30019 34007 34351 34724
+[1098] 27680 30017 34009 34353 34683
+[1099] 27683 30011 34011 34355 34685
+[1100] 27685 30008 34017 34357 34687
+[1101] 27687 30005 34019 34363 34689
+[1102] 27970 27973
+[1103] 27987 !35426
+[1104] 28014 28022
+[1105] 28015 28023
+[1106] 28034 !28035
+[1107] 28040 !32826
+[1108] 28045 !28181
+[1109] 28046 !28179
+[1110] 28048 28182
+[1111] 28121 !36380
+[1112] 28132 28217
+[1113] 28166 28172
+[1114] 28174 33979
+[1115] 28232 !35470
+[1116] 28260 29905
+[1117] 28273 28324
+[1118] 28283 35453
+[1119] 28328 28357 28575
+[1120] 28330 29621 29695
+[1121] 28340 28928 29015
+[1122] 28344 28353 28363 28749
+[1123] 28345 28347 28663 28751
+[1124] 28346 !28358
+[1125] 28348 28570 29705 29779
+[1126] 28349 29710
+[1127] 28354 28356 28359
+[1128] 28368 29014 29099 29265
+[1129] 28376 29098 29268 29352
+[1130] 28379 28577 28661 28746
+[1131] 28381 28573 28658 29788
+[1132] 28382 28662
+[1133] 28391 32835
+[1134] 28574 29793
+[1135] 28576 28665 28834
+[1136] 28578 !28755
+[1137] 28664 28752 28838 28923
+[1138] 28666 28839
+[1139] 28750 28842 28926 29009
+[1140] 28753 28927
+[1141] 28841 28929 29012 29095
+[1142] 28843 29013
+[1143] 28930 !29102
+[1144] 29016 29182
+[1145] 29100 29269
+[1146] 29184 29271 29355 29441
+[1147] 29185 29356
+[1148] 29270 29358 29527
+[1149] 29272 !29444
+[1150] 29357 29438 29530 29613
+[1151] 29359 29531
+[1152] 29449 29524 29615 29697
+[1153] 29454 29616
+[1154] 29537 29611 29699 29781
+[1155] 29542 29700
+[1156] 29626 !29783
+[1157] 29871 35471 35556
+[1158] 29874 35531
+[1159] 29958 30128 32846 35564 !35570 !35571 !35631 !35632 !35712 !35713 !35739 !35740 !35766 !35767 !35793 !35794 !35928 !35929 !35955 !35956 !35982 !35983
+[1160] 29982 29984
+[1161] 30057 !30105
+[1162] 30129 32847
+[1163] 30134 32862
+[1164] 30177 30227
+[1165] 30178 30228
+[1166] 30179 30229
+[1167] 30242 32878
+[1168] 30246 !30329
+[1169] 30261 30308
+[1170] 30298 !30312
+[1171] 30299 30309
+[1172] 30300 30313
+[1173] 30301 30314
+[1174] 30342 !30349
+[1175] 30363 32900
+[1176] 30384 30431
+[1177] 30385 30432
+[1178] 30420 !30435
+[1179] 30421 30441
+[1180] 30422 30440
+[1181] 30423 !30427 30442
+[1182] 30425 30438
+[1183] 30426 30436
+[1184] 30429 !30444
+[1185] 30437 30566
+[1186] 30494 32923
+[1187] 30546 !30570
+[1188] 30547 30575
+[1189] 30548 30576
+[1190] 30549 !30554 !30573 30577
+[1191] 30550 30567
+[1192] 30552 30572
+[1193] 30553 30571
+[1194] 30557 !30579
+[1195] 30606 !30616
+[1196] 30630 32946
+[1197] 30649 30699
+[1198] 30650 30700
+[1199] 30652 30702
+[1200] 30653 30703
+[1201] 30687 30835
+[1202] 30688 !30706
+[1203] 30689 30708
+[1204] 30690 30707
+[1205] 30691 30709
+[1206] 30692 30710
+[1207] 30693 30711
+[1208] 30694 30712
+[1209] 30763 32969
+[1210] 30783 !30833
+[1211] 30784 30832
+[1212] 30785 30834
+[1213] 30817 30935
+[1214] 30819 !30838
+[1215] 30820 30840
+[1216] 30821 30839
+[1217] 30822 30841
+[1218] 30823 30842
+[1219] 30824 30843
+[1220] 30825 30844
+[1221] 30894 32992
+[1222] 30913 30931
+[1223] 30914 30932
+[1224] 30915 30933
+[1225] 30916 30934
+[1226] 30919 31030 31710 32049 32110 32186 32261 !32337 32338 32377 !32383 !32449 32450 32521 !32529 !32599 32600 32601 !32675 32676 32779 !32787
+[1227] 30920 !30938
+[1228] 30921 30940
+[1229] 30922 30939
+[1230] 30923 30941
+[1231] 30924 30942
+[1232] 30925 30943
+[1233] 30926 30944
+[1234] 30992 33015
+[1235] 31012 !31028
+[1236] 31013 31027
+[1237] 31014 31029
+[1238] 31015 31119
+[1239] 31016 31118
+[1240] 31017 !31033
+[1241] 31019 31120
+[1242] 31020 !31036
+[1243] 31031 31101
+[1244] 31032 31103
+[1245] 31082 33038
+[1246] 31102 31185 31283
+[1247] 31107 !31111
+[1248] 31165 33061
+[1249] 31190 !31194
+[1250] 31241 33084
+[1251] 31284 !31337 !31518 !31595
+[1252] 31313 33107
+[1253] 31334 !31342
+[1254] 31338 !31420
+[1255] 31391 33130
+[1256] 31398 31468 31541
+[1257] 31400 !31401
+[1258] 31428 31453
+[1259] 31466 33153
+[1260] 31470 !31471 !31535
+[1261] 31496 31527
+[1262] 31497 31528
+[1263] 31498 31529
+[1264] 31539 33176
+[1265] 31543 31554 31561
+[1266] 31544 31613
+[1267] 31569 31604
+[1268] 31570 31605
+[1269] 31573 31606
+[1270] 31574 31607
+[1271] 31596 !31659
+[1272] 31617 33199
+[1273] 31619 31620 31630 31631 31637 31638
+[1274] 31621 31632 31639
+[1275] 31622 31633 31640 31685
+[1276] 31647 31677
+[1277] 31648 31678
+[1278] 31649 31679
+[1279] 31665 31719
+[1280] 31689 33222
+[1281] 31692 !31693 31698 !31699 31745 !31746 !31763
+[1282] 31720 31721
+[1283] 31727 31753
+[1284] 31728 31754
+[1285] 31729 31755
+[1286] 31730 31756
+[1287] 31768 33245
+[1288] 31772 !31773 31783 !31784 31790 !31791 !31835
+[1289] 31798 31827
+[1290] 31799 31828
+[1291] 31800 31829
+[1292] 31808 !31809
+[1293] 31810 !31862 !32105 !32183 !32260
+[1294] 31839 33268
+[1295] 31842 !31843 31848 !31849 31894 !31895 !31912
+[1296] 31860 !31868
+[1297] 31869 31929
+[1298] 31875 31902
+[1299] 31876 31903
+[1300] 31878 31904
+[1301] 31879 31905
+[1302] 31917 33290
+[1303] 31921 !32047
+[1304] 31923 !31927 !32048
+[1305] 31930 31931
+[1306] 31936 !31937 31944 !31945 31971 !31972 !31989
+[1307] 31955 !31957 31979 !31981
+[1308] 31993 33313
+[1309] 31996 !31997 32001 !32002 !32012 32014 32021 !32022 !32036 32039 !32055 !32061
+[1310] 32051 32053
+[1311] 32054 32106
+[1312] 32066 33337
+[1313] 32070 !32071 32077 !32078 32086 !32087 32094 !32095 !32116 32132 !32133 !32139
+[1314] 32112 32114
+[1315] 32115 32184
+[1316] 32143 33360
+[1317] 32147 !32148 32154 !32155 32163 !32164 !32171 32174 !32192 !32208 32210 !32216
+[1318] 32188 32190
+[1319] 32191 32256
+[1320] 32220 33383
+[1321] 32224 !32225 32231 !32232 32239 !32240 32244 !32245 !32267 32274 !32275 !32290
+[1322] 32263 32265
+[1323] 32266 32335
+[1324] 32294 33406
+[1325] 32298 !32299 32305 !32306 !32313 32316 32320 !32321 !32344 !32348 32350 !32368
+[1326] 32333 32339
+[1327] 32334 !32342
+[1328] 32341 32343
+[1329] 32372 33431
+[1330] 32378 32379
+[1331] 32385 !32387 32389 32394 !32395 32402 !32403 32415 !32416 !32425 32427 !32442
+[1332] 32447 33454
+[1333] 32452 32454
+[1334] 32455 32531
+[1335] 32456 !32459 32460 !32465 32466 !32473 32474 !32486 32487 !32497 32498 32513
+[1336] 32518 33477
+[1337] 32526 32527
+[1338] 32532 32533
+[1339] 32534 !32537 32539 32544 !32545 32552 !32553 32565 !32566 !32576 32578 !32593
+[1340] 32598 33498
+[1341] 32603 32605
+[1342] 32606 32673
+[1343] 32607 32609 !32611 !32616 32617 !32624 32625 !32637 32638 32647 !32649 32664
+[1344] 32669 33521
+[1345] 32671 32677
+[1346] 32678 32789
+[1347] 32679 !32682 32683 !32688 32689 !32696 32697 !32709 32710 !32720 32721 32736
+[1348] 32741 33544
+[1349] 32744 !32745 32749 !32750 32756 !32757 32762 !32763 32792 32796 !32797
+[1350] 32782 32783
+[1351] 32790 32791
+[1352] 32827 36368
+[1353] 32829 32832 32833 !32851 32871 !32884 32889 !32906 33013 33151 33220
+[1354] 32856 !32866 32920 32944 33174 33197 33358 33404 33427
+[1355] 32930 32931
+[1356] 32952 32953
+[1357] 32975 32976 32977
+[1358] 32998 32999 33000
+[1359] 33021 33022
+[1360] 33044 33045 33046
+[1361] 33059 33082 33105 33128 33243 33266 33311 33450 33486 !33504 33509 !33527
+[1362] 33067 33068
+[1363] 33090 33091
+[1364] 33113 33114
+[1365] 33122 33123
+[1366] 33136 33137
+[1367] 33140 33141
+[1368] 33142 33147 !33148 35849 !35852
+[1369] 33159 33160
+[1370] 33165 !33166 33170 !33171 35877 !35878
+[1371] 33182 33183
+[1372] 33188 !33189 33193 !33194 35903 !35906
+[1373] 33205 33206
+[1374] 33211 !33212 33216 !33217 35931 !35932
+[1375] 33228 33229
+[1376] 33234 !33235 33239 !33240 35957 !35960
+[1377] 33251 33252
+[1378] 33257 !33258 33262 !33263 35985 !35986
+[1379] 33274 33275
+[1380] 33280 !33281 33285 !33286 36010 !36013
+[1381] 33292 33429
+[1382] 33297 33298
+[1383] 33299 33300
+[1384] 33303 !33304 33308 !33309 36037 !36038
+[1385] 33322 33323
+[1386] 33326 !33327 33332 !33333 36062 !36065
+[1387] 33328 !33343
+[1388] 33344 33345
+[1389] 33349 !33350 33355 !33356 36089 !36090
+[1390] 33351 !33366
+[1391] 33372 !33373 33378 !33379 36114 !36117
+[1392] 33374 !33389
+[1393] 33390 33391
+[1394] 33395 !33396 33401 !33402 36141 !36142
+[1395] 33397 !33412
+[1396] 33418 !33419 33424 !33425 36166 !36169
+[1397] 33420 !33435
+[1398] 33441 !33442 33447 !33448 36193 !36194
+[1399] 33443 !33458
+[1400] 33466 !33467 33471 !33472 36218 !36221
+[1401] 33468 !33482
+[1402] 33489 !33490 33494 !33495 36244 !36246
+[1403] 33512 !33513 33517 !33518 36270 !36271
+[1404] 33534 !33535 33540 !33541 !36283 36284 36286
+[1405] 33536 !33550 !33551
+[1406] 33560 !33662 !36279
+[1407] 33561 33587 !33590 33619 33634 33659 34342 34343 34590 34778 34972
+[1408] 33563 33564 !33566 33596 33650 33660 33664 33676 33680 33696 33708 35433 35434 35439 35624 35678 35732 !35751 35840 !35859 35894 36106 !36124 36262
+[1409] 33571 33579 !33582 33629 !33632 33644 34501 34635 35020 35069 35451 35452 35505 35537 35572 35604 35623 35651 35677 35759 35785 35867 35893 35921 35947 !35967 35975 36001 36053 36080 36209 36236 36261 36300
+[1410] 33572 33604 33612 33620 33625 !33627 33635 33640 33645 33684 33700 33704 33712 35558 35760 35786 35868 36029 !36045 36185 !36201 !36202 36287 !36302 !36303
+[1411] 33574 33647 35777 35805 35885
+[1412] 33595 33603 33611 33639 33649 34457 34546 34826 34875 34923 35442 35443 !35449 35469 !35474 35499 !35503 35596 35656 35683 35818 35845 35872 35899 36034 !36035 36060 !36061 36112 !36113 36216 !36217 36242 !36243 36267 !36268
+[1413] 33598 33652 33678 33682 36125
+[1414] 33606 33614 33642 33686 33706 33714 36046
+[1415] 33622 33637 33702
+[1416] 33656 !33658
+[1417] 33666 33698 33710 35643 35697 35913 36278
+[1418] 33668 33672 33688 33716 !33718 33720 35706 !35723 35922 36081 36210 36237
+[1419] 33670 35939 36097 36098 36228 36253
+[1420] 33674 33690 33722 36229 36254
+[1421] 33693 !33695
+[1422] 33724 33730
+[1423] 33726 33728 33750 33760 33780 33795
+[1424] 33731 !33733
+[1425] 33736 !33738
+[1426] 33741 !33743
+[1427] 33746 !33748
+[1428] 33756 !33758
+[1429] 33766 !33768
+[1430] 33771 !33773
+[1431] 33776 !33778
+[1432] 33786 !33788
+[1433] 33791 !33793
+[1434] 33801 !33803
+[1435] 33806 !33808
+[1436] 33812 33815
+[1437] 33818 33820
+[1438] 33823 33825
+[1439] 33828 33830
+[1440] 33833 33835
+[1441] 33838 33840
+[1442] 33843 33845
+[1443] 33848 33850
+[1444] 33853 33855
+[1445] 33858 33860
+[1446] 33863 33865
+[1447] 33868 33870
+[1448] 33873 33875
+[1449] 33878 33880
+[1450] 33883 33885
+[1451] 33889 33967 34116 34201 34490 34668 34815 34960 35009
+[1452] 33890 33910 33933 34158 34401 34623 34863 35106
+[1453] 33892 !34822
+[1454] 33895 33940
+[1455] 33900 33956 34031 34534 34579 34766 34912 35057
+[1456] 33906 34870
+[1457] 33917 33975
+[1458] 33922 !33931
+[1459] 33929 33963 34123
+[1460] 33945 !33954
+[1461] 33952 34407 34967
+[1462] 34074 !34083 34159
+[1463] 34245 !34246
+[1464] 34288 !34289
+[1465] 34330 !34331
+[1466] 34333 34335
+[1467] 34337 34585
+[1468] 34340 34777 35444
+[1469] 34405 !34406
+[1470] 34411 !34453
+[1471] 34413 !34446
+[1472] 34449 !34451
+[1473] 34494 !34495
+[1474] 34538 !34540
+[1475] 34583 !34584
+[1476] 34589 34825
+[1477] 34627 !34629
+[1478] 34634 35068
+[1479] 34672 !34673
+[1480] 34675 35112
+[1481] 34678 !34774
+[1482] 34770 !34772
+[1483] 34773 35014
+[1484] 34819 !34820
+[1485] 34867 !34869
+[1486] 34916 !34917
+[1487] 34920 34921
+[1488] 34922 35445
+[1489] 34964 !34966
+[1490] 35012 !35013
+[1491] 35060 !35062
+[1492] 35063 35122
+[1493] 35109 !35110
+[1494] 35120 !35121
+[1495] 35129 35130 35138 35157 35195 35204 35238 35276 35314 35342
+[1496] 35146 !35149
+[1497] 35166 35176 35257 35266 35285 35304 35361 35399
+[1498] 35185 35214 35228 35295 35371 35390 35409
+[1499] 35218 !35225
+[1500] 35246 !35254
+[1501] 35255 !35816
+[1502] 35258 35268 35270
+[1503] 35260 !35261
+[1504] 35269 !35274
+[1505] 35279 !35280 35895 !35898
+[1506] 35288 !35290 !35293 35924 !35925
+[1507] 35298 !35299 !35302 35949 !35952
+[1508] 35307 !35309 !35312 35978 !35979
+[1509] 35317 !35318 36004 !36007
+[1510] 35322 !35330
+[1511] 35326 !35328 36032 !36033
+[1512] 35332 !35339
+[1513] 35336 !35337 36056 !36059
+[1514] 35345 !35347 36084 !36085
+[1515] 35351 !35358
+[1516] 35355 !35356 36108 !36111
+[1517] 35364 !35366 36136 !36137
+[1518] 35374 !35375 36160 !36163
+[1519] 35379 !35387
+[1520] 35383 !35385 36188 !36189
+[1521] 35393 !35394 36212 !36215
+[1522] 35402 !35404 36239 !36241
+[1523] 35412 !35413 36265 !36266
+[1524] 35420 !35421 !36289 36290
+[1525] 35427 35429 36404
+[1526] 35432 36002
+[1527] 35437 35438 !35467 !35976 !36158 36176 36177
+[1528] 35446 35533
+[1529] 35460 !36306
+[1530] 35486 35487
+[1531] 35490 35520 35814 !35831 36054
+[1532] 35534 35536
+[1533] 35602 35603 35607 35658 35659 35685 35686 35820 35821 35847 35848 35874 35875 35901 35902
+[1534] 35698 35914
+[1535] 35778 35806
+[1536] 35789 35815 35843
+[1537] 35823 !35824
+[1538] 35835 35863
+[1539] 35837 !35838
+[1540] 35870 !35871
+[1541] 35889 35917 35943 35944
+[1542] 35891 !35892
+[1543] 35919 !35920
+[1544] 35973 !35974
+[1545] 35999 !36000
+[1546] 36020 36021
+[1547] 36026 !36027
+[1548] 36051 !36052
+[1549] 36078 !36079
+[1550] 36103 !36104
+[1551] 36130 !36131
+[1552] 36143 !36151
+[1553] 36155 !36156
+[1554] 36182 !36183
+[1555] 36207 !36208
+[1556] 36234 !36235
+[1557] 36259 !36260
+[1558] 36294 !36295
+[1559] 36299 36301
+[1560] 36304 !36308
+[1561] 36342 !36346 !36347
+[1562] 36355 !36356
+[1563] 36358 !36359 !36360
+[1564] 36363 !36364
+[1565] 36681 45279
+[1566] 36683 45319 49344 49720 50054
+[1567] 36685 45288
+[1568] 36687 45313 49346 49722 50056
+[1569] 36690 45285
+[1570] 36692 45311 49352 49724 50058
+[1571] 36694 45282
+[1572] 36696 45309 49354 49730 50060
+[1573] 36699 50042
+[1574] 36700 45280 49380 49708 50043 50892
+[1575] 36702 45325 49382 49710 50045
+[1576] 36704 45323 49340 49712 50047
+[1577] 36706 45321 49342 49718 50049
+[1578] 36711 50065
+[1579] 36712 45307 49356 49732 50066 50871
+[1580] 36714 45301 49358 49734 50068
+[1581] 36716 45299 49364 49736 50070
+[1582] 36718 45297 49366 49694 50072
+[1583] 36723 45295 49368 49696 50031
+[1584] 36726 45289 49370 49698 50033
+[1585] 36728 45286 49376 49700 50035
+[1586] 36730 45283 49378 49706 50037
+[1587] 37013 37016
+[1588] 37030 !50767
+[1589] 37057 37065
+[1590] 37058 37066
+[1591] 37077 !37078
+[1592] 37083 !48124
+[1593] 37088 !37224
+[1594] 37089 !37222
+[1595] 37091 37225
+[1596] 37164 !51719
+[1597] 37175 37263
+[1598] 37209 37215
+[1599] 37217 49338
+[1600] 37277 !50811
+[1601] 37304 45183
+[1602] 37317 37368
+[1603] 37327 50794
+[1604] 37372 37401 43838
+[1605] 37374 44891 44977
+[1606] 37384 44195 44283
+[1607] 37388 37397 37407 44014
+[1608] 37389 37391 43927 44016
+[1609] 37390 !37402
+[1610] 37392 43833 44976 45060
+[1611] 37393 44978
+[1612] 37398 37400 37403
+[1613] 37412 44282 44368 44536
+[1614] 37420 44367 44539 44624
+[1615] 37423 43840 43925 44011
+[1616] 37425 43836 43922 45059
+[1617] 37426 43926
+[1618] 37514 !37518
+[1619] 37686 !37690
+[1620] 37697 !37701
+[1621] 37879 !37881
+[1622] 37946 !37948
+[1623] 37967 !37969
+[1624] 37978 !37980
+[1625] 38106 !38108
+[1626] 38148 !38150
+[1627] 38168 !38170
+[1628] 38284 !38288
+[1629] 38303 !38307
+[1630] 38322 !38326
+[1631] 38354 !38358
+[1632] 38436 !38438
+[1633] 38450 !38452
+[1634] 38464 !38466
+[1635] 38567 !38571
+[1636] 38589 !38593
+[1637] 38639 !38641
+[1638] 38716 !38718
+[1639] 38730 !38732
+[1640] 38843 !38848
+[1641] 38866 !38871
+[1642] 38910 !38914
+[1643] 38929 !38933
+[1644] 39032 !39034
+[1645] 39046 !39048
+[1646] 39060 !39062
+[1647] 39102 !39104
+[1648] 39191 !39193
+[1649] 39205 !39207
+[1650] 39219 !39221
+[1651] 39316 !39321
+[1652] 39353 !39358
+[1653] 39376 !39381
+[1654] 39417 !39421
+[1655] 39436 !39440
+[1656] 39484 !39486
+[1657] 39504 !39506
+[1658] 39544 !39546
+[1659] 39588 !39590
+[1660] 39641 39732
+[1661] 39642 39733
+[1662] 39682 !39689
+[1663] 39688 !39954
+[1664] 39706 !39713
+[1665] 39712 !39899
+[1666] 39751 !39756
+[1667] 39789 !39794
+[1668] 39800 !39806
+[1669] 39834 !39838
+[1670] 39878 40055
+[1671] 39889 40011
+[1672] 39890 40012
+[1673] 39943 !39950
+[1674] 39949 !40215
+[1675] 39968 !39973
+[1676] 39990 !39995
+[1677] 40030 !40035
+[1678] 40051 40056
+[1679] 40071 !40075
+[1680] 40103 !40107
+[1681] 40204 !40211
+[1682] 40210 !40700
+[1683] 40229 !40236
+[1684] 40257 !40265
+[1685] 40264 !40750
+[1686] 40280 !40287
+[1687] 40305 !40312
+[1688] 40329 !40336
+[1689] 40354 !40359
+[1690] 40373 !40378
+[1691] 40468 !40470
+[1692] 40545 !40547
+[1693] 40597 48133
+[1694] 40636 40788
+[1695] 40642 40766
+[1696] 40643 40767
+[1697] 40689 !40696
+[1698] 40695 !40979
+[1699] 40714 !40721
+[1700] 40739 !40746
+[1701] 40784 40789
+[1702] 40811 41092
+[1703] 40832 !40839
+[1704] 40858 !40863
+[1705] 40968 !40975
+[1706] 40993 !40998
+[1707] 41012 !41017
+[1708] 41032 !41037
+[1709] 41079 !41086
+[1710] 41107 !41114
+[1711] 41113 !41408
+[1712] 41131 !41138
+[1713] 41155 !41165
+[1714] 41202 41355
+[1715] 41203 41356
+[1716] 41256 !41263
+[1717] 41282 !41289
+[1718] 41306 !41313
+[1719] 41330 !41337
+[1720] 41376 41567
+[1721] 41396 !41403
+[1722] 41421 !41428
+[1723] 41460 !41464
+[1724] 41478 !41480
+[1725] 41523 !41528
+[1726] 41635 !41642
+[1727] 41641 !41986
+[1728] 41657 !41664
+[1729] 41706 !41711
+[1730] 41730 !41735
+[1731] 41769 41899
+[1732] 41788 !41795
+[1733] 41794 !42145
+[1734] 41813 !41818
+[1735] 41835 !41840
+[1736] 41856 !41863
+[1737] 41862 !41872
+[1738] 41910 42119
+[1739] 41911 42120
+[1740] 41978 !41982
+[1741] 42001 !42006
+[1742] 42022 !42029
+[1743] 42046 !42053
+[1744] 42070 !42077
+[1745] 42094 !42101
+[1746] 42138 42258
+[1747] 42158 !42165
+[1748] 42164 !42536
+[1749] 42181 !42188
+[1750] 42187 !42240
+[1751] 42207 !42212
+[1752] 42268 42509
+[1753] 42290 42413
+[1754] 42291 42414
+[1755] 42343 !42350
+[1756] 42349 !42822
+[1757] 42367 !42374
+[1758] 42392 !42397
+[1759] 42432 !42439
+[1760] 42457 !42464
+[1761] 42482 !42489
+[1762] 42505 42510
+[1763] 42524 !42532
+[1764] 42550 !42557
+[1765] 42573 !42581
+[1766] 42598 !42605
+[1767] 42674 !43414 !43417
+[1768] 42678 !42681
+[1769] 42811 !42818
+[1770] 42817 !43218
+[1771] 42836 !42843
+[1772] 42861 !42868
+[1773] 42885 !42892
+[1774] 42891 !43159
+[1775] 42909 !42916
+[1776] 42915 !43282
+[1777] 42934 !42941
+[1778] 42959 !42966
+[1779] 42984 !42991
+[1780] 43008 !43015
+[1781] 43055 !43063
+[1782] 43062 !43380
+[1783] 43081 !43088
+[1784] 43403 !43408
+[1785] 43415 43418
+[1786] 43502 43515
+[1787] 43504 43516
+[1788] 43505 43517
+[1789] 43506 43518
+[1790] 43510 43519
+[1791] 43581 !43583
+[1792] 43606 !43608
+[1793] 43669 !43671
+[1794] 43683 !43685
+[1795] 43779 !43781
+[1796] 43837 45061
+[1797] 43839 43929 44100
+[1798] 43841 !44020
+[1799] 43928 44017 44104 44190
+[1800] 43930 44105
+[1801] 44015 44108 44193 44277
+[1802] 44018 44194
+[1803] 44107 44196 44280 44364
+[1804] 44109 44281
+[1805] 44197 !44371
+[1806] 44284 44452
+[1807] 44369 44540
+[1808] 44454 44542 44627 44712
+[1809] 44455 44628
+[1810] 44541 44630 44798
+[1811] 44543 !44719
+[1812] 44629 44716 44802 44886
+[1813] 44631 44803
+[1814] 44715 44807 44889 44971
+[1815] 44717 44890
+[1816] 44805 44892 44974 45056
+[1817] 44808 44975
+[1818] 44893 !45063
+[1819] 45146 !45150
+[1820] 45152 50872
+[1821] 45236 45406 48144 50905 !50911 !50912 !50943 !50944 !50972 !50973 !50999 !51000 !51026 !51027 !51053 !51054 !51080 !51081 !51107 !51108 !51134 !51135 !51161 !51162 !51188 !51189 !51215 !51216 !51242 !51243 !51269 !51270 !51296 !51297 !51323 !51324
+[1822] 45260 45262
+[1823] 45335 !45383
+[1824] 45407 48145
+[1825] 45456 45472
+[1826] 45464 45474
+[1827] 45514 48160
+[1828] 45519 48178
+[1829] 45523 !45593
+[1830] 45539 45624
+[1831] 45576 !45628
+[1832] 45577 45625
+[1833] 45578 45629
+[1834] 45579 45630
+[1835] 45606 !45613
+[1836] 45641 48198
+[1837] 45659 45709
+[1838] 45660 45710
+[1839] 45695 !45713
+[1840] 45696 45719
+[1841] 45697 45844
+[1842] 45698 45718
+[1843] 45700 45715
+[1844] 45701 45714
+[1845] 45702 45716 !45720
+[1846] 45704 !45722
+[1847] 45772 48221
+[1848] 45824 !45848
+[1849] 45825 45853
+[1850] 45826 45854
+[1851] 45827 !45832 !45851 45855
+[1852] 45828 45845
+[1853] 45830 45850
+[1854] 45831 45849
+[1855] 45835 !45857
+[1856] 45884 !45894
+[1857] 45908 48244
+[1858] 45927 45976
+[1859] 45928 45977
+[1860] 45930 45979
+[1861] 45931 45980
+[1862] 45965 !45984
+[1863] 45966 45986
+[1864] 45967 45985
+[1865] 45968 45987
+[1866] 45969 45988
+[1867] 45970 45989
+[1868] 45971 45990
+[1869] 45983 46065
+[1870] 46041 48267
+[1871] 46060 46148
+[1872] 46061 46147
+[1873] 46062 46149
+[1874] 46063 46150
+[1875] 46064 46151
+[1876] 46099 !46154
+[1877] 46100 46156
+[1878] 46101 46155
+[1879] 46102 46157
+[1880] 46103 46158
+[1881] 46104 46159
+[1882] 46105 46160
+[1883] 46152 46196
+[1884] 46173 48290
+[1885] 46192 46251
+[1886] 46193 46245
+[1887] 46194 !46253
+[1888] 46195 46254
+[1889] 46199 !46258
+[1890] 46200 46260
+[1891] 46201 46259
+[1892] 46202 46261
+[1893] 46203 46262
+[1894] 46204 46263
+[1895] 46205 46264
+[1896] 46257 46301 47028 !47262 47411 47490 47564 47644 47717 !47723 !47789 47790 47868 !47876 !47897 47898 47899 !47973 47974 48044 !48052
+[1897] 46277 48313
+[1898] 46298 46347
+[1899] 46299 !46346
+[1900] 46300 46348 !46429 !46505 !46580
+[1901] 46302 46428
+[1902] 46303 46427
+[1903] 46304 !46351
+[1904] 46307 !46354
+[1905] 46349 46387
+[1906] 46350 46386
+[1907] 46353 46388
+[1908] 46367 48336
+[1909] 46433 !46437
+[1910] 46450 48359
+[1911] 46509 !46513
+[1912] 46526 48382
+[1913] 46581 !46658 !46805 !46882
+[1914] 46598 48405
+[1915] 46656 !46664
+[1916] 46660 !46737
+[1917] 46677 48428
+[1918] 46679 46698
+[1919] 46752 48451
+[1920] 46753 46826 46827 46848 46849 46856
+[1921] 46755 !46756 46760
+[1922] 46825 48474
+[1923] 46828 46850
+[1924] 46829 46851
+[1925] 46838 46867
+[1926] 46883 !46954
+[1927] 46903 48497
+[1928] 46906 !46907 46925 !46926 46932 !46970
+[1929] 46912 46940
+[1930] 46913 46941
+[1931] 46914 46942
+[1932] 46930 46931
+[1933] 46960 47037
+[1934] 46975 48520
+[1935] 46978 !46979 46999 !47000 47006 !47007 !47049
+[1936] 46984 47014
+[1937] 46985 47015
+[1938] 46987 47016
+[1939] 46988 47017
+[1940] 47038 47039
+[1941] 47054 48543
+[1942] 47057 !47058 47076 !47077 47083 !47084 !47120
+[1943] 47063 47091
+[1944] 47064 47092
+[1945] 47065 47093
+[1946] 47103 !47104
+[1947] 47105 !47183 !47406 !47487 !47561 !47643
+[1948] 47125 48566
+[1949] 47128 !47129 47151 !47152 47158 !47159 !47200
+[1950] 47134 47166
+[1951] 47135 47167
+[1952] 47139 47168
+[1953] 47140 47169
+[1954] 47181 !47189
+[1955] 47190 47264
+[1956] 47205 48589
+[1957] 47208 !47209 47227 !47228 47234 !47235 !47276
+[1958] 47214 47242
+[1959] 47215 47243
+[1960] 47216 47244
+[1961] 47256 !47332
+[1962] 47258 !47333 47334
+[1963] 47265 47266
+[1964] 47281 48612
+[1965] 47284 !47285 47304 !47305 47311 !47312 !47349
+[1966] 47290 !47293 47319 !47321
+[1967] 47336 47338
+[1968] 47354 48635
+[1969] 47357 !47358 47364 !47365 47376 !47377 47383 !47384 47392 !47393 !47417 !47426
+[1970] 47413 47415
+[1971] 47416 47488
+[1972] 47431 48658
+[1973] 47434 !47435 !47441 47444 47455 !47456 47462 !47463 !47471 47475 !47496 !47505
+[1974] 47492 47494
+[1975] 47495 47562
+[1976] 47510 48681
+[1977] 47513 !47514 47520 !47521 47532 !47533 47539 !47540 47548 !47549 !47570 !47579
+[1978] 47560 47642
+[1979] 47566 47568
+[1980] 47569 47639
+[1981] 47584 48703
+[1982] 47587 !47588 !47594 47597 47608 !47609 47615 !47616 !47624 47626 !47650 !47659
+[1983] 47637 47645
+[1984] 47638 !47648
+[1985] 47647 47649
+[1986] 47664 48726
+[1987] 47667 !47668 !47673 47675 47686 !47687 47693 !47694 !47701 47703 47725 !47734
+[1988] 47718 47719
+[1989] 47739 48749
+[1990] 47742 !47743 47749 !47750 47761 !47762 47768 !47769 47777 !47778 !47796 !47805
+[1991] 47792 47794
+[1992] 47795 47878
+[1993] 47810 48772
+[1994] 47813 !47814 !47820 47824 47835 !47836 47842 !47843 !47851 47857 47881 !47890
+[1995] 47873 47874
+[1996] 47879 47880
+[1997] 47895 48795
+[1998] 47901 47903
+[1999] 47904 47971
+[2000] 47905 !47909 47910 !47917 47918 47928 !47930 !47944 47945 47952 !47954 47962
+[2001] 47966 48818
+[2002] 47969 47975
+[2003] 47976 48055
+[2004] 47977 !47981 47982 !47989 47990 !48001 48002 !48016 48017 !48025 48026 48034
+[2005] 48038 48841
+[2006] 48045 48047
+[2007] 48054 48056
+[2008] 48057 48061 !48062 48069 !48070 48083 !48084 48098 !48099 48108 !48109 !48117
+[2009] 48125 51707
+[2010] 48128 48380 48426
+[2011] 48129 48186 48311 48403 48541 48732 48824
+[2012] 48130 48154 48287 48356 48402 48517 48632 48701 48770
+[2013] 48131 48448 48793
+[2014] 48139 48140 48158 48246 48476 48683 48843
+[2015] 48168 48265
+[2016] 48169 48187 48310 48609
+[2017] 48176 48407 48545
+[2018] 48200 48223
+[2019] 48218 48494
+[2020] 48219 48610 48679 48778 84515
+[2021] 48241 48333 48379 48586
+[2022] 48251 48252
+[2023] 48269 48522 48568 48774 48797
+[2024] 48273 48274
+[2025] 48288 48472 48564 48709 48755
+[2026] 48292 48361 48614
+[2027] 48317 48318
+[2028] 48338 48728 48820
+[2029] 48357 48633
+[2030] 48400 !51136
+[2031] 48423 !51164
+[2032] 48425 48563 48816 48839
+[2033] 48439 48444
+[2034] 48445 51190
+[2035] 48449 48847
+[2036] 48461 48462
+[2037] 48463 48468
+[2038] 48466 48467
+[2039] 48480 48481
+[2040] 48486 !48487 48491 !48492 51244 !51247
+[2041] 48495 48656
+[2042] 48499 48660
+[2043] 48509 !48510 48514 !48515 51272 !51273
+[2044] 48532 !48533 48537 !48538 51298 !51301
+[2045] 48540 48655 48678 48724
+[2046] 48555 !48556 48560 !48561 51326 !51327
+[2047] 48578 !48579 48583 !48584 51352 !51355
+[2048] 48593 48594
+[2049] 48601 !48602 48606 !48607 51379 !51380
+[2050] 48624 !48625 48629 !48630 51404 !51407
+[2051] 48647 !48648 48652 !48653 51431 !51432
+[2052] 48670 !48671 48675 !48676 51455 !51458
+[2053] 48693 !48694 48698 !48699 51482 !51483
+[2054] 48705 48751
+[2055] 48716 !48717 48721 !48722 51507 !51510
+[2056] 48739 !48740 48744 !48745 51534 !51535
+[2057] 48756 48757
+[2058] 48762 !48763 48767 !48768 51558 !51561
+[2059] 48785 !48786 48790 !48791 51585 !51587
+[2060] 48808 !48809 48813 !48814 51619 !51620
+[2061] 48831 !48832 48836 !48837 !51641 51642
+[2062] 48857 49000 50774
+[2063] 48858 49010 49204 49214 51628
+[2064] 48862 !48864
+[2065] 48869 49745 50771
+[2066] 48870 48900 48976 48994 49923 50165 50405
+[2067] 48874 49028 50775
+[2068] 48887 48888
+[2069] 48890 49044 49052 50808
+[2070] 48916 50357 50878 51046 51100 51400 !51402 51473 51602
+[2071] 48920 49032
+[2072] 48924 !48926
+[2073] 48931 50309
+[2074] 48935 49168 49169 49189 49224 50776 50777 51101
+[2075] 48947 50261 !51414
+[2076] 48959 50213
+[2077] 48981 50117 51374 !51376 51627
+[2078] 48986 50019 50772 50773 51403
+[2079] 48990 49059
+[2080] 48992 48993
+[2081] 48999 49277 49879
+[2082] 49004 !49007 49835 50780
+[2083] 49009 49791
+[2084] 49015 !49017
+[2085] 49020 49036
+[2086] 49021 49022
+[2087] 49056 49071 49174 49179 49194 49199 49209 49234 50965
+[2088] 49057 49058
+[2089] 49075 !49077
+[2090] 49079 49085
+[2091] 49081 49083 49135
+[2092] 49100 49115
+[2093] 49105 49125
+[2094] 49110 49140 49145
+[2095] 49155 50874 !50875 !50877
+[2096] 49183 49185
+[2097] 49218 49220
+[2098] 49228 49230
+[2099] 49238 49240
+[2100] 49244 49966 !49976 50114 50354
+[2101] 49245 49265 49922 50402
+[2102] 49248 49299 49755 50166 50214 50454 50464
+[2103] 49255 49287 49327 50210 50450
+[2104] 49276 49516 49558 49642 49790 49878 50016
+[2105] 49285 49888
+[2106] 49298 50306
+[2107] 49316 49390 50162
+[2108] 49331 49562
+[2109] 49432 49834
+[2110] 49474 49744 !49756 50258
+[2111] 49604 49754
+[2112] 49606 49607
+[2113] 49650 !49651
+[2114] 49750 !49751
+[2115] 49795 !49796
+[2116] 49839 !49840
+[2117] 49843 50310 50358
+[2118] 49883 !49884
+[2119] 49887 49975 50262 50406
+[2120] 49927 !49928
+[2121] 49933 49934
+[2122] 49971 !49972
+[2123] 49982 !49983
+[2124] 50026 !50027
+[2125] 50124 !50125
+[2126] 50172 !50173
+[2127] 50220 !50221
+[2128] 50268 !50269
+[2129] 50316 !50317
+[2130] 50364 !50365
+[2131] 50412 !50413
+[2132] 50452 50455
+[2133] 50459 !50460
+[2134] 50488 50693
+[2135] 50498 50555
+[2136] 50517 50593 50750
+[2137] 50526 50740
+[2138] 50545 50564 50621
+[2139] 50597 50607 50609
+[2140] 50599 !50600
+[2141] 50601 50611
+[2142] 50602 50702
+[2143] 50618 !50619 51236 !51239
+[2144] 50627 !50629 51265 !51266
+[2145] 50631 50645
+[2146] 50637 !50638 51290 !51293
+[2147] 50640 50674
+[2148] 50648 !50650 51319 !51320
+[2149] 50658 !50659 51343 !51346
+[2150] 50660 50717
+[2151] 50667 !50669 51371 !51372
+[2152] 50677 !50678 51395 !51398
+[2153] 50686 !50688 51423 !51424
+[2154] 50696 !50697 51449 !51452
+[2155] 50705 !50707 51477 !51478
+[2156] 50712 50721
+[2157] 50715 !50716 !50719 51501 !51504
+[2158] 50724 !50726 51529 !51530
+[2159] 50734 !50735 51553 !51556
+[2160] 50743 !50745 51580 !51582
+[2161] 50753 !50754 51606 !51607
+[2162] 50761 !50762 !51631 51632
+[2163] 50768 50770 51743
+[2164] 50778 !50899 !51474
+[2165] 50779 !51526
+[2166] 50789 50791
+[2167] 50792 51180 51348 !51350
+[2168] 50793 50817 50846 50964 51234 51262 51316
+[2169] 50812 50841
+[2170] 50814 50816
+[2171] 50843 50845
+[2172] 50916 50917
+[2173] 50933 !50947 51181
+[2174] 50945 51018 51426 !51428
+[2175] 50992 51498 51525 51550 51577
+[2176] 51073 !51092
+[2177] 51109 51138 51163
+[2178] 51127 !51146
+[2179] 51155 !51172
+[2180] 51204 51230 51231
+[2181] 51206 !51207
+[2182] 51208 51446
+[2183] 51211 !51212
+[2184] 51218 !51219
+[2185] 51260 !51261
+[2186] 51286 !51287
+[2187] 51289 !51308
+[2188] 51314 !51315
+[2189] 51340 !51341
+[2190] 51367 !51368
+[2191] 51392 !51393
+[2192] 51419 !51420
+[2193] 51444 !51445
+[2194] 51465 51466
+[2195] 51471 !51472
+[2196] 51490 51491
+[2197] 51496 !51497
+[2198] 51517 51518
+[2199] 51523 !51524
+[2200] 51542 51543
+[2201] 51548 !51549
+[2202] 51563 51564 51565
+[2203] 51575 !51576
+[2204] 51594 51595
+[2205] 51600 !51601
+[2206] 51614 51615 51616
+[2207] 51625 !51626
+[2208] 51636 51638 51639
+[2209] 51644 51645
+[2210] 51646 51647
+[2211] 51681 !51685 !51686
+[2212] 51694 !51695
+[2213] 51697 !51698 !51699
+[2214] 51702 !51703
+[2215] 52024 54315
+[2216] 52026 54355 58275 58667 58996
+[2217] 52028 54324
+[2218] 52030 54349 58277 58669 58998
+[2219] 52033 54321
+[2220] 52035 54347 58283 58671 59000
+[2221] 52037 54318
+[2222] 52039 54345 58285 58677 59002
+[2223] 52042 58984
+[2224] 52043 54316 58311 58655 58985 59841
+[2225] 52045 54361 58313 58657 58987
+[2226] 52047 54359 58271 58659 58989
+[2227] 52049 54357 58273 58665 58991
+[2228] 52054 59007
+[2229] 52055 54343 58287 58679 59008 59820
+[2230] 52057 54337 58289 58681 59010
+[2231] 52059 54335 58295 58683 59012
+[2232] 52061 54333 58297 58641 59014
+[2233] 52066 54331 58299 58643 58973
+[2234] 52069 54325 58301 58645 58975
+[2235] 52071 54322 58307 58647 58977
+[2236] 52073 54319 58309 58653 58979
+[2237] 52356 52359
+[2238] 52373 !59716
+[2239] 52400 52408
+[2240] 52401 52409
+[2241] 52420 !52421
+[2242] 52426 !57140
+[2243] 52431 !52567
+[2244] 52432 !52565
+[2245] 52434 52568
+[2246] 52507 !60670
+[2247] 52518 52603
+[2248] 52552 52558
+[2249] 52560 58269
+[2250] 52618 !59760
+[2251] 52646 54219
+[2252] 52659 52710
+[2253] 52669 59743
+[2254] 52714 52743 52889
+[2255] 52716 53935 54009
+[2256] 52726 53242 53329
+[2257] 52730 52739 52749 53063
+[2258] 52731 52733 52977 53065
+[2259] 52732 !52744
+[2260] 52734 52884 54019 54093
+[2261] 52735 54024
+[2262] 52740 52742 52745
+[2263] 52754 53328 53413 53579
+[2264] 52762 53412 53582 53666
+[2265] 52765 52891 52975 53060
+[2266] 52767 52887 52972 54102
+[2267] 52768 52976
+[2268] 52774 57149
+[2269] 52888 54107
+[2270] 52890 52979 53148
+[2271] 52892 !53069
+[2272] 52978 53066 53152 53237
+[2273] 52980 53153
+[2274] 53064 53156 53240 53323
+[2275] 53067 53241
+[2276] 53155 53243 53326 53409
+[2277] 53157 53327
+[2278] 53244 !53416
+[2279] 53330 53496
+[2280] 53414 53583
+[2281] 53498 53585 53669 53755
+[2282] 53499 53670
+[2283] 53584 53672 53841
+[2284] 53586 !53758
+[2285] 53671 53752 53844 53927
+[2286] 53673 53845
+[2287] 53763 53838 53929 54011
+[2288] 53768 53930
+[2289] 53851 53925 54013 54095
+[2290] 53856 54014
+[2291] 53940 !54097
+[2292] 54182 !54186
+[2293] 54188 59821
+[2294] 54272 54442 57160 59854 !59921 !59922 !60056 !60057 !60083 !60084 !60137 !60138
+[2295] 54296 54298
+[2296] 54371 !54419
+[2297] 54443 57161
+[2298] 54448 57176
+[2299] 54491 54541
+[2300] 54492 54542
+[2301] 54493 54543
+[2302] 54556 57192
+[2303] 54560 !54643
+[2304] 54575 54622
+[2305] 54612 !54626
+[2306] 54613 54623
+[2307] 54614 54627
+[2308] 54615 54628
+[2309] 54656 !54663
+[2310] 54677 57214
+[2311] 54698 54745
+[2312] 54699 54746
+[2313] 54734 !54749
+[2314] 54735 54755
+[2315] 54736 54754
+[2316] 54737 !54741 54756
+[2317] 54739 54752
+[2318] 54740 54750
+[2319] 54743 !54758
+[2320] 54751 54880
+[2321] 54808 57237
+[2322] 54860 !54884
+[2323] 54861 54889
+[2324] 54862 54890
+[2325] 54863 !54868 !54887 54891
+[2326] 54864 54881
+[2327] 54866 54886
+[2328] 54867 54885
+[2329] 54871 !54893
+[2330] 54920 !54930
+[2331] 54944 57260
+[2332] 54963 55013
+[2333] 54964 55014
+[2334] 54966 55016
+[2335] 54967 55017
+[2336] 55001 55149
+[2337] 55002 !55020
+[2338] 55003 55022
+[2339] 55004 55021
+[2340] 55005 55023
+[2341] 55006 55024
+[2342] 55007 55025
+[2343] 55008 55026
+[2344] 55077 57283
+[2345] 55097 !55147
+[2346] 55098 55146
+[2347] 55099 55148
+[2348] 55131 55249
+[2349] 55133 !55152
+[2350] 55134 55154
+[2351] 55135 55153
+[2352] 55136 55155
+[2353] 55137 55156
+[2354] 55138 55157
+[2355] 55139 55158
+[2356] 55208 57306
+[2357] 55227 55245
+[2358] 55228 55246
+[2359] 55229 55247
+[2360] 55230 55248
+[2361] 55233 55344 56024 56363 56424 56500 56575 !56651 56652 56691 !56697 !56763 56764 56835 !56843 !56913 56914 56915 !56989 56990 57093 !57101
+[2362] 55234 !55252
+[2363] 55235 55254
+[2364] 55236 55253
+[2365] 55237 55255
+[2366] 55238 55256
+[2367] 55239 55257
+[2368] 55240 55258
+[2369] 55306 57329
+[2370] 55326 !55342
+[2371] 55327 55341
+[2372] 55328 55343 !55416 !55499 !55597
+[2373] 55329 55433
+[2374] 55330 55432
+[2375] 55331 !55347
+[2376] 55333 55434
+[2377] 55334 !55350
+[2378] 55345 55415
+[2379] 55346 55417
+[2380] 55396 57352
+[2381] 55421 !55425
+[2382] 55479 57375
+[2383] 55504 !55508
+[2384] 55555 57398
+[2385] 55598 !55651 !55832 !55909
+[2386] 55627 57421
+[2387] 55648 !55656
+[2388] 55652 !55734
+[2389] 55705 57444
+[2390] 55708 55714
+[2391] 55780 57467
+[2392] 55782 55793 55855 55856 55866 55867
+[2393] 55784 !55785 55795 !55796 !55849
+[2394] 55853 57490
+[2395] 55857 55868 55875
+[2396] 55858 55869 55927
+[2397] 55873 55874
+[2398] 55884 55919
+[2399] 55910 !55973
+[2400] 55931 57513
+[2401] 55935 !55936 55946 !55947 55953 !55954 !55999
+[2402] 55962 55992
+[2403] 55979 56033
+[2404] 56003 57536
+[2405] 56006 !56007 56012 !56013 56059 !56060 !56077
+[2406] 56034 56035
+[2407] 56041 56067
+[2408] 56042 56068
+[2409] 56043 56069
+[2410] 56044 56070
+[2411] 56082 57559
+[2412] 56086 !56087 56097 !56098 56104 !56105 !56149
+[2413] 56112 56141
+[2414] 56113 56142
+[2415] 56114 56143
+[2416] 56122 !56123
+[2417] 56124 !56176 !56419 !56497 !56574
+[2418] 56153 57582
+[2419] 56156 !56157 56162 !56163 56208 !56209 !56226
+[2420] 56174 !56182
+[2421] 56183 56243
+[2422] 56189 56216
+[2423] 56190 56217
+[2424] 56192 56218
+[2425] 56193 56219
+[2426] 56231 57604
+[2427] 56235 !56361
+[2428] 56237 !56241 !56362
+[2429] 56244 56245
+[2430] 56250 !56251 56258 !56259 56285 !56286 !56303
+[2431] 56269 56293
+[2432] 56270 56294 56327 56352 56484 56521
+[2433] 56271 56295
+[2434] 56307 57627
+[2435] 56310 !56311 56315 !56316 !56326 56335 !56336 !56350 !56369 !56375
+[2436] 56328 56353
+[2437] 56365 56367
+[2438] 56368 56420
+[2439] 56380 57651
+[2440] 56384 !56385 56391 !56392 56400 !56401 !56430 !56453
+[2441] 56408 !56409 56446 !56447
+[2442] 56426 56428
+[2443] 56429 56498
+[2444] 56457 57674
+[2445] 56461 !56462 56468 !56469 56477 !56478 !56506 !56530
+[2446] 56485 !56488 56522 !56524
+[2447] 56502 56504
+[2448] 56505 56570
+[2449] 56534 57697
+[2450] 56538 !56539 56545 !56546 56553 !56554 56558 !56559 !56581 56588 !56589 !56604
+[2451] 56577 56579
+[2452] 56580 56649
+[2453] 56608 57720
+[2454] 56612 !56613 56619 !56620 !56627 56630 56634 !56635 !56658 !56662 56664 !56682
+[2455] 56647 56653
+[2456] 56648 !56656
+[2457] 56655 56657
+[2458] 56686 57745
+[2459] 56692 56693
+[2460] 56699 !56701 56703 56708 !56709 56716 !56717 56729 !56730 !56739 56741 !56756
+[2461] 56761 57768
+[2462] 56766 56768
+[2463] 56769 56845
+[2464] 56770 !56773 56774 !56779 56780 !56787 56788 !56800 56801 !56811 56812 56827
+[2465] 56832 57791
+[2466] 56840 56841
+[2467] 56846 56847
+[2468] 56848 !56851 56853 56858 !56859 56866 !56867 56879 !56880 !56890 56892 !56907
+[2469] 56912 57812
+[2470] 56917 56919
+[2471] 56920 56987
+[2472] 56921 56923 !56925 !56930 56931 !56938 56939 !56951 56952 56961 !56963 56978
+[2473] 56983 57835
+[2474] 56985 56991
+[2475] 56992 57103
+[2476] 56993 !56996 56997 !57002 57003 !57010 57011 !57023 57024 !57034 57035 57050
+[2477] 57055 57858
+[2478] 57058 !57059 57063 !57064 57070 !57071 57076 !57077 57106 57110 !57111
+[2479] 57096 57097
+[2480] 57104 57105
+[2481] 57141 60658
+[2482] 57143 57144 57487 57510 57556 57758 57822 !57841 57845
+[2483] 57145 !57165 57184 !57198 57257 57280 57579
+[2484] 57155 57629
+[2485] 57156 57469
+[2486] 57169 !57180 57349 57464
+[2487] 57174 57446
+[2488] 57194 57400
+[2489] 57202 !57220 57533 57799 !57818
+[2490] 57235 57303 57441 57666 57712
+[2491] 57239 57766
+[2492] 57243 57244
+[2493] 57262 57561
+[2494] 57267 57268
+[2495] 57290 57291
+[2496] 57313 57314
+[2497] 57335 57336 57337
+[2498] 57354 57699
+[2499] 57359 57360
+[2500] 57372 57633 57689
+[2501] 57382 57383
+[2502] 57395 57610 57735
+[2503] 57405 57406
+[2504] 57427 57428 57429
+[2505] 57432 57436 57437
+[2506] 57451 57452
+[2507] 57461 !57462 60139 !60142
+[2508] 57474 57475
+[2509] 57477 57478
+[2510] 57479 57484 !57485 60167 !60168
+[2511] 57497 57498
+[2512] 57502 !57503 57507 !57508 60193 !60196
+[2513] 57520 57521
+[2514] 57525 !57526 57530 !57531 60221 !60222
+[2515] 57543 57544
+[2516] 57548 !57549 57553 !57554 60247 !60250
+[2517] 57566 57567
+[2518] 57571 !57572 57576 !57577 60275 !60276
+[2519] 57584 57606 57722
+[2520] 57589 57590
+[2521] 57594 !57595 57599 !57600 60300 !60303
+[2522] 57611 57612
+[2523] 57617 !57618 57622 !57623 60327 !60328
+[2524] 57634 57635
+[2525] 57640 !57641 57646 !57647 60352 !60355
+[2526] 57642 !57657
+[2527] 57653 57836
+[2528] 57658 57659
+[2529] 57663 !57664 57669 !57670 60379 !60380
+[2530] 57676 57789
+[2531] 57681 57682
+[2532] 57686 !57687 57692 !57693 60404 !60407
+[2533] 57704 57705
+[2534] 57709 !57710 57715 !57716 60431 !60432
+[2535] 57727 57728
+[2536] 57732 !57733 57738 !57739 60456 !60459
+[2537] 57750 57751
+[2538] 57755 !57756 57761 !57762 60483 !60484
+[2539] 57773 57774
+[2540] 57780 !57781 57785 !57786 60508 !60511
+[2541] 57782 !57796
+[2542] 57803 !57804 57808 !57809 60534 !60536
+[2543] 57815 57816
+[2544] 57826 !57827 57831 !57832 60560 !60561
+[2545] 57848 !57849 57854 !57855 !60573 60574 60576
+[2546] 57864 57865
+[2547] 57872 57894 57899 58449 58632 59165 59213
+[2548] 57873 59742 59894 59995 60291 60343 60370 60422 60447 60474 60499
+[2549] 57874 59723
+[2550] 57875 57930 57958
+[2551] 57879 57939 57944 58702 58747 59359
+[2552] 57880 57935 !57937 57998 !58000
+[2553] 57884 57889 57924 58235 58880 59262 59310 !59354
+[2554] 57885 58002 59724
+[2555] 57890 57966 57970 57994 58080 58090 58103 58119 58124 58129 58134 58149 58154 58159 58164 58169 59725 59726 60050 !60067
+[2556] 57895 57950 57962
+[2557] 57904 59116 59819 !59825 59853 60000 60162 60216 60298 !60299
+[2558] 57905 57925
+[2559] 57909 !57912 59068
+[2560] 57914 57919 58925 58969
+[2561] 57920 57954 58010 60577 !60592 !60593
+[2562] 57929 58836
+[2563] 57940 57945 57978 57982 60266 !60283
+[2564] 57942 57947
+[2565] 57949 58633 59766 59795 59913 59941 60103 60129 60183 60551
+[2566] 57968 57972
+[2567] 57984 60439
+[2568] 57986 57990
+[2569] 58014 58020
+[2570] 58016 58018 58035 58040 58055 58095
+[2571] 58025 58030 58060 58065
+[2572] 58046 !58048
+[2573] 58050 58070
+[2574] 58086 !58088
+[2575] 58102 58105
+[2576] 58108 58110
+[2577] 58113 58115
+[2578] 58138 58140
+[2579] 58143 58145
+[2580] 58173 58175
+[2581] 58179 58211 58234 58257 58363 58448 58534 58577 58619 58691 58735 58780 58824 58958 59056 59153 59347
+[2582] 58182 !59209
+[2583] 58183 !58188
+[2584] 58191 !58198 58201 !58209
+[2585] 58224 !58232
+[2586] 58247 !58255
+[2587] 58322 !58330
+[2588] 58407 !58415
+[2589] 58492 !58500
+[2590] 58545 !58743
+[2591] 58580 58623 58693 58694
+[2592] 58582 !58583
+[2593] 58624 !58626
+[2594] 58630 58790 !58832 59115 59164
+[2595] 58631 59067
+[2596] 58701 59407
+[2597] 58739 !58741
+[2598] 58746 58924 58968 59212 59261
+[2599] 58784 !58785
+[2600] 58828 !58830
+[2601] 58835 59358
+[2602] 58837 !58870
+[2603] 58873 !58874
+[2604] 58877 58878
+[2605] 58881 !58914
+[2606] 58917 !58919
+[2607] 58962 !58963
+[2608] 58965 59064
+[2609] 59060 !59062
+[2610] 59069 !59106
+[2611] 59109 !59110
+[2612] 59157 !59159
+[2613] 59166 !59203
+[2614] 59206 !59207
+[2615] 59214 !59251
+[2616] 59254 !59256
+[2617] 59302 !59303
+[2618] 59306 59307
+[2619] 59350 !59352
+[2620] 59399 !59400
+[2621] 59403 59404
+[2622] 59410 !59411
+[2623] 59419 59420 59456 59485 59699
+[2624] 59428 59475 59537 59661
+[2625] 59437 59680 59689
+[2626] 59447 59494 59547 59604
+[2627] 59466 59518
+[2628] 59504 59670
+[2629] 59509 59651
+[2630] 59528 59566 59632
+[2631] 59539 59541
+[2632] 59540 !59545
+[2633] 59550 !59551 60131 !60134
+[2634] 59555 !59563
+[2635] 59559 !59561 60160 !60161
+[2636] 59569 !59570 60185 !60188
+[2637] 59575 59585
+[2638] 59578 !59580 60214 !60215
+[2639] 59588 !59589 60239 !60242
+[2640] 59593 !59601
+[2641] 59597 !59599 60268 !60269
+[2642] 59607 !59608 60294 !60297
+[2643] 59613 59623
+[2644] 59616 !59618 60322 !60323
+[2645] 59626 !59627 !59630 60346 !60349
+[2646] 59635 !59637 60374 !60375
+[2647] 59645 !59646 60398 !60401
+[2648] 59654 !59656 60426 !60427
+[2649] 59664 !59665 60450 !60453
+[2650] 59673 !59675 60478 !60479
+[2651] 59683 !59684 60502 !60505
+[2652] 59692 !59694 60529 !60531
+[2653] 59702 !59703 60555 !60556
+[2654] 59710 !59711 !60579 60580
+[2655] 59717 59719 60694
+[2656] 59727 !60130
+[2657] 59729 59780
+[2658] 59732 59886 60027 60108 60324 !60325 60350 !60351 60402 !60403 60428 !60429 60506 !60507
+[2659] 59738 59740
+[2660] 59741 59862 59967 60075 60157 60211 60318 60395
+[2661] 59750 !60596
+[2662] 59763 59765
+[2663] 59789 !59793 59946 59973 60189 60243 60270 60376 !60377 60454 !60455 60532 !60533
+[2664] 59837 59838
+[2665] 59848 !59864
+[2666] 59860 59861 60002 60003 60164 60165 60218 60219
+[2667] 59882 !59896
+[2668] 59892 59893 60029 60030 60110 60111
+[2669] 59948 59949 59975 59976 60191 60192 60245 60246 60272 60273
+[2670] 60022 !60041
+[2671] 60106 !60107
+[2672] 60113 !60114
+[2673] 60153 60179 60207 60233 60261 60287 60314 60315
+[2674] 60155 !60156
+[2675] 60181 !60182
+[2676] 60209 !60210
+[2677] 60235 !60236
+[2678] 60238 !60257
+[2679] 60263 !60264
+[2680] 60289 !60290
+[2681] 60341 !60342
+[2682] 60368 !60369
+[2683] 60393 !60394
+[2684] 60420 !60421
+[2685] 60445 !60446
+[2686] 60472 !60473
+[2687] 60491 60492
+[2688] 60497 !60498
+[2689] 60524 !60525
+[2690] 60527 !60543
+[2691] 60549 !60550
+[2692] 60568 60569
+[2693] 60584 !60585
+[2694] 60589 60591
+[2695] 60594 !60598
+[2696] 60632 !60636 !60637
+[2697] 60645 !60646
+[2698] 60648 !60649 !60650
+[2699] 60653 !60654
+[2700] 60971 63334
+[2701] 60973 63374 67318 67710 68039
+[2702] 60975 63343
+[2703] 60977 63368 67320 67712 68041
+[2704] 60980 63340
+[2705] 60982 63366 67326 67714 68043
+[2706] 60984 63337
+[2707] 60986 63364 67328 67720 68045
+[2708] 60989 68027
+[2709] 60990 63335 67354 67698 68028 68884
+[2710] 60992 63380 67356 67700 68030
+[2711] 60994 63378 67314 67702 68032
+[2712] 60996 63376 67316 67708 68034
+[2713] 61001 68050
+[2714] 61002 63362 67330 67722 68051 68863
+[2715] 61004 63356 67332 67724 68053
+[2716] 61006 63354 67338 67726 68055
+[2717] 61008 63352 67340 67684 68057
+[2718] 61013 63350 67342 67686 68016
+[2719] 61016 63344 67344 67688 68018
+[2720] 61018 63341 67350 67690 68020
+[2721] 61020 63338 67352 67696 68022
+[2722] 61303 61306
+[2723] 61320 !68759
+[2724] 61347 61355
+[2725] 61348 61356
+[2726] 61367 !61368
+[2727] 61373 !66159
+[2728] 61378 !61514
+[2729] 61379 !61512
+[2730] 61381 61515
+[2731] 61454 !69713
+[2732] 61465 61550
+[2733] 61499 61505
+[2734] 61507 67312
+[2735] 61565 !68803
+[2736] 61593 63238
+[2737] 61616 68786
+[2738] 61661 61690 61908
+[2739] 61663 62954 63028
+[2740] 61673 62261 62348
+[2741] 61677 61686 61696 62082
+[2742] 61678 61680 61996 62084
+[2743] 61679 !61691
+[2744] 61681 61903 63038 63112
+[2745] 61682 63043
+[2746] 61687 61689 61692
+[2747] 61701 62347 62432 62598
+[2748] 61709 62431 62601 62685
+[2749] 61712 61910 61994 62079
+[2750] 61714 61906 61991 63121
+[2751] 61715 61995
+[2752] 61724 66168
+[2753] 61907 63126
+[2754] 61909 61998 62167
+[2755] 61911 !62088
+[2756] 61997 62085 62171 62256
+[2757] 61999 62172
+[2758] 62083 62175 62259 62342
+[2759] 62086 62260
+[2760] 62174 62262 62345 62428
+[2761] 62176 62346
+[2762] 62263 !62435
+[2763] 62349 62515
+[2764] 62433 62602
+[2765] 62517 62604 62688 62774
+[2766] 62518 62689
+[2767] 62603 62691 62860
+[2768] 62605 !62777
+[2769] 62690 62771 62863 62946
+[2770] 62692 62864
+[2771] 62782 62857 62948 63030
+[2772] 62787 62949
+[2773] 62870 62944 63032 63114
+[2774] 62875 63033
+[2775] 62959 !63116
+[2776] 63204 67673 67674 67789 67922 68255 68304 68401 68778 68865
+[2777] 63207 68864
+[2778] 63291 63461 66179 68897
+[2779] 63315 63317
+[2780] 63390 !63438
+[2781] 63462 66180
+[2782] 63467 66195
+[2783] 63510 63560
+[2784] 63511 63561
+[2785] 63512 63562
+[2786] 63575 66211
+[2787] 63579 !63662
+[2788] 63594 63641
+[2789] 63631 !63645
+[2790] 63632 63642
+[2791] 63633 63646
+[2792] 63634 63647
+[2793] 63675 !63682
+[2794] 63696 66233
+[2795] 63717 63764
+[2796] 63718 63765
+[2797] 63753 !63768
+[2798] 63754 63774
+[2799] 63755 63773
+[2800] 63756 !63760 63775
+[2801] 63758 63771
+[2802] 63759 63769
+[2803] 63762 !63777
+[2804] 63770 63899
+[2805] 63827 66256
+[2806] 63879 !63903
+[2807] 63880 63908
+[2808] 63881 63909
+[2809] 63882 !63887 !63906 63910
+[2810] 63883 63900
+[2811] 63885 63905
+[2812] 63886 63904
+[2813] 63890 !63912
+[2814] 63939 !63949
+[2815] 63963 66279
+[2816] 63982 64032
+[2817] 63983 64033
+[2818] 63985 64035
+[2819] 63986 64036
+[2820] 64020 64168
+[2821] 64021 !64039
+[2822] 64022 64041
+[2823] 64023 64040
+[2824] 64024 64042
+[2825] 64025 64043
+[2826] 64026 64044
+[2827] 64027 64045
+[2828] 64096 66302
+[2829] 64116 !64166
+[2830] 64117 64165
+[2831] 64118 64167
+[2832] 64150 64268
+[2833] 64152 !64171
+[2834] 64153 64173
+[2835] 64154 64172
+[2836] 64155 64174
+[2837] 64156 64175
+[2838] 64157 64176
+[2839] 64158 64177
+[2840] 64227 66325
+[2841] 64246 64264
+[2842] 64247 64265
+[2843] 64248 64266
+[2844] 64249 64267
+[2845] 64252 64363 65043 !65260 65594 !65670 65671 65710 !65716 !65782 65783 65854 !65862 !65932 65933 65934 !66008 66009 66112 !66120
+[2846] 64253 !64271
+[2847] 64254 64273
+[2848] 64255 64272
+[2849] 64256 64274
+[2850] 64257 64275
+[2851] 64258 64276
+[2852] 64259 64277
+[2853] 64325 66348
+[2854] 64345 !64361
+[2855] 64346 64360
+[2856] 64347 64362
+[2857] 64348 64452
+[2858] 64349 64451
+[2859] 64350 !64366
+[2860] 64353 !64369
+[2861] 64364 64434
+[2862] 64365 64436
+[2863] 64415 66371
+[2864] 64435 64518 64616
+[2865] 64440 !64444
+[2866] 64498 66394
+[2867] 64523 !64527
+[2868] 64574 66417
+[2869] 64617 !64670
+[2870] 64646 66440
+[2871] 64667 !64675
+[2872] 64671 !64753
+[2873] 64724 66463
+[2874] 64726 64732
+[2875] 64799 66486
+[2876] 64801 64802 64813
+[2877] 64830 64861
+[2878] 64851 64928
+[2879] 64872 66509
+[2880] 64876 !64877 !64946
+[2881] 64885 64963 64964
+[2882] 64887 !64888
+[2883] 64892 64970 64971
+[2884] 64894 !64895
+[2885] 64902 64937
+[2886] 64903 64938
+[2887] 64906 64939
+[2888] 64907 64940
+[2889] 64929 !64992
+[2890] 64950 66532
+[2891] 64954 !64955 64965 64972 !65018
+[2892] 64980 65010
+[2893] 64981 65011
+[2894] 64982 65012
+[2895] 64998 65052
+[2896] 65022 66555
+[2897] 65025 !65026 65031 !65032 65078 !65079 !65096
+[2898] 65053 65054
+[2899] 65060 65086
+[2900] 65061 65087
+[2901] 65062 65088
+[2902] 65063 65089
+[2903] 65101 66578
+[2904] 65105 !65106 65116 !65117 65123 !65124 !65168
+[2905] 65131 65160
+[2906] 65132 65161
+[2907] 65133 65162
+[2908] 65141 !65142
+[2909] 65143 !65195 !65438 !65516 !65593
+[2910] 65172 66601
+[2911] 65175 !65176 65181 !65182 65227 !65228 !65245
+[2912] 65193 !65201
+[2913] 65202 65262
+[2914] 65208 65235
+[2915] 65209 65236
+[2916] 65211 65237
+[2917] 65212 65238
+[2918] 65250 66623
+[2919] 65254 !65380
+[2920] 65256 !65381 65382
+[2921] 65263 65264
+[2922] 65269 !65270 65277 !65278 65304 !65305 !65322
+[2923] 65288 65312
+[2924] 65289 65313
+[2925] 65290 65314
+[2926] 65326 66646
+[2927] 65329 !65330 65334 !65335 65354 !65355 !65394
+[2928] 65345 !65347 65369 !65372
+[2929] 65399 66670
+[2930] 65403 !65404 65410 !65411 65419 !65420 65427 !65428 65465 !65466 !65472
+[2931] 65443 65519
+[2932] 65448 65517
+[2933] 65476 66693
+[2934] 65480 !65481 65487 !65488 65496 !65497 !65504 65507 !65541 65543 !65549
+[2935] 65521 65523
+[2936] 65553 66716
+[2937] 65557 !65558 65564 !65565 65572 !65573 65577 !65578 !65600 65607 !65608 !65623
+[2938] 65596 65598
+[2939] 65599 65668
+[2940] 65627 66739
+[2941] 65631 !65632 65638 !65639 !65646 65649 65653 !65654 !65677 !65681 65683 !65701
+[2942] 65666 65672
+[2943] 65667 !65675
+[2944] 65674 65676
+[2945] 65705 66764
+[2946] 65711 65712
+[2947] 65718 !65720 65722 65727 !65728 65735 !65736 65748 !65749 !65758 65760 !65775
+[2948] 65780 66787
+[2949] 65785 65787
+[2950] 65788 65864
+[2951] 65789 !65792 65793 !65798 65799 !65806 65807 !65819 65820 !65830 65831 65846
+[2952] 65851 66810
+[2953] 65859 65860
+[2954] 65865 65866
+[2955] 65867 !65870 65872 65877 !65878 65885 !65886 65898 !65899 !65909 65911 !65926
+[2956] 65931 66831
+[2957] 65936 65938
+[2958] 65939 66006
+[2959] 65940 65942 !65944 !65949 65950 !65957 65958 !65970 65971 65980 !65982 65997
+[2960] 66002 66854
+[2961] 66004 66010
+[2962] 66011 66122
+[2963] 66012 !66015 66016 !66021 66022 !66029 66030 !66042 66043 !66053 66054 66069
+[2964] 66074 66877
+[2965] 66077 !66078 66082 !66083 66089 !66090 66095 !66096 66125 66129 !66130
+[2966] 66115 66116
+[2967] 66123 66124
+[2968] 66160 69701
+[2969] 66162 !66217
+[2970] 66163 66188 !66199 66203 66708 66818 !66837
+[2971] 66164 !66184 66276 66414 66460 66506 66529 66777 66795 !66814
+[2972] 66165 66204 66222 !66239 66253 66277 66300 66323 66346 66369 66415 66438 66461 66484 66530 66553 66668 66714 66760 66783 66870
+[2973] 66172 !66181
+[2974] 66174 66193 66235 66258 66327 66350 66419 66442 66557 66603 66695 66832 66878
+[2975] 66215 66216
+[2976] 66254 66299 66345 66368 66391 66552 66575 66662 66685 66841 !66860
+[2977] 66283 66284
+[2978] 66306 66307
+[2979] 66331 66332
+[2980] 66375 66376
+[2981] 66398 66399
+[2982] 66401 66402
+[2983] 66411 69102
+[2984] 66446 66447
+[2985] 66467 66468
+[2986] 66490 66491
+[2987] 66492 66493
+[2988] 66496 66519
+[2989] 66498 !66499
+[2990] 66501 66524 66525 69184 69209
+[2991] 66503 !66504 69210
+[2992] 66513 66514
+[2993] 66516 66517
+[2994] 66526 69236 !69239
+[2995] 66536 66537
+[2996] 66542 66543
+[2997] 66544 66549 !66550 69264 !69265
+[2998] 66567 !66568 66572 !66573 69290 !69293
+[2999] 66582 66583
+[3000] 66585 66586
+[3001] 66590 !66591 66595 !66596 69318 !69319
+[3002] 66607 66608 66609
+[3003] 66613 !66614 66618 !66619 69343 !69346
+[3004] 66627 66628
+[3005] 66630 66631
+[3006] 66632 66633
+[3007] 66636 !66637 66641 !66642 69370 !69371
+[3008] 66650 66651
+[3009] 66653 66654
+[3010] 66655 66656
+[3011] 66659 !66660 66665 !66666 69395 !69398
+[3012] 66674 66675
+[3013] 66682 !66683 66688 !66689 69422 !69423
+[3014] 66700 66701
+[3015] 66705 !66706 66711 !66712 69447 !69450
+[3016] 66720 66721
+[3017] 66728 !66729 66734 !66735 69474 !69475
+[3018] 66730 !66745
+[3019] 66743 66744
+[3020] 66746 66747
+[3021] 66751 !66752 66757 !66758 69499 !69502
+[3022] 66753 !66768
+[3023] 66761 !66765
+[3024] 66774 !66775 66780 !66781 69526 !69527
+[3025] 66784 !66788
+[3026] 66799 !66800 66804 !66805 69551 !69554
+[3027] 66807 !66811
+[3028] 66822 !66823 66827 !66828 69577 !69579
+[3029] 66845 !66846 66850 !66851 69603 !69604
+[3030] 66857 66858
+[3031] 66867 !66868 66873 !66874 !69616 69617 69619
+[3032] 66869 !66883
+[3033] 66894 67675
+[3034] 66895 !66899 67630
+[3035] 66896 66905 66921 66929 66993 67009 67013 67021 67033 67037 68766
+[3036] 66904 !66999 67588 68402
+[3037] 66912 67545 68353 !68397
+[3038] 66913 66945 66958 66968 66978 66983 67029 67049 67059 67061 67062 67073 67078 67088 67098 67108 67118 67123 67128 67133 67146 67152 67167 67172 67177 67187 67197 67202 68768 68773 68774 68827 68902 69125 69179 69233 69260 69287 69314 69363 69467
+[3039] 66920 68305
+[3040] 66928 67492 68256 68785 69010 !69030
+[3041] 66931 67011
+[3042] 66936 !66939 67450 68208 !68252
+[3043] 66944 68159 !68204
+[3044] 66952 68111 !68155 68984 !69002
+[3045] 66953 66963 67001 67005 67017 67025 67041 67053 68767 !68770 !68771 68800 68823 69065 69147 69173 69227 69281 69309 69335 69362 69414 69439 69543 69570
+[3046] 66957 67301 68012 !68107
+[3047] 66962 67968 !68008
+[3048] 66967 67923
+[3049] 66972 !66975 67879 !67919
+[3050] 66977 67255 67834 !67875
+[3051] 66982 !67047 67790
+[3052] 66987 !66990 67745 !67786
+[3053] 66992 67226 67676 69542
+[3054] 67055 69561
+[3055] 67057 67063
+[3056] 67069 !67071
+[3057] 67084 !67086
+[3058] 67094 !67096
+[3059] 67104 !67106
+[3060] 67114 !67116
+[3061] 67139 !67141
+[3062] 67145 67148
+[3063] 67156 67158
+[3064] 67161 67163
+[3065] 67181 67183
+[3066] 67191 67193
+[3067] 67206 67208
+[3068] 67211 67213
+[3069] 67216 67218
+[3070] 67229 67963 68007
+[3071] 67244 !67830
+[3072] 67250 68300
+[3073] 67273 67829
+[3074] 67278 !67964
+[3075] 67285 67541
+[3076] 67296 67740 67918 68203
+[3077] 67371 68347
+[3078] 67414 67585
+[3079] 67449 67956 68099
+[3080] 67535 !68348
+[3081] 67578 !67579
+[3082] 67581 67623
+[3083] 67582 !67584
+[3084] 67627 67785 68154
+[3085] 67666 67736 67737
+[3086] 67667 !67669
+[3087] 67782 !67784
+[3088] 67827 !67828
+[3089] 67871 !67873
+[3090] 67916 !67917
+[3091] 67960 !67962
+[3092] 68005 !68006
+[3093] 68103 !68105
+[3094] 68152 !68153
+[3095] 68200 !68202
+[3096] 68249 !68250
+[3097] 68297 !68299
+[3098] 68345 !68346
+[3099] 68393 !68395
+[3100] 68442 !68443
+[3101] 68449 !68456
+[3102] 68453 !68454
+[3103] 68462 68552 68609 68723
+[3104] 68463 68561 68666 68704 68732
+[3105] 68471 68490 68518 68571 68599 68618
+[3106] 68479 !68482
+[3107] 68499 68685 68694
+[3108] 68508 !68511
+[3109] 68527 !68530
+[3110] 68537 68580 68590 68656 68675
+[3111] 68547 68647 68742
+[3112] 68601 68603
+[3113] 68602 69203 !69204
+[3114] 68612 !68613 69228 !69231
+[3115] 68621 !68623 69257 !69258
+[3116] 68627 !68634
+[3117] 68631 !68632 !68635 69282 !69285
+[3118] 68637 68713
+[3119] 68640 !68642 69311 !69312
+[3120] 68650 !68651 69337 !69340
+[3121] 68659 !68661 69365 !69366
+[3122] 68669 !68670 69389 !69392
+[3123] 68678 !68680 69417 !69418
+[3124] 68688 !68689 69441 !69444
+[3125] 68697 !68699 69469 !69470
+[3126] 68707 !68708 69493 !69496
+[3127] 68716 !68718 69521 !69522
+[3128] 68726 !68727 69545 !69548
+[3129] 68735 !68737 69572 !69574
+[3130] 68745 !68746 69598 !69599
+[3131] 68753 !68754 !69622 69623
+[3132] 68760 68762 69737
+[3133] 68764 68775
+[3134] 68776 69043
+[3135] 68783 68796
+[3136] 68784 68937 69517 !69534
+[3137] 68793 !69639
+[3138] 68802 !68807 68962 69016
+[3139] 68804 68833
+[3140] 68809 69413
+[3141] 68832 69151
+[3142] 68838 69092 !69110
+[3143] 68867 68869 68880
+[3144] 68890 68907
+[3145] 68896 69097 69341 !69342 69367 69471
+[3146] 68903 69099 69100
+[3147] 68929 69286
+[3148] 68935 68936 68940 69288
+[3149] 68956 !68976 69038 !69056 69254 !69272 69465 !69482
+[3150] 68964 68965 69018 69019
+[3151] 68989 69313 69549 !69550
+[3152] 68991 68992 69315
+[3153] 69045 69046
+[3154] 69070 69523 !69524
+[3155] 69072 69073
+[3156] 69118 !69138
+[3157] 69122 69148
+[3158] 69124 69232
+[3159] 69126 69234
+[3160] 69127 69235
+[3161] 69146 69226
+[3162] 69153 69154
+[3163] 69164 69246
+[3164] 69172 69308
+[3165] 69174 !69177
+[3166] 69192 69326
+[3167] 69196 69197
+[3168] 69200 !69218 69633
+[3169] 69205 69575 !69576
+[3170] 69207 69208
+[3171] 69224 !69225
+[3172] 69252 !69253
+[3173] 69278 !69279
+[3174] 69306 !69307
+[3175] 69332 !69333
+[3176] 69334 69438
+[3177] 69353 69457
+[3178] 69359 !69360
+[3179] 69368 69472
+[3180] 69384 !69385
+[3181] 69386 !69405
+[3182] 69393 !69394
+[3183] 69411 !69412
+[3184] 69419 !69420
+[3185] 69436 !69437
+[3186] 69445 !69446
+[3187] 69463 !69464
+[3188] 69488 !69489
+[3189] 69490 !69509
+[3190] 69497 !69498
+[3191] 69515 !69516
+[3192] 69540 !69541
+[3193] 69567 !69568
+[3194] 69592 !69593
+[3195] 69594 !69611
+[3196] 69600 !69601
+[3197] 69627 !69628
+[3198] 69632 69634 69637 !69641
+[3199] 69675 !69679 !69680
+[3200] 69688 !69689
+[3201] 69691 !69692 !69693
+[3202] 69696 !69697
+[3203] 70014 78611
+[3204] 70016 78651 82654 83030 83358
+[3205] 70018 78620
+[3206] 70020 78645 82656 83032 83360
+[3207] 70023 78617
+[3208] 70025 78643 82662 83034 83362
+[3209] 70027 78614
+[3210] 70029 78641 82664 83040 83364
+[3211] 70032 83346
+[3212] 70033 78612 82690 83018 83347 84202
+[3213] 70035 78657 82692 83020 83349
+[3214] 70037 78655 82650 83022 83351
+[3215] 70039 78653 82652 83028 83353
+[3216] 70044 83369
+[3217] 70045 78639 82666 83042 83370 84181
+[3218] 70047 78633 82668 83044 83372
+[3219] 70049 78631 82674 83046 83374
+[3220] 70051 78629 82676 83004 83376
+[3221] 70056 78627 82678 83006 83335
+[3222] 70059 78621 82680 83008 83337
+[3223] 70061 78618 82686 83010 83339
+[3224] 70063 78615 82688 83016 83341
+[3225] 70346 70349
+[3226] 70363 !84077
+[3227] 70390 70398
+[3228] 70391 70399
+[3229] 70410 !70411
+[3230] 70416 !81434
+[3231] 70421 !70557
+[3232] 70422 !70555
+[3233] 70424 70558
+[3234] 70497 !85029
+[3235] 70508 70593
+[3236] 70542 70548
+[3237] 70550 82648
+[3238] 70608 !84121
+[3239] 70636 78515
+[3240] 70659 84104
+[3241] 70704 70733 77170
+[3242] 70706 78223 78309
+[3243] 70716 77527 77615
+[3244] 70720 70729 70739 77346
+[3245] 70721 70723 77259 77348
+[3246] 70722 !70734
+[3247] 70724 77165 78308 78392
+[3248] 70725 78310
+[3249] 70730 70732 70735
+[3250] 70744 77614 77700 77868
+[3251] 70752 77699 77871 77956
+[3252] 70755 77172 77257 77343
+[3253] 70757 77168 77254 78391
+[3254] 70758 77258
+[3255] 70846 !70850
+[3256] 71018 !71022
+[3257] 71029 !71033
+[3258] 71211 !71213
+[3259] 71278 !71280
+[3260] 71299 !71301
+[3261] 71310 !71312
+[3262] 71438 !71440
+[3263] 71480 !71482
+[3264] 71500 !71502
+[3265] 71616 !71620
+[3266] 71635 !71639
+[3267] 71654 !71658
+[3268] 71686 !71690
+[3269] 71768 !71770
+[3270] 71782 !71784
+[3271] 71796 !71798
+[3272] 71899 !71903
+[3273] 71921 !71925
+[3274] 71971 !71973
+[3275] 72048 !72050
+[3276] 72062 !72064
+[3277] 72175 !72180
+[3278] 72198 !72203
+[3279] 72242 !72246
+[3280] 72261 !72265
+[3281] 72364 !72366
+[3282] 72378 !72380
+[3283] 72392 !72394
+[3284] 72434 !72436
+[3285] 72523 !72525
+[3286] 72537 !72539
+[3287] 72551 !72553
+[3288] 72648 !72653
+[3289] 72685 !72690
+[3290] 72708 !72713
+[3291] 72749 !72753
+[3292] 72768 !72772
+[3293] 72816 !72818
+[3294] 72836 !72838
+[3295] 72876 !72878
+[3296] 72920 !72922
+[3297] 72973 73064
+[3298] 72974 73065
+[3299] 73014 !73021
+[3300] 73020 !73286
+[3301] 73038 !73045
+[3302] 73044 !73231
+[3303] 73083 !73088
+[3304] 73121 !73126
+[3305] 73132 !73138
+[3306] 73166 !73170
+[3307] 73210 73387
+[3308] 73221 73343
+[3309] 73222 73344
+[3310] 73275 !73282
+[3311] 73281 !73547
+[3312] 73300 !73305
+[3313] 73322 !73327
+[3314] 73362 !73367
+[3315] 73383 73388
+[3316] 73403 !73407
+[3317] 73435 !73439
+[3318] 73536 !73543
+[3319] 73542 !74032
+[3320] 73561 !73568
+[3321] 73589 !73597
+[3322] 73596 !74082
+[3323] 73612 !73619
+[3324] 73637 !73644
+[3325] 73661 !73668
+[3326] 73686 !73691
+[3327] 73705 !73710
+[3328] 73800 !73802
+[3329] 73877 !73879
+[3330] 73929 81443
+[3331] 73968 74120
+[3332] 73974 74098
+[3333] 73975 74099
+[3334] 74021 !74028
+[3335] 74027 !74311
+[3336] 74046 !74053
+[3337] 74071 !74078
+[3338] 74116 74121
+[3339] 74143 74424
+[3340] 74164 !74171
+[3341] 74190 !74195
+[3342] 74300 !74307
+[3343] 74325 !74330
+[3344] 74344 !74349
+[3345] 74364 !74369
+[3346] 74411 !74418
+[3347] 74439 !74446
+[3348] 74445 !74740
+[3349] 74463 !74470
+[3350] 74487 !74497
+[3351] 74534 74687
+[3352] 74535 74688
+[3353] 74588 !74595
+[3354] 74614 !74621
+[3355] 74638 !74645
+[3356] 74662 !74669
+[3357] 74708 74899
+[3358] 74728 !74735
+[3359] 74753 !74760
+[3360] 74792 !74796
+[3361] 74810 !74812
+[3362] 74855 !74860
+[3363] 74967 !74974
+[3364] 74973 !75318
+[3365] 74989 !74996
+[3366] 75038 !75043
+[3367] 75062 !75067
+[3368] 75101 75231
+[3369] 75120 !75127
+[3370] 75126 !75477
+[3371] 75145 !75150
+[3372] 75167 !75172
+[3373] 75188 !75195
+[3374] 75194 !75204
+[3375] 75242 75451
+[3376] 75243 75452
+[3377] 75310 !75314
+[3378] 75333 !75338
+[3379] 75354 !75361
+[3380] 75378 !75385
+[3381] 75402 !75409
+[3382] 75426 !75433
+[3383] 75470 75590
+[3384] 75490 !75497
+[3385] 75496 !75868
+[3386] 75513 !75520
+[3387] 75519 !75572
+[3388] 75539 !75544
+[3389] 75600 75841
+[3390] 75622 75745
+[3391] 75623 75746
+[3392] 75675 !75682
+[3393] 75681 !76154
+[3394] 75699 !75706
+[3395] 75724 !75729
+[3396] 75764 !75771
+[3397] 75789 !75796
+[3398] 75814 !75821
+[3399] 75837 75842
+[3400] 75856 !75864
+[3401] 75882 !75889
+[3402] 75905 !75913
+[3403] 75930 !75937
+[3404] 76006 !76746 !76749
+[3405] 76010 !76013
+[3406] 76143 !76150
+[3407] 76149 !76550
+[3408] 76168 !76175
+[3409] 76193 !76200
+[3410] 76217 !76224
+[3411] 76223 !76491
+[3412] 76241 !76248
+[3413] 76247 !76614
+[3414] 76266 !76273
+[3415] 76291 !76298
+[3416] 76316 !76323
+[3417] 76340 !76347
+[3418] 76387 !76395
+[3419] 76394 !76712
+[3420] 76413 !76420
+[3421] 76735 !76740
+[3422] 76747 76750
+[3423] 76834 76847
+[3424] 76836 76848
+[3425] 76837 76849
+[3426] 76838 76850
+[3427] 76842 76851
+[3428] 76913 !76915
+[3429] 76938 !76940
+[3430] 77001 !77003
+[3431] 77015 !77017
+[3432] 77111 !77113
+[3433] 77169 78393
+[3434] 77171 77261 77432
+[3435] 77173 !77352
+[3436] 77260 77349 77436 77522
+[3437] 77262 77437
+[3438] 77347 77440 77525 77609
+[3439] 77350 77526
+[3440] 77439 77528 77612 77696
+[3441] 77441 77613
+[3442] 77529 !77703
+[3443] 77616 77784
+[3444] 77701 77872
+[3445] 77786 77874 77959 78044
+[3446] 77787 77960
+[3447] 77873 77962 78130
+[3448] 77875 !78051
+[3449] 77961 78048 78134 78218
+[3450] 77963 78135
+[3451] 78047 78139 78221 78303
+[3452] 78049 78222
+[3453] 78137 78224 78306 78388
+[3454] 78140 78307
+[3455] 78225 !78395
+[3456] 78484 84182
+[3457] 78568 78738 81454 84215 !84221 !84222 !84253 !84363 !84390 !84391 !84417 !84418 !84444 !84471 !84472 !84525
+[3458] 78592 78594
+[3459] 78667 !78715
+[3460] 78739 81455
+[3461] 78744 81470
+[3462] 78787 78837
+[3463] 78788 78838
+[3464] 78789 78839
+[3465] 78852 81486
+[3466] 78856 !78939
+[3467] 78871 78918
+[3468] 78908 !78922
+[3469] 78909 78919
+[3470] 78910 78923
+[3471] 78911 78924
+[3472] 78952 !78959
+[3473] 78973 81508
+[3474] 78994 79041
+[3475] 78995 79042
+[3476] 79030 !79045
+[3477] 79031 79051
+[3478] 79032 79050
+[3479] 79033 !79037 79052
+[3480] 79035 79048
+[3481] 79036 79046
+[3482] 79039 !79054
+[3483] 79047 79176
+[3484] 79104 81531
+[3485] 79156 !79180
+[3486] 79157 79185
+[3487] 79158 79186
+[3488] 79159 !79164 !79183 79187
+[3489] 79160 79177
+[3490] 79162 79182
+[3491] 79163 79181
+[3492] 79167 !79189
+[3493] 79216 !79226
+[3494] 79240 81554
+[3495] 79259 79309
+[3496] 79260 79310
+[3497] 79262 79312
+[3498] 79263 79313
+[3499] 79297 79445
+[3500] 79298 !79316
+[3501] 79299 79318
+[3502] 79300 79317
+[3503] 79301 79319
+[3504] 79302 79320
+[3505] 79303 79321
+[3506] 79304 79322
+[3507] 79373 81577
+[3508] 79393 !79443
+[3509] 79394 79442
+[3510] 79395 79444
+[3511] 79427 79545
+[3512] 79429 !79448
+[3513] 79430 79450
+[3514] 79431 79449
+[3515] 79432 79451
+[3516] 79433 79452
+[3517] 79434 79453
+[3518] 79435 79454
+[3519] 79504 81600
+[3520] 79523 79541
+[3521] 79524 79542
+[3522] 79525 79543
+[3523] 79526 79544
+[3524] 79529 79640 80320 80871 !80947 80948 80987 !80993 !81059 81060 81131 !81139 !81209 81210 81211 !81285 81286 81354 !81362
+[3525] 79530 !79548
+[3526] 79531 79550
+[3527] 79532 79549
+[3528] 79533 79551
+[3529] 79534 79552
+[3530] 79535 79553
+[3531] 79536 79554
+[3532] 79602 81623
+[3533] 79622 !79638
+[3534] 79623 79637
+[3535] 79624 79639 !79712 !79795
+[3536] 79625 79729
+[3537] 79626 79728
+[3538] 79627 !79643
+[3539] 79630 !79646
+[3540] 79641 79711
+[3541] 79642 79713
+[3542] 79692 81646
+[3543] 79717 !79721
+[3544] 79775 81669
+[3545] 79800 !79804
+[3546] 79851 81692
+[3547] 79894 !79947 !80128 !80205
+[3548] 79923 81715
+[3549] 79944 !79952
+[3550] 79948 !80030
+[3551] 80001 81738
+[3552] 80076 81761
+[3553] 80079 80090
+[3554] 80106 80137
+[3555] 80149 81784
+[3556] 80151 80229 80230 80241 80248
+[3557] 80153 !80154 !80223
+[3558] 80162 80240
+[3559] 80164 !80165
+[3560] 80169 80247
+[3561] 80171 !80172
+[3562] 80183 80216
+[3563] 80206 !80269
+[3564] 80227 81807
+[3565] 80232 80295
+[3566] 80257 80287
+[3567] 80258 80288
+[3568] 80259 80289
+[3569] 80275 80329
+[3570] 80299 81830
+[3571] 80300 80391 80450 80451 80503
+[3572] 80302 !80303
+[3573] 80308 !80309 !80373
+[3574] 80330 80331
+[3575] 80337 80363
+[3576] 80338 80364
+[3577] 80339 80365
+[3578] 80340 80366
+[3579] 80378 81853
+[3580] 80382 !80383 !80445
+[3581] 80393 !80394
+[3582] 80398 80502
+[3583] 80400 !80401
+[3584] 80408 80437
+[3585] 80409 80438
+[3586] 80410 80439
+[3587] 80418 !80419
+[3588] 80420 !80472 !80715 !80793 !80870
+[3589] 80449 81876
+[3590] 80452 80458 !80459 !80522
+[3591] 80470 !80478
+[3592] 80479 80539
+[3593] 80485 80512
+[3594] 80486 80513
+[3595] 80488 80514 80566 80590
+[3596] 80489 80515
+[3597] 80527 81898
+[3598] 80531 !80657
+[3599] 80533 !80658
+[3600] 80540 80541
+[3601] 80546 !80547 80554 !80555 !80565 !80589 !80599
+[3602] 80567 80591
+[3603] 80579 80629 80630
+[3604] 80581 !80582
+[3605] 80603 81921
+[3606] 80606 !80607 80611 !80612 80631 !80671
+[3607] 80622 80632 80646
+[3608] 80623 80648
+[3609] 80624 80649
+[3610] 80659 80720 80796
+[3611] 80664 80716
+[3612] 80676 81945
+[3613] 80680 !80681 80687 !80688 80696 !80697 !80749
+[3614] 80703 80741
+[3615] 80704 80742
+[3616] 80705 80743
+[3617] 80725 80794
+[3618] 80753 81968
+[3619] 80757 !80758 80764 !80765 80773 !80774 !80826
+[3620] 80780 80817
+[3621] 80781 !80784 80818 !80820
+[3622] 80798 80800
+[3623] 80830 81991
+[3624] 80834 !80835 80841 !80842 80849 !80850 80854 !80855 !80877 80884 !80885 !80900
+[3625] 80873 80875
+[3626] 80876 80945
+[3627] 80904 82014
+[3628] 80908 !80909 80915 !80916 !80923 80926 80930 !80931 !80954 !80958 80960 !80978
+[3629] 80943 80949
+[3630] 80944 !80952
+[3631] 80951 80953
+[3632] 80982 82039
+[3633] 80988 80989
+[3634] 80995 !80997 80999 81004 !81005 81012 !81013 81025 !81026 !81035 81037 !81052
+[3635] 81057 82062
+[3636] 81062 81064
+[3637] 81065 81141
+[3638] 81066 !81069 81070 !81075 81076 !81083 81084 !81096 81097 !81107 81108 81123
+[3639] 81128 82085
+[3640] 81136 81137
+[3641] 81142 81143
+[3642] 81144 !81147 81149 81154 !81155 81162 !81163 81175 !81176 !81186 81188 !81203
+[3643] 81208 82106
+[3644] 81213 81215
+[3645] 81216 81283
+[3646] 81217 81219 !81221 !81226 81227 !81234 81235 !81247 81248 81257 !81259 81274
+[3647] 81279 82129
+[3648] 81281 81287
+[3649] 81288 81364
+[3650] 81289 !81292 81293 !81298 81299 !81306 81307 !81319 81320 !81330 81331 81346
+[3651] 81351 82152
+[3652] 81357 81358
+[3653] 81365 81366
+[3654] 81367 81371 !81372 81377 !81378 81385 !81386 81398 !81399 81410 !81411 !81426
+[3655] 81435 85017
+[3656] 81438 81666
+[3657] 81439 81827
+[3658] 81440 81552 81851 81896 82012
+[3659] 81441 81464 81497 81575 81736 81759 82071 82094
+[3660] 81449 81648 81740
+[3661] 81463 81758
+[3662] 81468 81602 81855
+[3663] 81478 !81492 82052
+[3664] 81490 81491
+[3665] 81510 81763 82107
+[3666] 81528 81621 81644 82035
+[3667] 81529 81904 82070 82116
+[3668] 81533 81717 82016
+[3669] 81558 81559
+[3670] 81560 81561
+[3671] 81579 81878 82060
+[3672] 81597 82029
+[3673] 81598 81713 81805 81828 81966 81989
+[3674] 81620 82093
+[3675] 81627 81628
+[3676] 81643 81850 81937 82139
+[3677] 81671 81694
+[3678] 81676 81677
+[3679] 81689 81804
+[3680] 81690 81874
+[3681] 81721 81722
+[3682] 81735 81927 81983
+[3683] 81753 81776
+[3684] 81755 !81756 84500
+[3685] 81773 81778 84528 !84529
+[3686] 81777 84473 84502
+[3687] 81786 81923 81970
+[3688] 81791 81792
+[3689] 81794 81799 81817 81818 81822 81823
+[3690] 81796 !81797 81801 !81802 84554 !84557
+[3691] 81819 81824
+[3692] 81820 81825 !84582 84583
+[3693] 81842 !81843 81847 !81848 84608 !84611
+[3694] 81865 !81866 81870 !81871 84636 !84637
+[3695] 81888 !81889 81893 !81894 84661 !84664
+[3696] 81911 !81912 81916 !81917 84688 !84689
+[3697] 81919 82117 82145
+[3698] 81934 !81935 81940 !81941 84713 !84716
+[3699] 81947 82083 82153
+[3700] 81952 81953
+[3701] 81957 !81958 81963 !81964 84740 !84741
+[3702] 81959 !81974
+[3703] 81980 !81981 81986 !81987 84765 !84768
+[3704] 82003 !82004 82009 !82010 84792 !84793
+[3705] 82026 !82027 82032 !82033 84817 !84820
+[3706] 82036 !82040
+[3707] 82049 !82050 82055 !82056 84844 !84845
+[3708] 82067 82068
+[3709] 82074 !82075 82079 !82080 84869 !84872
+[3710] 82097 !82098 82102 !82103 84895 !84897
+[3711] 82120 !82121 82125 !82126 84921 !84922
+[3712] 82132 82133
+[3713] 82142 !82143 82148 !82149 !84951 84952
+[3714] 82165 !84724 !84749
+[3715] 82167 82184 82200 82315 !82317 82330 82338 82350 82354 82358 82366 82373 !82375 82377 !82379 82478 82489 82494 82504 82514 82519 82524 82539 82549 84084 84086
+[3716] 82168 82230 82245 82261 82273 82300 82305 !82307 82362 82381 !82383 82484 82509 84091 84092 84119 84145 !84154 84252 84281 84335 84362 84443 84497 84524 84706 84733 84810 !84816 !84828 84862
+[3717] 82172 !82174
+[3718] 82179 82196 82210 82226 82241 82269 82286 82830 82872 82914 83055 83467 !83475 83515 !83523 83611 !83620 83667 83715 83763 84081 84082 84093 84094 84120 84280 84307 84334 84496 84550 84577 84604 84631 84659 !84660 84685 !84686 !84697 84711 84737 84763 !84764 84841 !84842 !84853 84867
+[3719] 82181 82182
+[3720] 82213 !82227
+[3721] 82234 !82236
+[3722] 82258 82259
+[3723] 82290 82295 82320 !82322 82334 82342 82346 82385 !82387 82479 82529 82534 82544 84087 !84089 84118 84303 !84320 84329 !84348 84357 !84374 84383 !84402 84411 !84428 84465 !84482 84491 !84510 84545 !84564 84599 !84618 84653 !84671 84705 !84723 84732 !84748 84757 !84775 84938 !84954 !84955
+[3724] 82292 82293
+[3725] 82297 82298
+[3726] 82302 82303
+[3727] 82311 !82313
+[3728] 82326 !82328
+[3729] 82347 82348
+[3730] 82359 82360
+[3731] 82363 82364
+[3732] 82367 82368
+[3733] 82370 !82372
+[3734] 82389 82395
+[3735] 82391 82393 82460
+[3736] 82410 82455
+[3737] 82420 82440
+[3738] 82498 82500
+[3739] 82556 82557
+[3740] 82558 !82563 82587 !82595 82630 82746 82956 83064 83196 83240 83284 83522 83668 83716
+[3741] 82560 83283
+[3742] 82572 82574
+[3743] 82576 !82584 82598 !82606 83152 83328 83426 83570 83764
+[3744] 82609 !82617
+[3745] 82627 82628 82629
+[3746] 82638 82639
+[3747] 82641 82788
+[3748] 82701 82702
+[3749] 82743 82744
+[3750] 82785 82786
+[3751] 82827 82828
+[3752] 82831 !82869
+[3753] 82873 !82911
+[3754] 82906 82948
+[3755] 82908 !82909
+[3756] 82915 !82953
+[3757] 82957 !82995
+[3758] 82990 83058 83103 83147 83191 83192
+[3759] 82992 !82993
+[3760] 83057 !83066
+[3761] 83060 !83061
+[3762] 83102 !83110
+[3763] 83105 !83106
+[3764] 83111 83112
+[3765] 83146 !83154
+[3766] 83149 !83150
+[3767] 83190 !83198
+[3768] 83234 !83242
+[3769] 83237 !83238
+[3770] 83278 !83286
+[3771] 83281 !83282
+[3772] 83322 !83330
+[3773] 83325 !83326
+[3774] 83420 !83428
+[3775] 83423 !83424
+[3776] 83471 !83472
+[3777] 83477 83478
+[3778] 83519 !83520
+[3779] 83564 !83572
+[3780] 83567 !83568
+[3781] 83615 !83616
+[3782] 83621 83622
+[3783] 83626 !83627
+[3784] 83665 83666
+[3785] 83674 !83675
+[3786] 83713 83714
+[3787] 83722 !83723
+[3788] 83761 83762
+[3789] 83769 !83770
+[3790] 83773 83775
+[3791] 83780 83846 83908 84012 84022 84060
+[3792] 83781 83789 83808 83817 83827 83855 83865 83917 83927 83946 84031
+[3793] 83798 83836 83879 83898 83936 83955 83974 83984 84050
+[3794] 83869 !83876
+[3795] 83888 !83895
+[3796] 83890 83891
+[3797] 83901 !83903
+[3798] 83911 !83912 !83915 84492
+[3799] 83920 !83922 84521
+[3800] 83930 !83931
+[3801] 83939 !83941 84575 !84576
+[3802] 83949 !83950 84600 !84603
+[3803] 83958 !83960 84629 !84630
+[3804] 83964 !83971
+[3805] 83968 !83969 84655 !84658
+[3806] 83977 !83979 84683 !84684
+[3807] 83987 !83988 84707 !84710
+[3808] 83992 !84000
+[3809] 83996 !83998 84735 !84736
+[3810] 84002 !84009
+[3811] 84006 !84007 84759 !84762
+[3812] 84015 !84017 84787 !84788
+[3813] 84025 !84026 !84029 84811 !84814
+[3814] 84034 !84036 84839 !84840
+[3815] 84040 !84047
+[3816] 84044 !84045 84863 !84866
+[3817] 84053 !84055 84890 !84892
+[3818] 84063 !84064 !84067 84916 !84917
+[3819] 84071 !84072 !84941 84942
+[3820] 84078 84080 85053
+[3821] 84100 84125 84712 84738 84868 84880
+[3822] 84101 84114 84115
+[3823] 84137 84138
+[3824] 84152 !84153
+[3825] 84155 84167 84168
+[3826] 84185 84187 84198 84199
+[3827] 84208 84225
+[3828] 84226 84227
+[3829] 84254 84258 84259 84364 84445 84457 84526 84537
+[3830] 84282 84309 84310 84336 84498 84552 84553 84579 84580 84591 84606 84607 84633 84634 84645
+[3831] 84283 84295 84337 84499
+[3832] 84321 84565 84619
+[3833] 84349 84511
+[3834] 84403 84429 84483
+[3835] 84466 84494 84520
+[3836] 84540 84568 84569
+[3837] 84542 !84543
+[3838] 84546 !84549
+[3839] 84596 !84597
+[3840] 84624 !84625
+[3841] 84650 !84651
+[3842] 84672 84776
+[3843] 84677 !84678
+[3844] 84702 !84703
+[3845] 84729 !84730
+[3846] 84754 !84755
+[3847] 84781 !84782
+[3848] 84794 !84802
+[3849] 84806 !84807
+[3850] 84833 !84834
+[3851] 84858 !84859
+[3852] 84885 !84886
+[3853] 84898 !84906
+[3854] 84910 !84911
+[3855] 84923 !84931
+[3856] 84935 !84936
+[3857] 84947 84949
+[3858] 84956 84957
+[3859] 84991 !84995 !84996
+[3860] 85004 !85005
+[3861] 85007 !85008 !85009
+[3862] 85012 !85013
+
+fraig> usage
+Period time used : 0 seconds
+Total time used  : 8.98 seconds
+Total memory used: 16.03 M Bytes
+
+fraig> q -f
+
